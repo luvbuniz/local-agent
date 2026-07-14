@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buni — Every call answered, every appointment booked | Bradenton &amp; Lakewood Ranch</title>
+<meta name="description" content="Buni sets up a friendly receptionist that answers every call and website message, books appointments on your calendar, and texts you the summary — 24/7. Bradenton, Sarasota, Lakewood Ranch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== EDIT ME: swap these two placeholders site-wide with find & replace =====
+     Phone number:  941-555-0100   (also appears as tel:9415550100 in links)
+     Booking link:  https://calendly.com/PLACEHOLDER
+============================================================================== -->
+
+<header>
+  <div class="wrap hdr">
+    <a class="logo" href="#top">buni<span>.</span></a>
+    <nav class="nav">
+      <a href="#demos">Try it</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="phone-pill" href="tel:9415550100">📞 941-555-0100</a>
+  </div>
+</header>
+
+<section class="wrap hero" id="top">
+  <div class="hero-inner">
+    <h1>When you can't answer the phone, your customer calls your competitor.</h1>
+    <p class="sub">I set up a friendly receptionist that answers every call and every website message, books the appointment on your calendar, and texts you the summary — 24/7.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="tel:9415550100">📞 Call our demo line — try it yourself</a>
+      <a class="btn btn-secondary" href="https://calendly.com/PLACEHOLDER">Book a free 15-minute chat</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stat"><b>80%</b><span>of callers hang up on voicemail — and call the next business on Google.</span></div>
+    <div class="stat"><b>30–40%</b><span>of calls to a typical trades business go unanswered.</span></div>
+    <div class="stat"><b>1st</b><span>to respond usually wins the job. Customers pick whoever answers.</span></div>
+  </div>
+</section>
+
+<section class="wrap section" id="demos">
+  <div class="kicker">Try it yourself</div>
+  <h2>Hear it answer a call for a business like yours.</h2>
+  <p class="lede">Pick your line of work. Call the demo number and talk to it like a real customer would.</p>
+
+  <div class="tabs" id="tabs"></div>
+
+  <div class="demo-row">
+    <!-- ============================================================
+         DEMO CARDS — to add a vertical, copy one whole .demo-card
+         block below and edit its data-tab name + text.
+         To remove one, delete the whole block. Tabs build themselves.
+         To add a Loom video: replace the .video-slot div's contents with
+         <iframe src="https://www.loom.com/embed/YOUR_VIDEO_ID"></iframe>
+         ============================================================ -->
+    <div class="demo-card" data-tab="Salon &amp; spa">
+      <p class="demo-pain">Your stylist's hands are full — literally.</p>
+      <p class="demo-blurb">Books appointments straight into the calendar and answers pricing and hours questions while you work.</p>
+      <div class="video-slot">loom demo video — salon &amp; spa</div>
+      <a class="demo-call" href="tel:9415550100">📞 Call the salon demo · 941-555-0100</a>
+    </div>
+
+    <div class="demo-card" data-tab="Painter / contractor">
+      <p class="demo-pain">Your painter is on a ladder — who's answering?</p>
+      <p class="demo-blurb">Captures the job details and books an estimate while you're up on a ladder.</p>
+      <div class="video-slot">loom demo video — painter / contractor</div>
+      <a class="demo-call" href="tel:9415550100">📞 Call the painter demo · 941-555-0100</a>
+    </div>
+
+    <div class="demo-card" data-tab="Roofing">
+      <p class="demo-pain">After a storm, everyone calls at once.</p>
+      <p class="demo-blurb">Handles the call surge after a storm and books inspections without missing anyone.</p>
+      <div class="video-slot">loom demo video — roofing</div>
+      <a class="demo-call" href="tel:9415550100">📞 Call the roofing demo · 941-555-0100</a>
+    </div>
+
+    <div class="demo-card" data-tab="Insurance agent">
+      <p class="demo-pain">Claims don't wait for office hours.</p>
+      <p class="demo-blurb">Takes after-hours intake and books policy review appointments for the morning.</p>
+      <div class="video-slot">loom demo video — insurance</div>
+      <a class="demo-call" href="tel:9415550100">📞 Call the insurance demo · 941-555-0100</a>
+    </div>
+
+    <div class="demo-card" data-tab="Law office">
+      <p class="demo-pain">A missed call is a client hiring the firm across town.</p>
+      <p class="demo-blurb">Friendly intake — name, matter type, urgency — books the consultation, and never gives legal advice.</p>
+      <div class="video-slot">loom demo video — law office</div>
+      <a class="demo-call" href="tel:9415550100">📞 Call the law office demo · 941-555-0100</a>
+    </div>
+    <!-- ================== END DEMO CARDS ================== -->
+
+    <div class="chat-card">
+      <div class="emoji">💬</div>
+      <h3>Rather type than talk?</h3>
+      <p>The same receptionist answers messages on your website too. Try the chat right here on this page.</p>
+      <button type="button" onclick="openChat()">Try the chat →</button>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap section">
+    <h2 style="margin-bottom:22px">What I set up for you</h2>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="emoji">📞</div>
+        <h3>Every call answered &amp; booked</h3>
+        <p>A friendly voice answers 24/7, books straight into the calendar you already use — Google Calendar, Square, Jobber, and others — and texts you a summary of every call.</p>
+      </div>
+      <div class="svc">
+        <div class="emoji">💬</div>
+        <h3>Every message answered too</h3>
+        <p>A chat assistant on your website and Facebook/Instagram messages that answers questions and books appointments for customers who'd rather type — including at 11pm. If a call does slip through, the caller gets an instant text back so they don't dial your competitor.</p>
+      </div>
+      <div class="svc">
+        <div class="emoji">⭐</div>
+        <h3>More 5-star reviews</h3>
+        <p>Happy customers get a friendly text asking for a review at just the right moment. You climb the Google rankings without asking anyone in person.</p>
+      </div>
+    </div>
+    <div class="more">
+      <h3>And when you're ready for more…</h3>
+      <div class="more-grid">
+        <div class="more-item"><strong>Team AI training</strong> — a lunch-hour session teaching your staff to use AI for the everyday stuff: emails, quotes, scheduling. Former teacher — I make it click.</div>
+        <div class="more-item"><strong>Wake up your old quotes</strong> — a friendly text and email campaign to past estimates and lapsed customers. New jobs from people who already know you, zero ad spend.</div>
+        <div class="more-item"><strong>Reviews answered for you</strong> — every Google review gets a thoughtful reply in your voice, good or bad, within a day.</div>
+        <div class="more-item"><strong>Paperwork on autopilot</strong> — quotes, estimates, and intake forms that write themselves from a few details.</div>
+        <div class="more-item"><strong>Social media that posts itself</strong> — a steady stream of posts drafted from your photos and jobs. You approve each one from your phone; nothing goes out without your say-so.</div>
+      </div>
+      <p class="more-note">Most clients start with the receptionist and add these later.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <h2 style="margin-bottom:22px">How it works</h2>
+  <div class="steps">
+    <div class="step"><b>1</b><p>We talk for 15 minutes about how customers reach you today.</p></div>
+    <div class="step"><b>2</b><p>I set everything up and test it with you — usually within a week.</p></div>
+    <div class="step"><b>3</b><p>You go back to work. Every call gets answered.</p></div>
+  </div>
+  <p class="promise">Nothing goes live until you've heard it yourself and approved it.</p>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="photo-slot">
+      <!-- Replace this div with: <img src="amy.jpg" alt="Amy Sullivan"> -->
+      <div class="ph">photo of Amy</div>
+    </div>
+    <div class="bio">
+      <h2 style="margin-bottom:12px">Hi, I'm Amy.</h2>
+      <p>I live right here in Bradenton / Lakewood Ranch, and I spent years as a teacher. That means I explain things in plain English — and I don't disappear after setup.</p>
+      <p>I work with a small number of local businesses at a time, so every client gets real attention.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap strip">
+  <div class="strip-inner">
+    <p><strong>Already paying for ads or SEO?</strong> Great — I make sure the calls they generate actually get answered.</p>
+  </div>
+</section>
+
+<section class="wrap section" id="faq" style="padding-top:24px">
+  <h2 style="margin-bottom:18px">Questions people ask</h2>
+  <div class="faq-list">
+    <details open>
+      <summary>Will callers know it's not a person?</summary>
+      <p>It sounds friendly and natural, and if someone asks, it's honest about being a virtual receptionist. Most callers just appreciate getting an answer, a booked appointment, and no hold music.</p>
+    </details>
+    <details>
+      <summary>What if it can't answer something?</summary>
+      <p>It never guesses. It takes a message and texts me — and you — instantly, so the customer still gets a fast call back from a human.</p>
+    </details>
+    <details>
+      <summary>Do I need new phone numbers or equipment?</summary>
+      <p>No. We simply forward your existing number. Nothing changes for your customers, and you can un-forward it anytime.</p>
+    </details>
+    <details>
+      <summary>What does it cost?</summary>
+      <p>One-time setup is $400–$1,000 depending on the size of your business and how many calendars and tools we connect. Then $150–$500 a month depending on call volume — most clients land in the middle. For most businesses, that's less than one missed job a month. You only pay to start — nothing goes live until you've heard it yourself and approved it, and if you're not happy, full refund. No long contracts, cancel anytime. Exact quote happens in the free 15-minute chat.</p>
+    </details>
+    <details>
+      <summary>Can I turn it off?</summary>
+      <p>Yes, anytime. No long contracts — you're never locked in.</p>
+    </details>
+    <details>
+      <summary>What areas do you serve?</summary>
+      <p>Bradenton, Sarasota, and Lakewood Ranch in person — and I can set everything up remotely for businesses anywhere.</p>
+    </details>
+  </div>
+</section>
+
+<section class="final" id="pricing">
+  <div class="wrap">
+    <h2>Hear it for yourself — it takes two minutes.</h2>
+    <p class="pricing-line">Setup runs $400–$1,000 once, then $150–$500 a month depending on call volume. For most businesses, that's less than one missed job a month. No long contracts — cancel anytime, and if you're not happy, full refund.</p>
+    <div class="cta-row">
+      <a class="btn btn-coral" href="tel:9415550100">📞 Call the demo line · 941-555-0100</a>
+      <a class="btn btn-ghost" href="https://calendly.com/PLACEHOLDER">Book a free 15-minute chat</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-logo">buni<span>.</span> <small>· Buni LLC, Bradenton FL</small></div>
+    <div class="f-links">
+      <a href="mailto:amy@bunillc.com">amy@bunillc.com</a>
+      <a href="https://linkedin.com/in/PLACEHOLDER">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Chat widget placeholder — replace .chat-panel-body contents with your real widget embed -->
+<div class="chat-panel" id="chatPanel" hidden>
+  <div class="chat-panel-head"><span>💬 Chat with us</span><button type="button" onclick="closeChat()">✕</button></div>
+  <div class="chat-panel-body">chat widget embeds here</div>
+</div>
+<button class="chat-bubble" type="button" onclick="toggleChat()" aria-label="Open chat">💬</button>
+
+<script>
+// Demo tabs — built automatically from the .demo-card blocks above
+(function () {
+  var cards = document.querySelectorAll('.demo-card');
+  var tabs = document.getElementById('tabs');
+  cards.forEach(function (card, i) {
+    var btn = document.createElement('button');
+    btn.className = 'tab' + (i === 0 ? ' active' : '');
+    btn.type = 'button';
+    btn.textContent = card.dataset.tab;
+    btn.onclick = function () {
+      cards.forEach(function (c) { c.hidden = c !== card; });
+      tabs.querySelectorAll('.tab').forEach(function (t) { t.classList.remove('active'); });
+      btn.classList.add('active');
+    };
+    tabs.appendChild(btn);
+    card.hidden = i !== 0;
+  });
+})();
+// Chat panel
+var chatPanel = document.getElementById('chatPanel');
+function openChat() { chatPanel.hidden = false; }
+function closeChat() { chatPanel.hidden = true; }
+function toggleChat() { chatPanel.hidden = !chatPanel.hidden; }
+</script>
+</body>
+</html>
