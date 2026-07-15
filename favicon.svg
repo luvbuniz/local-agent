@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="buni">
+  <rect width="512" height="512" rx="112" fill="#1f4d47"/>
+  <rect x="150" y="132" width="64" height="256" rx="32" fill="#faf6ef"/>
+  <circle cx="250" cy="296" r="92" fill="#faf6ef"/>
+  <circle cx="250" cy="296" r="32" fill="#1f4d47"/>
+  <circle cx="398" cy="372" r="30" fill="#e8735a"/>
+</svg>
