@@ -54,6 +54,13 @@ Each vertical is one self-contained block in `index.html` between the
 - **Add:** copy any block, paste it next to the others, change `data-tab`
   (that's the tab label), the pain line, blurb, and demo number.
 
+## Edit a "How it works" expander
+
+Each demo card ends with a `<details class="demo-how">` block — the
+per-industry expander with the worry line, the four steps, the tools list,
+and the safety-rail line. It's plain HTML: edit the text in place. To add
+one to a new vertical, copy the whole `<details>` block from any card.
+
 ## Add your photo
 
 In the "Hi, I'm Amy" section, replace the placeholder div with:

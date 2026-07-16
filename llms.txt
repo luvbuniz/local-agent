@@ -13,6 +13,10 @@
 
 Local service businesses — salons and spas, painters and contractors, roofers, insurance agents, law offices, and similar appointment- or lead-driven businesses.
 
+## Integrations
+
+Works with the tools each industry already uses (exact fit confirmed in the free consultation): Square Appointments, Vagaro, and GlossGenius for salons; ServiceTitan, Jobber, and Housecall Pro for trades; Clio, Litify, and Lead Docket for law offices; Google Calendar for everyone. Industry safety rails are built in — for example, it never gives legal advice, never quotes contractor prices, and never gives insurance coverage advice; those questions route to the business owner.
+
 ## Pricing
 
 - One-time setup: $400–$1,000 depending on business size and tools connected.

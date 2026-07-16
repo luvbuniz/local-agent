@@ -61,6 +61,14 @@ h2{margin:8px 0 6px;font-size:clamp(25px,4vw,34px);font-weight:800;letter-spacin
 .video-slot iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
 .demo-call{display:block;text-align:center;background:var(--ink);color:#fff;font-weight:700;font-size:15.5px;padding:14px;border-radius:12px;text-decoration:none}
 .demo-call:hover{background:#0f2422;color:#fff}
+.demo-how{margin-top:12px;background:var(--bg);border:1px solid var(--card-line);border-radius:12px;padding:0 14px}
+.demo-how summary{padding:13px 0;font-size:14.5px;color:var(--teal)}
+.demo-how summary::after{font-size:16px}
+.demo-how p{margin:0;padding:0 0 12px;font-size:14px;line-height:1.55;color:var(--muted)}
+.demo-how ol{margin:0 0 12px;padding-left:20px;font-size:14px;line-height:1.55;color:var(--muted)}
+.demo-how ol li{margin-bottom:4px}
+.demo-how strong{color:var(--ink)}
+.demo-how .safety{font-weight:700;color:var(--deep)}
 .chat-card{flex:1 1 280px;background:var(--deep);border-radius:18px;padding:24px;display:flex;flex-direction:column;justify-content:center;gap:12px}
 .chat-card .emoji{font-size:30px}
 .chat-card h3{margin:0;font-size:19px;font-weight:800;color:#fff;line-height:1.3}
