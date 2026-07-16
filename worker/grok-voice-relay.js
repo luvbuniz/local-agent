@@ -26,19 +26,31 @@ const MAX_SESSION_MS = 5 * 60 * 1000;
 
 export default {
   async fetch(request, env) {
+    const origin = request.headers.get('Origin');
+    const agentKey = new URL(request.url).searchParams.get('agent');
+    console.log(
+      `[relay] upgrade=${request.headers.get('Upgrade')} origin=${origin} ` +
+      `agent=${agentKey} keyPresent=${Boolean(env.XAI_API_KEY)}`,
+    );
+
     if (request.headers.get('Upgrade') !== 'websocket') {
       return new Response('Expected a WebSocket connection.', { status: 426 });
     }
 
-    const origin = request.headers.get('Origin');
     if (!ALLOWED_ORIGINS.includes(origin)) {
+      console.log(`[relay] REJECTED: origin not allowed: ${origin}`);
       return new Response('Forbidden', { status: 403 });
     }
 
-    const agentKey = new URL(request.url).searchParams.get('agent');
     const agentId = AGENTS[agentKey];
     if (!agentId) {
+      console.log(`[relay] REJECTED: unknown agent: ${agentKey}`);
       return new Response('Unknown agent', { status: 404 });
+    }
+
+    if (!env.XAI_API_KEY) {
+      console.log('[relay] REJECTED: XAI_API_KEY missing at runtime — add it under Settings → Variables and secrets (the runtime section, not Build)');
+      return new Response('Voice service not configured.', { status: 500 });
     }
 
     const upstreamResp = await fetch(
@@ -52,8 +64,12 @@ export default {
     );
     const upstream = upstreamResp.webSocket;
     if (!upstream) {
+      let body = '';
+      try { body = (await upstreamResp.text()).slice(0, 300); } catch (e) {}
+      console.log(`[relay] UPSTREAM FAILED: xAI answered status=${upstreamResp.status} body=${body}`);
       return new Response('Could not reach the voice service.', { status: 502 });
     }
+    console.log('[relay] connected to xAI, piping');
     upstream.accept();
 
     const pair = new WebSocketPair();
