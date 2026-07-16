@@ -9,35 +9,20 @@ Single-page static site for Buni LLC. No build step — just `index.html` + `sty
 3. On github.com: **Settings → Pages → Source: Deploy from a branch → Branch: `main` / root → Save.**
 4. Your site appears at `https://luvbuniz.github.io/local-agent/` in a minute or two.
 
-## Swap the placeholder phone number
+## Swap the placeholder demo numbers
 
-The demo number `941-555-0100` appears in two forms:
+Every demo number placeholder is `941-555-0100`, in two forms:
 - Display text: `941-555-0100`
 - Links: `tel:9415550100`
 
-Find & replace **both** in `index.html` (any text editor: Ctrl/Cmd+H).
+Each demo card has its **own** number in the "Try this demo" link — swap
+each card's display text and `tel:` href with that industry's demo line.
+The hero button and the final CTA share one general demo number; swap
+those two the same way.
 
 ## Swap the booking link
 
 Find & replace `https://calendly.com/PLACEHOLDER` with your real Calendly URL (3 places).
-
-## Add a Loom video to a demo card
-
-In a demo card, replace the placeholder line inside `.video-slot`:
-
-```html
-<div class="video-slot">loom demo video — salon &amp; spa</div>
-```
-
-with:
-
-```html
-<div class="video-slot">
-  <iframe src="https://www.loom.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
-</div>
-```
-
-(Get the ID from Loom's Share → Embed.)
 
 ## Add or remove a demo vertical
 
