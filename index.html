@@ -266,6 +266,12 @@
       <p class="demo-pain">A missed call is a client hiring the firm across town.</p>
       <p class="demo-blurb">Friendly intake — name, matter type, urgency — books the consultation, and never gives legal advice.</p>
       <a class="demo-call" href="tel:9415550100">📞 Try this demo · 941-555-0100</a>
+      <button type="button" class="demo-voice" data-voice-agent="law" hidden>🎙 Or talk to it right here</button>
+      <div class="voice-panel" hidden>
+        <div class="voice-status"></div>
+        <div class="voice-transcript"></div>
+        <button type="button" class="voice-end">End demo</button>
+      </div>
       <details class="demo-how">
         <summary>How it works</summary>
         <p><strong>The worry:</strong> confidentiality, conflicts, and the fear that anyone but a lawyer answering will say the wrong thing.</p>
@@ -411,6 +417,12 @@
   <div class="chat-panel-body">chat widget embeds here</div>
 </div>
 <button class="chat-bubble" type="button" onclick="toggleChat()" aria-label="Open chat">💬</button>
+
+<!-- Voice demo (Grok): paste your Cloudflare Worker URL between the quotes
+     to turn on the in-page voice demo button on the law card.
+     See README → "Turn on the in-page voice demo". Empty = buttons stay hidden. -->
+<script>window.GROK_RELAY_URL = "";</script>
+<script src="voice-demo.js" defer></script>
 
 <script>
 // Demo tabs — built automatically from the .demo-card blocks above

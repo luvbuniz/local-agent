@@ -56,6 +56,31 @@ In the "Hi, I'm Amy" section, replace the placeholder div with:
 
 and put `amy.jpg` in the repo root.
 
+## Turn on the in-page voice demo (Grok)
+
+The law demo card has a hidden "🎙 Or talk to it right here" button. It talks
+to your Grok voice agent through a tiny Cloudflare Worker relay so your xAI
+API key never appears in the site code. Two steps:
+
+1. **Deploy the relay** (one time, ~3 minutes):
+   - Cloudflare dashboard → **Workers & Pages → Create → Worker**
+   - Paste the contents of `worker/grok-voice-relay.js` and **Deploy**
+   - **Settings → Variables and Secrets** → add a **secret** named
+     `XAI_API_KEY` with your xAI API key
+   - Copy the worker's URL (looks like `https://grok-voice-relay.YOURNAME.workers.dev`)
+2. **Point the site at it:** in `index.html`, find
+   `window.GROK_RELAY_URL = ""` near the bottom and paste the worker URL
+   between the quotes. Push — the button appears.
+
+Notes:
+- The relay only accepts connections from bunillc.com and only exposes the
+  agents whitelisted in `worker/grok-voice-relay.js` (add more to the
+  `AGENTS` map — e.g. a roofing agent — and give the card's button a
+  matching `data-voice-agent` attribute).
+- Sessions are hard-capped at 5 minutes each to protect your xAI bill.
+- Never paste the xAI API key itself into `index.html` or anywhere in this
+  repo — it belongs only in the Worker secret.
+
 ## Wire up the real chat widget
 
 Replace the contents of `<div class="chat-panel-body">` at the bottom of
