@@ -1,6 +1,6 @@
-# Optional: deploy from the command line with `npx wrangler deploy`
-# (the dashboard copy-paste route in grok-voice-relay.js works too).
-# Set the secret once with: npx wrangler secret put XAI_API_KEY
+# Deployed automatically by Cloudflare's git integration on every push
+# (Workers project "grok-voice-relay", root directory /worker).
+# The XAI_API_KEY secret is set in the Cloudflare dashboard, not here.
 name = "grok-voice-relay"
 main = "grok-voice-relay.js"
 compatibility_date = "2026-07-01"
