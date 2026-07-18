@@ -12,8 +12,15 @@
  * AGENTS below are reachable. Sessions are hard-capped at 5 minutes.
  */
 
+// One entry per live voice agent. As each new agent is created in the
+// xAI console, paste its ID here AND add its key to VOICE_AGENTS in
+// index.html. Ready-to-paste agent prompts: agents/voice-agent-prompts.md
 const AGENTS = {
   law: 'agent_m9bI9TNJojkS84SO',
+  // salon: 'agent_...',
+  // painter: 'agent_...',
+  // roofing: 'agent_...',
+  // insurance: 'agent_...',
 };
 
 const ALLOWED_ORIGINS = [

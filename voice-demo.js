@@ -5,11 +5,13 @@
   'use strict';
 
   var RELAY_URL = window.GROK_RELAY_URL || '';
+  var LIVE_AGENTS = window.VOICE_AGENTS || [];
   var RATE = 24000; // PCM16 sample rate the realtime API speaks
 
   if (!RELAY_URL) return; // not configured yet — leave buttons hidden
 
   document.querySelectorAll('[data-voice-agent]').forEach(function (btn) {
+    if (LIVE_AGENTS.indexOf(btn.getAttribute('data-voice-agent')) === -1) return;
     btn.hidden = false;
     btn.addEventListener('click', function () { start(btn); });
   });
@@ -62,6 +64,23 @@
         sendMic(s);
       };
 
+      var agentLineOpen = false;
+      function scrollTranscript() { transcriptEl.scrollTop = transcriptEl.scrollHeight; }
+      function appendAgent(delta) {
+        if (!agentLineOpen) {
+          transcriptEl.textContent += (transcriptEl.textContent ? '\n' : '') + 'Receptionist: ';
+          agentLineOpen = true;
+        }
+        transcriptEl.textContent += delta;
+        scrollTranscript();
+      }
+      function appendCaller(text) {
+        if (!text) return;
+        agentLineOpen = false;
+        transcriptEl.textContent += (transcriptEl.textContent ? '\n' : '') + 'You: ' + text;
+        scrollTranscript();
+      }
+
       ws.onmessage = function (raw) {
         var ev;
         try { ev = JSON.parse(raw.data); } catch (e) { return; }
@@ -70,10 +89,12 @@
         if (ev.type === 'response.output_audio.delta') {
           playDelta(s, ev.delta);
         } else if (ev.type === 'response.output_audio_transcript.delta') {
-          transcriptEl.textContent += ev.delta;
-          transcriptEl.scrollTop = transcriptEl.scrollHeight;
+          appendAgent(ev.delta);
         } else if (ev.type === 'response.output_audio_transcript.done') {
-          transcriptEl.textContent += '\n';
+          agentLineOpen = false;
+        } else if (ev.type === 'conversation.item.input_audio_transcription.completed' ||
+                   ev.type === 'conversation.item.input_audio_transcription.done') {
+          appendCaller(ev.transcript);
         } else if (ev.type === 'input_audio_buffer.speech_started') {
           bargeIn(s); // caller started talking — hush the agent
         } else if (ev.type === 'error') {

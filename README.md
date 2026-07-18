@@ -73,10 +73,13 @@ API key never appears in the site code. Two steps:
    between the quotes. Push — the button appears.
 
 Notes:
-- The relay only accepts connections from bunillc.com and only exposes the
-  agents whitelisted in `worker/grok-voice-relay.js` (add more to the
-  `AGENTS` map — e.g. a roofing agent — and give the card's button a
-  matching `data-voice-agent` attribute).
+- Every demo card already has a hidden 🎙 button. To turn one on, create
+  the agent (ready-to-paste prompts: `agents/voice-agent-prompts.md`),
+  then put its ID in the `AGENTS` map in `worker/grok-voice-relay.js` and
+  add its key ("salon", "painter", "roofing", "insurance") to
+  `window.VOICE_AGENTS` in `index.html`.
+- The relay only accepts connections from bunillc.com and only exposes
+  whitelisted agents.
 - Sessions are hard-capped at 5 minutes each to protect your xAI bill.
 - Never paste the xAI API key itself into `index.html` or anywhere in this
   repo — it belongs only in the Worker secret.

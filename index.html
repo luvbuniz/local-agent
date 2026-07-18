@@ -194,6 +194,12 @@
       <p class="demo-pain">Your stylist's hands are full — literally.</p>
       <p class="demo-blurb">Books appointments straight into the calendar and answers pricing and hours questions while you work.</p>
       <a class="demo-call" href="tel:9415550100">📞 Try this demo · 941-555-0100</a>
+      <button type="button" class="demo-voice" data-voice-agent="salon" hidden>🎙 Or talk to it right here</button>
+      <div class="voice-panel" hidden>
+        <div class="voice-status"></div>
+        <div class="voice-transcript"></div>
+        <button type="button" class="voice-end">End demo</button>
+      </div>
       <details class="demo-how">
         <summary>How it works</summary>
         <p><strong>The worry:</strong> calls that hit voicemail while your hands are in someone's hair — and the no-shows that eat your week.</p>
@@ -212,6 +218,12 @@
       <p class="demo-pain">Your painter is on a ladder — who's answering?</p>
       <p class="demo-blurb">Captures the job details and books an estimate while you're up on a ladder.</p>
       <a class="demo-call" href="tel:9415550100">📞 Try this demo · 941-555-0100</a>
+      <button type="button" class="demo-voice" data-voice-agent="painter" hidden>🎙 Or talk to it right here</button>
+      <div class="voice-panel" hidden>
+        <div class="voice-status"></div>
+        <div class="voice-transcript"></div>
+        <button type="button" class="voice-end">End demo</button>
+      </div>
       <details class="demo-how">
         <summary>How it works</summary>
         <p><strong>The worry:</strong> you're up a ladder or running a crew, and every missed call — especially after hours — is a job that goes to the next name on Google.</p>
@@ -230,6 +242,12 @@
       <p class="demo-pain">After a storm, everyone calls at once.</p>
       <p class="demo-blurb">Handles the call surge after a storm and books inspections without missing anyone.</p>
       <a class="demo-call" href="tel:9415550100">📞 Try this demo · 941-555-0100</a>
+      <button type="button" class="demo-voice" data-voice-agent="roofing" hidden>🎙 Or talk to it right here</button>
+      <div class="voice-panel" hidden>
+        <div class="voice-status"></div>
+        <div class="voice-transcript"></div>
+        <button type="button" class="voice-end">End demo</button>
+      </div>
       <details class="demo-how">
         <summary>How it works</summary>
         <p><strong>The worry:</strong> after a storm everyone calls at once — and the real emergencies get buried with the tire-kickers.</p>
@@ -248,6 +266,12 @@
       <p class="demo-pain">Claims don't wait for office hours.</p>
       <p class="demo-blurb">Takes after-hours intake and books policy review appointments for the morning.</p>
       <a class="demo-call" href="tel:9415550100">📞 Try this demo · 941-555-0100</a>
+      <button type="button" class="demo-voice" data-voice-agent="insurance" hidden>🎙 Or talk to it right here</button>
+      <div class="voice-panel" hidden>
+        <div class="voice-status"></div>
+        <div class="voice-transcript"></div>
+        <button type="button" class="voice-end">End demo</button>
+      </div>
       <details class="demo-how">
         <summary>How it works</summary>
         <p><strong>The worry:</strong> claims and quote requests don't wait for office hours — and neither do your competitors.</p>
@@ -328,6 +352,41 @@
     
     </div>
   </div>
+</section>
+
+<section class="wrap section" id="journey">
+  <div class="kicker">Behind the scenes</div>
+  <h2>What happens when a call comes in</h2>
+  <p class="lede">Every call takes the same trip — here's the whole thing, start to finish.</p>
+  <div class="flow">
+    <div class="flow-step">
+      <div class="flow-emoji">📞</div>
+      <h3>Your customer calls</h3>
+      <p>2:47am or mid-rush — doesn't matter. No voicemail, no hold music.</p>
+    </div>
+    <div class="flow-step">
+      <div class="flow-emoji">🗣️</div>
+      <h3>Answered on the first ring</h3>
+      <p>A friendly voice asks the right questions and takes down the details.</p>
+    </div>
+    <div class="flow-step">
+      <div class="flow-emoji">📅</div>
+      <h3>Appointment booked</h3>
+      <p>Straight onto your calendar with everything you need to know.</p>
+    </div>
+    <div class="flow-step">
+      <div class="flow-emoji">🔗</div>
+      <h3>Lands in your tools</h3>
+      <p>Calendar, CRM, booking system — wired to what you already use.</p>
+      <div class="flow-chips"><span>Google Calendar</span><span>Square</span><span>Jobber</span><span>Housecall Pro</span><span>ServiceTitan</span><span>Clio</span><span>…and yours</span></div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-emoji">📲</div>
+      <h3>You get a text</h3>
+      <p>Who called, what they need, and when they're booked.</p>
+    </div>
+  </div>
+  <p class="flow-note">Every business runs differently. We wire the receptionist into your CRM, your booking system, your way of working — not the other way around.</p>
 </section>
 
 <section class="wrap section">
@@ -418,10 +477,15 @@
 </div>
 <button class="chat-bubble" type="button" onclick="toggleChat()" aria-label="Open chat">💬</button>
 
-<!-- Voice demo (Grok): paste your Cloudflare Worker URL between the quotes
-     to turn on the in-page voice demo button on the law card.
-     See README → "Turn on the in-page voice demo". Empty = buttons stay hidden. -->
-<script>window.GROK_RELAY_URL = "https://grok-voice-relay.sullivanamy75.workers.dev";</script>
+<!-- Voice demos: the relay URL plus the list of agents that are live.
+     A card's 🎙 button only appears when its agent key is in VOICE_AGENTS
+     AND that key has an agent ID in worker/grok-voice-relay.js.
+     As each new voice agent is created, add its key here: "salon",
+     "painter", "roofing", "insurance". See README → voice demo section. -->
+<script>
+window.GROK_RELAY_URL = "https://grok-voice-relay.sullivanamy75.workers.dev";
+window.VOICE_AGENTS = ["law"];
+</script>
 <script src="voice-demo.js" defer></script>
 
 <script>
