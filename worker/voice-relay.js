@@ -98,9 +98,11 @@ export default {
     }
 
     /* ---------------- Grok realtime relay (fallback) ---------------- */
+    // Accept either secret name — the dashboard secret is named X_API_KEY.
+    const xaiKey = env.XAI_API_KEY || env.X_API_KEY;
     console.log(
       `[relay] upgrade=${request.headers.get('Upgrade')} origin=${origin} ` +
-      `agent=${agentKey} keyPresent=${Boolean(env.XAI_API_KEY)}`,
+      `agent=${agentKey} keyPresent=${Boolean(xaiKey)}`,
     );
 
     if (request.headers.get('Upgrade') !== 'websocket') {
@@ -115,14 +117,14 @@ export default {
       console.log(`[relay] REJECTED: unknown agent: ${agentKey}`);
       return new Response('Unknown agent', { status: 404 });
     }
-    if (!env.XAI_API_KEY) {
-      console.log('[relay] REJECTED: XAI_API_KEY missing at runtime');
+    if (!xaiKey) {
+      console.log('[relay] REJECTED: XAI_API_KEY / X_API_KEY missing at runtime');
       return new Response('Voice service not configured.', { status: 500 });
     }
 
     const upstreamResp = await fetch(
       `https://api.x.ai/v1/realtime?agent_id=${grokId}`,
-      { headers: { Upgrade: 'websocket', Authorization: `Bearer ${env.XAI_API_KEY}` } },
+      { headers: { Upgrade: 'websocket', Authorization: `Bearer ${xaiKey}` } },
     );
     const upstream = upstreamResp.webSocket;
     if (!upstream) {
