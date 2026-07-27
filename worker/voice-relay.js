@@ -14,7 +14,7 @@
 
 // Retell agent IDs, one per demo card. Fill in as each agent is published.
 const RETELL_AGENTS = {
-  law: '',        // ← paste the Legal Intake Screener agent_id here
+  law: 'agent_4c77c6a8a5521ac1123fda3cec',   // Legal Intake Screener
   // salon: 'agent_...',
   // painter: 'agent_...',
   // roofing: 'agent_...',
