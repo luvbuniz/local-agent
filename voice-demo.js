@@ -60,8 +60,19 @@
       s.ws = ws;
 
       ws.onopen = function () {
-        setStatus('🎙 Connected — say hello!');
+        setStatus('🎙 Connected — the receptionist is about to greet you…');
         sendMic(s);
+        // Kick the conversation off so the agent speaks first, like a real
+        // call being answered, instead of waiting in silence.
+        ws.send(JSON.stringify({
+          type: 'conversation.item.create',
+          item: {
+            type: 'message',
+            role: 'user',
+            content: [{ type: 'input_text', text: 'Hello!' }],
+          },
+        }));
+        ws.send(JSON.stringify({ type: 'response.create' }));
       };
 
       var agentLineOpen = false;
