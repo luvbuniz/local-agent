@@ -7,7 +7,7 @@ One prompt per industry, written to match what the website promises (the
    the prompt below as its instructions. Pick a warm, friendly voice.
 2. Copy the new agent's ID (`agent_...`).
 3. Send the ID to Claude (or edit yourself): it goes in TWO places —
-   - `worker/grok-voice-relay.js` → the `AGENTS` map (e.g. `salon: 'agent_...'`)
+   - `worker/voice-relay.js` → the `RETELL_AGENTS` map (e.g. `salon: 'agent_...'`)
    - `index.html` → `window.VOICE_AGENTS` (e.g. `["law","salon"]`)
 4. Push. The card's 🎙 button appears automatically.
 

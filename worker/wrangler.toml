@@ -2,5 +2,5 @@
 # (Workers project "grok-voice-relay", root directory /worker).
 # The XAI_API_KEY secret is set in the Cloudflare dashboard, not here.
 name = "grok-voice-relay"
-main = "grok-voice-relay.js"
+main = "voice-relay.js"
 compatibility_date = "2026-07-01"

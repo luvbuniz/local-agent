@@ -56,33 +56,37 @@ In the "Hi, I'm Amy" section, replace the placeholder div with:
 
 and put `amy.jpg` in the repo root.
 
-## Turn on the in-page voice demo (Grok)
+## Turn on the in-page voice demo (Retell)
 
-The law demo card has a hidden "🎙 Or talk to it right here" button. It talks
-to your Grok voice agent through a tiny Cloudflare Worker relay so your xAI
-API key never appears in the site code. Two steps:
+Each demo card has a hidden "🎙 Or talk to it right here" button. It runs a
+Retell **web call** in the browser and shows a live transcript. The Retell
+API key stays in the Cloudflare Worker — never in the site code.
 
-1. **Deploy the relay** (one time, ~3 minutes):
-   - Cloudflare dashboard → **Workers & Pages → Create → Worker**
-   - Paste the contents of `worker/grok-voice-relay.js` and **Deploy**
-   - **Settings → Variables and Secrets** → add a **secret** named
-     `XAI_API_KEY` with your xAI API key
-   - Copy the worker's URL (looks like `https://grok-voice-relay.YOURNAME.workers.dev`)
-2. **Point the site at it:** in `index.html`, find
-   `window.GROK_RELAY_URL = ""` near the bottom and paste the worker URL
-   between the quotes. Push — the button appears.
+Three steps per agent:
+
+1. **Publish the agent in Retell** and copy its `agent_id`.
+   (An exported JSON has `agent_id: ""` — you only get a real ID once the
+   agent is saved/published in the dashboard.)
+2. **Add the ID to the relay:** `worker/voice-relay.js` → `RETELL_AGENTS`,
+   e.g. `law: 'agent_abc123'`. Pushing redeploys the worker automatically.
+3. **Enable the button:** `index.html` → `window.VOICE_AGENTS = ["law"]`.
+
+One-time setup, if not already done:
+- Worker → **Settings → Variables and secrets** (the **runtime** section,
+  not Build) → add a **Secret** named `RETELL_API_KEY`.
+- Confirm `window.VOICE_RELAY_URL` in `index.html` matches the worker URL.
 
 Notes:
-- Every demo card already has a hidden 🎙 button. To turn one on, create
-  the agent (ready-to-paste prompts: `agents/voice-agent-prompts.md`),
-  then put its ID in the `AGENTS` map in `worker/grok-voice-relay.js` and
-  add its key ("salon", "painter", "roofing", "insurance") to
-  `window.VOICE_AGENTS` in `index.html`.
-- The relay only accepts connections from bunillc.com and only exposes
-  whitelisted agents.
-- Sessions are hard-capped at 5 minutes each to protect your xAI bill.
-- Never paste the xAI API key itself into `index.html` or anywhere in this
-  repo — it belongs only in the Worker secret.
+- The relay only answers requests from bunillc.com and only for agents
+  listed in `RETELL_AGENTS`.
+- The browser loads Retell's SDK from esm.sh at call time — the only
+  external dependency besides Google Fonts.
+- The Grok WebSocket relay is still in `worker/voice-relay.js` as a
+  fallback; it needs `XAI_API_KEY` instead.
+- Ready-to-paste agent prompts for the other industries live in
+  `agents/voice-agent-prompts.md`.
+- Never paste an API key into `index.html` or anywhere in this repo — keys
+  belong only in the Worker's runtime secrets.
 
 ## Wire up the real chat widget
 
