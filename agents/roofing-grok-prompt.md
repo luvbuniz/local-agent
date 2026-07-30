@@ -1,5 +1,10 @@
 # Roofing demo agent — Grok voice prompt
 
+> **Inactive legacy prompt.** The live roofing demo now uses Retell. See
+> `roofing-retell-prompt.md` for the published prompt. Do not reuse the
+> booking, dispatch, licensing, pricing, or confirmation claims below unless
+> a real client has supplied and approved those facts and integrations.
+
 For the roofing card's demo. Grok takes a **single system prompt** (no node
 graph), so the whole conversation shape lives in the text below — paste it
 into the agent's instructions in the xAI Voice Agent Builder.
