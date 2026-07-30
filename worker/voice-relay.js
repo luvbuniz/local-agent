@@ -21,9 +21,10 @@ const RETELL_AGENTS = {
   // insurance: 'agent_...',
 };
 
-// Grok agent IDs (fallback path).
+// Grok agent IDs.
 const GROK_AGENTS = {
   law: 'agent_m9bI9TNJojkS84SO',
+  roofing: 'agent_Boxggw1E8dEMdNcv',
 };
 
 const ALLOWED_ORIGINS = [
