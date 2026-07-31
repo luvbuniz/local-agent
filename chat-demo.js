@@ -22,6 +22,14 @@
   if (!relayUrl || !panel || !messagesEl || !statusEl || !form || !input || !submit) return;
 
   var agentCopy = {
+    insurance: {
+      name: '💬 Harborlight Insurance demo',
+      subtitle: 'Text chat · fictional insurance agency',
+      notice: 'Please use made-up details. Do not share real policy, claim, payment, identity, or contact information. This demo cannot quote, change coverage, file a claim, or place a real transfer.',
+      label: 'Message the fictional insurance receptionist',
+      placeholder: 'Ask about intake, policy service, claims, or documents…',
+      greeting: "Thanks for trying the Harborlight Insurance demo. I'm Jamie, an AI receptionist for a fictional agency, so please use made-up details and no real policy numbers. Are you asking about a new policy, an existing policy, a claim or loss, or a document request?"
+    },
     salon: {
       name: '💬 Aster & Ash salon demo',
       subtitle: 'Text chat · fictional high-end salon',
@@ -231,3 +239,4 @@
 
   applyAgentUi();
 })();
+
