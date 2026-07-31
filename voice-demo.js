@@ -38,14 +38,17 @@
     var agentKey = btn.getAttribute('data-voice-agent');
 
     panel.hidden = false;
-    transcriptEl.textContent = '';
+    transcriptEl.setAttribute('role', 'log');
+    transcriptEl.setAttribute('aria-live', 'polite');
+    transcriptEl.setAttribute('aria-relevant', 'additions text');
+    transcriptEl.textContent = 'Live captions will appear here as you and the receptionist speak.';
     btn.textContent = '⏹ End the voice demo';
 
     var s = {
       btn: btn, closed: false, provider: providerFor(agentKey), agentKey: agentKey,
       statusEl: statusEl, transcriptEl: transcriptEl,
       client: null, ws: null, ctx: null, stream: null, proc: null,
-      playHead: 0, sources: [],
+      playHead: 0, sources: [], retellTurns: [],
     };
     active = s;
 
@@ -77,10 +80,7 @@
           client.on('update', function (update) {
             var turns = update && update.transcript;
             if (!turns || !turns.length) return;
-            s.transcriptEl.textContent = turns.map(function (t) {
-              return (t.role === 'agent' ? 'Receptionist' : 'You') + ': ' + t.content;
-            }).join('\n');
-            scrollTranscript(s);
+            mergeRetellTranscript(s, turns);
           });
           client.on('call_ended', function () {
             setStatus(s, 'Demo ended. Thanks for trying it!');
@@ -100,6 +100,58 @@
         setStatus(s, 'Could not connect — please try again later.');
         cleanup(s, false);
       });
+  }
+
+
+  function mergeRetellTranscript(s, incoming) {
+    incoming.forEach(function (turn) {
+      if (!turn || !turn.content) return;
+      var role = turn.role === 'agent' ? 'agent' : 'user';
+      var content = String(turn.content).trim();
+      if (!content) return;
+      var words = Array.isArray(turn.words) ? turn.words : [];
+      var start = words.length && typeof words[0].start === 'number' ? words[0].start : null;
+      var key = start === null ? null : role + ':' + start.toFixed(3);
+      var match = -1;
+      if (key) match = s.retellTurns.findIndex(function (saved) { return saved.key === key; });
+      if (match === -1) {
+        match = s.retellTurns.findIndex(function (saved) {
+          return saved.role === role && saved.content === content;
+        });
+      }
+      if (match === -1) {
+        for (var i = s.retellTurns.length - 1; i >= Math.max(0, s.retellTurns.length - 3); i--) {
+          var saved = s.retellTurns[i];
+          if (saved.role === role && (content.indexOf(saved.content) === 0 || saved.content.indexOf(content) === 0)) {
+            match = i;
+            break;
+          }
+        }
+      }
+      var normalized = { key: key, role: role, content: content };
+      if (match === -1) s.retellTurns.push(normalized);
+      else s.retellTurns[match] = normalized;
+    });
+    if (s.retellTurns.length > 30) s.retellTurns = s.retellTurns.slice(-30);
+    renderRetellTranscript(s);
+  }
+
+  function renderRetellTranscript(s) {
+    var fragment = document.createDocumentFragment();
+    s.retellTurns.forEach(function (turn) {
+      var row = document.createElement('div');
+      row.className = 'voice-turn voice-turn-' + turn.role;
+      var label = document.createElement('strong');
+      label.textContent = turn.role === 'agent' ? 'Receptionist' : 'You';
+      var text = document.createElement('span');
+      text.textContent = turn.content;
+      row.appendChild(label);
+      row.appendChild(text);
+      fragment.appendChild(row);
+    });
+    s.transcriptEl.textContent = '';
+    s.transcriptEl.appendChild(fragment);
+    scrollTranscript(s);
   }
 
   /* ---------------- Grok realtime ---------------- */
