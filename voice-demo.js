@@ -59,6 +59,7 @@
     var transcriptEl = panel.querySelector('.voice-transcript');
     var agentKey = btn.getAttribute('data-voice-agent');
 
+    var defaultLabel = btn.textContent;
     panel.hidden = false;
     transcriptEl.setAttribute('role', 'log');
     transcriptEl.setAttribute('aria-live', 'polite');
@@ -68,7 +69,7 @@
 
     var s = {
       btn: btn, panel: panel, endBtn: panel.querySelector('.voice-end'),
-      defaultLabel: btn.textContent, closed: false,
+      defaultLabel: defaultLabel, closed: false,
       provider: providerFor(agentKey), agentKey: agentKey,
       statusEl: statusEl, transcriptEl: transcriptEl,
       client: null, ws: null, ctx: null, stream: null, proc: null,
