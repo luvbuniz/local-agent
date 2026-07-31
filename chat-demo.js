@@ -22,6 +22,14 @@
   if (!relayUrl || !panel || !messagesEl || !statusEl || !form || !input || !submit) return;
 
   var agentCopy = {
+    hvac: {
+      name: '💬 Coastal Comfort HVAC demo',
+      subtitle: 'Text chat · fictional HVAC company',
+      notice: 'Please use made-up details. This demo cannot dispatch a real technician, confirm an appointment, take payment, or provide repair and replacement quotes.',
+      label: 'Message the fictional HVAC receptionist',
+      placeholder: 'Ask about no cooling, repair, maintenance, or replacement…',
+      greeting: "Thanks for trying the Coastal Comfort Heating & Air demo. I'm Casey, an AI receptionist for a fictional HVAC company, so please use made-up contact details. Is this about no cooling, a repair or maintenance visit, replacing a system, or something else?"
+    },
     insurance: {
       name: '💬 Harborlight Insurance demo',
       subtitle: 'Text chat · fictional insurance agency',
