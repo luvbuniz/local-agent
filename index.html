@@ -470,12 +470,27 @@
   </div>
 </footer>
 
-<!-- Chat widget placeholder — replace .chat-panel-body contents with your real widget embed -->
-<div class="chat-panel" id="chatPanel" hidden>
-  <div class="chat-panel-head"><span>💬 Chat with us</span><button type="button" onclick="closeChat()">✕</button></div>
-  <div class="chat-panel-body">chat widget embeds here</div>
+<!-- Text-only Retell roofing demo. The private API key stays in the Worker. -->
+<div class="chat-panel" id="chatPanel" hidden aria-label="Suncoast Roofing text chat">
+  <div class="chat-panel-head">
+    <div>
+      <span>💬 Suncoast Roofing demo</span>
+      <small>Text chat · fictional business</small>
+    </div>
+    <button type="button" onclick="closeChat()" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-panel-body">
+    <div class="chat-notice">Please use made-up contact details. This demo cannot book, text, or dispatch a real crew.</div>
+    <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-relevant="additions"></div>
+    <div class="chat-status" id="chatStatus" role="status"></div>
+    <form class="chat-composer" id="chatForm">
+      <label class="sr-only" for="chatInput">Message the roofing receptionist</label>
+      <input id="chatInput" name="message" type="text" maxlength="2000" autocomplete="off" placeholder="Type a roofing question…" required>
+      <button type="submit" aria-label="Send message">Send</button>
+    </form>
+  </div>
 </div>
-<button class="chat-bubble" type="button" onclick="toggleChat()" aria-label="Open chat">💬</button>
+<button class="chat-bubble" type="button" onclick="toggleChat()" aria-label="Open roofing text chat">💬</button>
 
 <!-- Voice demos (Retell web call via the Cloudflare Worker relay).
      A card's 🎙 button only appears when its key is listed in VOICE_AGENTS
@@ -486,8 +501,10 @@
 <script>
 window.VOICE_RELAY_URL = "https://grok-voice-relay.sullivanamy75.workers.dev";
 window.VOICE_AGENTS = { law: "retell", roofing: "retell" };
+window.CHAT_AGENT_KEY = "roofing";
 </script>
 <script src="voice-demo.js" defer></script>
+<script src="chat-demo.js" defer></script>
 
 <script>
 // Demo tabs — built automatically from the .demo-card blocks above
@@ -508,11 +525,6 @@ window.VOICE_AGENTS = { law: "retell", roofing: "retell" };
     card.hidden = i !== 0;
   });
 })();
-// Chat panel
-var chatPanel = document.getElementById('chatPanel');
-function openChat() { chatPanel.hidden = false; }
-function closeChat() { chatPanel.hidden = true; }
-function toggleChat() { chatPanel.hidden = !chatPanel.hidden; }
 </script>
 </body>
 </html>
