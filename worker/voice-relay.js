@@ -18,7 +18,7 @@ const RETELL_AGENTS = {
   salon: 'agent_ccbadfffc1b8af1d4a5325ec14',  // Aster & Ash Salon Demo
   // painter: 'agent_...',
   roofing: 'agent_48deacf6eeb9b85ad57e6b2a04',  // Suncoast Roofing Demo
-  // insurance: 'agent_...',
+  insurance: 'agent_fd6462aa808fb206a445768896',  // Harborlight Insurance Demo
 };
 
 // Retell chat agents, used by the text-only website chat.
@@ -26,6 +26,7 @@ const CHAT_AGENTS = {
   law: 'agent_bb3b3bc5dc1cecab334cb21c91',  // Meridian Family Law Text Chat
   salon: 'agent_ca006d2cb1d654773f742b9dcc',  // Aster & Ash Salon Text Chat
   roofing: 'agent_863274eb8a64e80d0b8a2557e9',  // Suncoast Roofing Text Chat
+  insurance: 'agent_277aeaf686af4cd2ed3d87bdd4',  // Harborlight Insurance Text Chat
 };
 
 // Grok agent IDs.
@@ -112,7 +113,6 @@ export default {
       console.log(`[relay] web call created agent=${agentKey} call_id=${data.call_id}`);
       return json({ access_token: data.access_token, call_id: data.call_id }, origin);
     }
-
 
     /* ---------------- Retell text chat ---------------- */
     if (path === '/chat/start' || path === '/chat/message') {
@@ -245,3 +245,4 @@ export default {
     return new Response(null, { status: 101, webSocket: client });
   },
 };
+
