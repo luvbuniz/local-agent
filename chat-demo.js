@@ -22,6 +22,14 @@
   if (!relayUrl || !panel || !messagesEl || !statusEl || !form || !input || !submit) return;
 
   var agentCopy = {
+    salon: {
+      name: '💬 Aster & Ash salon demo',
+      subtitle: 'Text chat · fictional high-end salon',
+      notice: 'Please use made-up contact details. This demo cannot create a real appointment, deposit, or client record.',
+      label: 'Message the fictional salon guest coordinator',
+      placeholder: 'Ask about services, prices, or stylists…',
+      greeting: "Thanks for trying the Aster & Ash salon demo. I'm Poppy, an AI guest coordinator for a fictional salon, so please use made-up contact details. Are you looking for a cut, color, or help choosing the right stylist?"
+    },
     law: {
       name: '💬 Meridian Family Law demo',
       subtitle: 'Text chat · fictional law firm',
