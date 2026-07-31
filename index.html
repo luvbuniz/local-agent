@@ -470,27 +470,27 @@
   </div>
 </footer>
 
-<!-- Text-only Retell roofing demo. The private API key stays in the Worker. -->
-<div class="chat-panel" id="chatPanel" hidden aria-label="Suncoast Roofing text chat">
+<!-- Text-only Retell demos. The private API key stays in the Worker. -->
+<div class="chat-panel" id="chatPanel" hidden aria-label="Website receptionist text chat">
   <div class="chat-panel-head">
     <div>
-      <span>💬 Suncoast Roofing demo</span>
-      <small>Text chat · fictional business</small>
+      <span id="chatAgentName">💬 Website receptionist demo</span>
+      <small id="chatAgentSubtitle">Text chat · fictional business</small>
     </div>
     <button type="button" onclick="closeChat()" aria-label="Close chat">✕</button>
   </div>
   <div class="chat-panel-body">
-    <div class="chat-notice">Please use made-up contact details. This demo cannot book, text, or dispatch a real crew.</div>
+    <div class="chat-notice" id="chatNotice">Please use made-up details in this public demo.</div>
     <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-relevant="additions"></div>
     <div class="chat-status" id="chatStatus" role="status"></div>
     <form class="chat-composer" id="chatForm">
-      <label class="sr-only" for="chatInput">Message the roofing receptionist</label>
-      <input id="chatInput" name="message" type="text" maxlength="2000" autocomplete="off" placeholder="Type a roofing question…" required>
+      <label class="sr-only" id="chatInputLabel" for="chatInput">Message the demo receptionist</label>
+      <input id="chatInput" name="message" type="text" maxlength="2000" autocomplete="off" placeholder="Type a question…" required>
       <button type="submit" aria-label="Send message">Send</button>
     </form>
   </div>
 </div>
-<button class="chat-bubble" type="button" onclick="toggleChat()" aria-label="Open roofing text chat">💬</button>
+<button class="chat-bubble" type="button" onclick="toggleChat()" aria-label="Open text chat">💬</button>
 
 <!-- Voice demos (Retell web call via the Cloudflare Worker relay).
      A card's 🎙 button only appears when its key is listed in VOICE_AGENTS
@@ -501,6 +501,7 @@
 <script>
 window.VOICE_RELAY_URL = "https://grok-voice-relay.sullivanamy75.workers.dev";
 window.VOICE_AGENTS = { law: "retell", roofing: "retell" };
+window.CHAT_AGENTS = { law: true, roofing: true };
 window.CHAT_AGENT_KEY = "roofing";
 </script>
 <script src="voice-demo.js" defer></script>
@@ -520,6 +521,10 @@ window.CHAT_AGENT_KEY = "roofing";
       cards.forEach(function (c) { c.hidden = c !== card; });
       tabs.querySelectorAll('.tab').forEach(function (t) { t.classList.remove('active'); });
       btn.classList.add('active');
+      var voiceButton = card.querySelector('[data-voice-agent]');
+      document.dispatchEvent(new CustomEvent('demo-agent-change', {
+        detail: { key: voiceButton && voiceButton.getAttribute('data-voice-agent') }
+      }));
     };
     tabs.appendChild(btn);
     card.hidden = i !== 0;
