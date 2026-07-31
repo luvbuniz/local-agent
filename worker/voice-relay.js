@@ -16,7 +16,7 @@
 const RETELL_AGENTS = {
   law: 'agent_e1baa529b6316a3e2d2ee1c46c',   // Meridian Family Law Demo
   salon: 'agent_ccbadfffc1b8af1d4a5325ec14',  // Aster & Ash Salon Demo
-  // painter: 'agent_...',
+  hvac: 'agent_af80256e0fca866e3d35d3418e',  // Coastal Comfort HVAC Demo
   roofing: 'agent_48deacf6eeb9b85ad57e6b2a04',  // Suncoast Roofing Demo
   insurance: 'agent_fd6462aa808fb206a445768896',  // Harborlight Insurance Demo
 };
@@ -25,6 +25,7 @@ const RETELL_AGENTS = {
 const CHAT_AGENTS = {
   law: 'agent_bb3b3bc5dc1cecab334cb21c91',  // Meridian Family Law Text Chat
   salon: 'agent_ca006d2cb1d654773f742b9dcc',  // Aster & Ash Salon Text Chat
+  hvac: 'agent_4da492dd5554162c71807049a9',  // Coastal Comfort HVAC Text Chat
   roofing: 'agent_863274eb8a64e80d0b8a2557e9',  // Suncoast Roofing Text Chat
   insurance: 'agent_277aeaf686af4cd2ed3d87bdd4',  // Harborlight Insurance Text Chat
 };
