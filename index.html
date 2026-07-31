@@ -214,11 +214,10 @@
       </details>
     </div>
 
-    <div class="demo-card" data-tab="Painter / contractor">
-      <p class="demo-pain">Your painter is on a ladder — who's answering?</p>
-      <p class="demo-blurb">Captures the job details and books an estimate while you're up on a ladder.</p>
-      <button type="button" class="demo-voice" data-voice-agent="painter" hidden>🎙 Talk to it right now — no phone needed</button>
-      <a class="demo-book" href="https://calendly.com/PLACEHOLDER">This demo is coming soon — book a chat to hear it</a>
+    <div class="demo-card" data-tab="HVAC">
+      <p class="demo-pain">A failed AC in Florida becomes a high-ticket call fast.</p>
+      <p class="demo-blurb">Answers 24/7, separates safety emergencies from routine no-cool calls, and moves repair and replacement leads to the right person.</p>
+      <button type="button" class="demo-voice" data-voice-agent="hvac" hidden>🎙 Talk to it right now — no phone needed</button>
       <div class="voice-panel" hidden>
         <div class="voice-status"></div>
         <div class="voice-transcript"></div>
@@ -226,15 +225,16 @@
       </div>
       <details class="demo-how">
         <summary>How it works</summary>
-        <p><strong>The worry:</strong> you're up a ladder or running a crew, and every missed call — especially after hours — is a job that goes to the next name on Google.</p>
+        <p><strong>The worry:</strong> during peak heat, the homeowner who reaches voicemail calls the next company — and that missed call could be a full system replacement.</p>
         <ol>
-          <li>It answers while you work.</li>
-          <li>It asks the right questions — interior or exterior, how big, what timeline.</li>
-          <li>It books an estimate window on your calendar.</li>
-          <li>You get a text summary before you're off the ladder.</li>
+          <li>It answers after-hours and overflow calls without a phone tree.</li>
+          <li>It screens gas, carbon-monoxide, fire, and electrical danger before booking.</li>
+          <li>It captures the symptom, system, urgency, property, and access details your dispatcher needs.</li>
+          <li>It routes repairs to service and replacement leads to a comfort advisor.</li>
+          <li>Your team gets concise notes with the booking or warm handoff.</li>
         </ol>
-        <p><strong>Plays with:</strong> ServiceTitan, Jobber, Housecall Pro — plus Google Calendar. Exact fit confirmed in your free consultation.</p>
-        <p class="safety">It never quotes a price — it gathers the details so you can.</p>
+        <p><strong>Possible connections:</strong> ServiceTitan, Jobber, Housecall Pro, and Google Calendar. Exact access and workflow are verified before setup.</p>
+        <p class="safety">Gas, CO, and fire instructions always come first. Repair and replacement pricing stays with the technician or comfort advisor.</p>
       </details>
     </div>
 
@@ -493,16 +493,16 @@
      A card's 🎙 button only appears when its key is listed in VOICE_AGENTS
      AND that key has a Retell agent_id in worker/voice-relay.js — so an
      unfinished agent never shows a broken button to visitors.
-     Add keys as agents go live: "law", "salon", "painter", "roofing",
+     Add keys as agents go live: "law", "salon", "hvac", "roofing",
      "insurance". See README → "Turn on the in-page voice demo". -->
 <script>
 window.VOICE_RELAY_URL = "https://grok-voice-relay.sullivanamy75.workers.dev";
-window.VOICE_AGENTS = { law: "retell", salon: "retell", roofing: "retell", insurance: "retell" };
-window.CHAT_AGENTS = { law: true, salon: true, roofing: true, insurance: true };
+window.VOICE_AGENTS = { law: "retell", salon: "retell", hvac: "retell", roofing: "retell", insurance: "retell" };
+window.CHAT_AGENTS = { law: true, salon: true, hvac: true, roofing: true, insurance: true };
 window.CHAT_AGENT_KEY = "roofing";
 </script>
-<script src="voice-demo.js?v=20260731-insurance" defer></script>
-<script src="chat-demo.js?v=20260731-insurance" defer></script>
+<script src="voice-demo.js?v=20260731-hvac" defer></script>
+<script src="chat-demo.js?v=20260731-hvac" defer></script>
 
 <script>
 // Demo tabs — built automatically from the .demo-card blocks above
