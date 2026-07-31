@@ -21,6 +21,11 @@ const RETELL_AGENTS = {
   // insurance: 'agent_...',
 };
 
+// Retell chat agents, used by the text-only website chat.
+const CHAT_AGENTS = {
+  roofing: 'agent_863274eb8a64e80d0b8a2557e9',  // Suncoast Roofing Text Chat
+};
+
 // Grok agent IDs.
 const GROK_AGENTS = {
   law: 'agent_m9bI9TNJojkS84SO',
@@ -49,6 +54,15 @@ function json(body, origin, status = 200) {
     status,
     headers: { 'Content-Type': 'application/json', ...corsHeaders(origin) },
   });
+}
+
+async function retellRequest(path, env, init = {}) {
+  const headers = {
+    Authorization: `Bearer ${env.RETELL_API_KEY}`,
+    'Content-Type': 'application/json',
+    ...(init.headers || {}),
+  };
+  return fetch(`https://api.retellai.com${path}`, { ...init, headers });
 }
 
 export default {
@@ -96,6 +110,77 @@ export default {
       const data = await resp.json();
       console.log(`[relay] web call created agent=${agentKey} call_id=${data.call_id}`);
       return json({ access_token: data.access_token, call_id: data.call_id }, origin);
+    }
+
+
+    /* ---------------- Retell text chat ---------------- */
+    if (path === '/chat/start' || path === '/chat/message') {
+      if (request.method === 'OPTIONS') {
+        return new Response(null, { status: 204, headers: corsHeaders(origin || '*') });
+      }
+      if (request.method !== 'POST') {
+        return json({ error: 'method not allowed' }, origin || '*', 405);
+      }
+      if (!ALLOWED_ORIGINS.includes(origin)) {
+        console.log(`[relay] REJECTED chat: origin not allowed: ${origin}`);
+        return json({ error: 'forbidden' }, origin || '*', 403);
+      }
+      if (!env.RETELL_API_KEY) {
+        console.log('[relay] RETELL_API_KEY missing at runtime');
+        return json({ error: 'not configured' }, origin, 500);
+      }
+
+      const chatAgentId = CHAT_AGENTS[agentKey];
+      if (!chatAgentId) {
+        return json({ error: 'unknown agent' }, origin, 404);
+      }
+
+      let payload = {};
+      try {
+        payload = await request.json();
+      } catch (e) {
+        return json({ error: 'invalid json' }, origin, 400);
+      }
+
+      if (path === '/chat/start') {
+        const resp = await retellRequest('/create-chat', env, {
+          method: 'POST',
+          body: JSON.stringify({
+            agent_id: chatAgentId,
+            metadata: { source: 'buni_web_demo', vertical: agentKey },
+          }),
+        });
+        if (!resp.ok) {
+          const detail = (await resp.text()).slice(0, 300);
+          console.log(`[relay] Retell create-chat failed: status=${resp.status} body=${detail}`);
+          return json({ error: 'upstream', status: resp.status }, origin, 502);
+        }
+        const data = await resp.json();
+        return json({ chat_id: data.chat_id }, origin, 201);
+      }
+
+      const chatId = typeof payload.chat_id === 'string' ? payload.chat_id.trim() : '';
+      const content = typeof payload.content === 'string' ? payload.content.trim() : '';
+      if (!chatId || !content || content.length > 2000) {
+        return json({ error: 'invalid message' }, origin, 400);
+      }
+
+      const resp = await retellRequest('/create-chat-completion', env, {
+        method: 'POST',
+        body: JSON.stringify({ chat_id: chatId, content }),
+      });
+      if (!resp.ok) {
+        const detail = (await resp.text()).slice(0, 300);
+        console.log(`[relay] Retell chat completion failed: status=${resp.status} body=${detail}`);
+        return json({ error: 'upstream', status: resp.status }, origin, 502);
+      }
+      const data = await resp.json();
+      const messages = Array.isArray(data.messages)
+        ? data.messages
+            .filter((message) => message && message.role === 'agent')
+            .map((message) => ({ role: 'agent', content: String(message.content || '') }))
+        : [];
+      return json({ messages }, origin);
     }
 
     /* ---------------- Grok realtime relay (fallback) ---------------- */
