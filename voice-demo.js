@@ -27,9 +27,31 @@
   });
 
   var active = null; // one call at a time
+  var feedbackCtx = null;
+
+  function playClick() {
+    try {
+      var AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      feedbackCtx = feedbackCtx || new AudioCtx();
+      if (feedbackCtx.state === 'suspended') feedbackCtx.resume();
+      var now = feedbackCtx.currentTime;
+      var oscillator = feedbackCtx.createOscillator();
+      var gain = feedbackCtx.createGain();
+      oscillator.type = 'sine';
+      oscillator.frequency.setValueAtTime(560, now);
+      oscillator.frequency.exponentialRampToValueAtTime(390, now + 0.055);
+      gain.gain.setValueAtTime(0.045, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
+      oscillator.connect(gain);
+      gain.connect(feedbackCtx.destination);
+      oscillator.start(now);
+      oscillator.stop(now + 0.065);
+    } catch (e) {}
+  }
 
   function start(btn) {
-    if (active) { stop(); return; }
+    if (active) { requestStop(); return; }
 
     var card = btn.closest('.demo-card');
     var panel = card.querySelector('.voice-panel');
@@ -45,7 +67,9 @@
     btn.textContent = '⏹ End the voice demo';
 
     var s = {
-      btn: btn, closed: false, provider: providerFor(agentKey), agentKey: agentKey,
+      btn: btn, panel: panel, endBtn: panel.querySelector('.voice-end'),
+      defaultLabel: btn.textContent, closed: false,
+      provider: providerFor(agentKey), agentKey: agentKey,
       statusEl: statusEl, transcriptEl: transcriptEl,
       client: null, ws: null, ctx: null, stream: null, proc: null,
       playHead: 0, sources: [], retellTurns: [],
@@ -289,6 +313,24 @@
 
   function stop() { if (active) cleanup(active, true); }
 
+  function requestStop() {
+    if (!active || active.closed) return;
+    var s = active;
+    s.btn.classList.add('is-pressed');
+    s.btn.setAttribute('aria-busy', 'true');
+    s.btn.textContent = 'Ending demo...';
+    if (s.endBtn) {
+      s.endBtn.classList.add('is-pressed');
+      s.endBtn.setAttribute('aria-busy', 'true');
+      s.endBtn.textContent = 'Ending...';
+    }
+    setStatus(s, 'Ending demo...');
+    playClick();
+    window.setTimeout(function () {
+      if (active === s) stop();
+    }, 120);
+  }
+
   function cleanup(s, hangUp) {
     if (s.closed) return;
     s.closed = true;
@@ -297,12 +339,19 @@
     if (s.proc) { try { s.proc.disconnect(); } catch (e) {} }
     if (s.stream) s.stream.getTracks().forEach(function (t) { t.stop(); });
     if (s.ctx) { try { s.ctx.close(); } catch (e) {} }
-    s.btn.textContent = '🎙 Or talk to it right here';
+    s.btn.classList.remove('is-pressed');
+    s.btn.removeAttribute('aria-busy');
+    s.btn.textContent = s.defaultLabel;
+    if (s.endBtn) {
+      s.endBtn.classList.remove('is-pressed');
+      s.endBtn.removeAttribute('aria-busy');
+      s.endBtn.textContent = 'End demo';
+    }
     active = null;
   }
 
   document.addEventListener('click', function (e) {
-    if (e.target.classList && e.target.classList.contains('voice-end')) stop();
+    if (e.target.classList && e.target.classList.contains('voice-end')) requestStop();
   });
 
   /* ---------------- audio helpers (Grok path) ---------------- */
