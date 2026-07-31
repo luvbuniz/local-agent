@@ -14,7 +14,7 @@
 
 // Retell agent IDs, one per demo card. Fill in as each agent is published.
 const RETELL_AGENTS = {
-  law: 'agent_4c77c6a8a5521ac1123fda3cec',   // Legal Intake Screener
+  law: 'agent_e1baa529b6316a3e2d2ee1c46c',   // Meridian Family Law Demo
   // salon: 'agent_...',
   // painter: 'agent_...',
   roofing: 'agent_48deacf6eeb9b85ad57e6b2a04',  // Suncoast Roofing Demo
@@ -23,6 +23,7 @@ const RETELL_AGENTS = {
 
 // Retell chat agents, used by the text-only website chat.
 const CHAT_AGENTS = {
+  law: 'agent_bb3b3bc5dc1cecab334cb21c91',  // Meridian Family Law Text Chat
   roofing: 'agent_863274eb8a64e80d0b8a2557e9',  // Suncoast Roofing Text Chat
 };
 
