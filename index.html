@@ -263,9 +263,8 @@
 
     <div class="demo-card" data-tab="Insurance agent">
       <p class="demo-pain">Claims don't wait for office hours.</p>
-      <p class="demo-blurb">Takes after-hours intake and books policy review appointments for the morning.</p>
+      <p class="demo-blurb">Captures the right details, spots urgent losses and policy deadlines, and routes customers to a licensed human&mdash;without quoting or giving coverage advice.</p>
       <button type="button" class="demo-voice" data-voice-agent="insurance" hidden>🎙 Talk to it right now — no phone needed</button>
-      <a class="demo-book" href="https://calendly.com/PLACEHOLDER">This demo is coming soon — book a chat to hear it</a>
       <div class="voice-panel" hidden>
         <div class="voice-status"></div>
         <div class="voice-transcript"></div>
@@ -273,15 +272,15 @@
       </div>
       <details class="demo-how">
         <summary>How it works</summary>
-        <p><strong>The worry:</strong> claims and quote requests don't wait for office hours — and neither do your competitors.</p>
+        <p><strong>The worry:</strong> claims, lapse notices, policy changes, and quote requests do not wait for office hours.</p>
         <ol>
           <li>It answers after-hours and overflow calls.</li>
-          <li>It takes the intake — name, policy, what happened.</li>
-          <li>It books a policy review or call-back on your calendar.</li>
-          <li>You get a text summary the moment the call ends.</li>
+          <li>It sorts new-policy, policy-service, claim, and document requests.</li>
+          <li>Urgent losses and same-day deadlines get a licensed-human handoff.</li>
+          <li>Your team receives concise notes, so the customer does not start over.</li>
         </ol>
         <p><strong>Plays with:</strong> Google Calendar and the tools your agency already uses. Exact fit confirmed in your free consultation.</p>
-        <p class="safety">It never gives coverage advice — policy questions route straight to you.</p>
+        <p class="safety">It never quotes, binds, changes, or interprets coverage.</p>
       </details>
     </div>
 
@@ -498,12 +497,12 @@
      "insurance". See README → "Turn on the in-page voice demo". -->
 <script>
 window.VOICE_RELAY_URL = "https://grok-voice-relay.sullivanamy75.workers.dev";
-window.VOICE_AGENTS = { law: "retell", salon: "retell", roofing: "retell" };
-window.CHAT_AGENTS = { law: true, salon: true, roofing: true };
+window.VOICE_AGENTS = { law: "retell", salon: "retell", roofing: "retell", insurance: "retell" };
+window.CHAT_AGENTS = { law: true, salon: true, roofing: true, insurance: true };
 window.CHAT_AGENT_KEY = "roofing";
 </script>
-<script src="voice-demo.js?v=20260731-salon" defer></script>
-<script src="chat-demo.js?v=20260731-salon" defer></script>
+<script src="voice-demo.js?v=20260731-insurance" defer></script>
+<script src="chat-demo.js?v=20260731-insurance" defer></script>
 
 <script>
 // Demo tabs — built automatically from the .demo-card blocks above
@@ -531,3 +530,4 @@ window.CHAT_AGENT_KEY = "roofing";
 </script>
 </body>
 </html>
+
