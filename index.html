@@ -138,7 +138,6 @@
                     phone number needed. A card only shows its button once its
                     agent is listed in VOICE_AGENTS (near the bottom of this
                     file) AND wired in worker/voice-relay.js.
-     Law demo line: 941-841-7590 (the only real demo number so far).
      Booking link:  https://calendly.com/PLACEHOLDER
 ==================== -->
 
@@ -192,10 +191,9 @@
          per-industry "How it works" expander. Edit its text freely.
          ============================================================ -->
     <div class="demo-card" data-tab="Salon &amp; spa">
-      <p class="demo-pain">Your stylist's hands are full — literally.</p>
-      <p class="demo-blurb">Books appointments straight into the calendar and answers pricing and hours questions while you work.</p>
+      <p class="demo-pain">A missed call is a new client booking the salon down the street.</p>
+      <p class="demo-blurb">Quotes prices clearly, matches color clients with the right specialist, and moves quickly toward an appointment.</p>
       <button type="button" class="demo-voice" data-voice-agent="salon" hidden>🎙 Talk to it right now — no phone needed</button>
-      <a class="demo-book" href="https://calendly.com/PLACEHOLDER">This demo is coming soon — book a chat to hear it</a>
       <div class="voice-panel" hidden>
         <div class="voice-status"></div>
         <div class="voice-transcript"></div>
@@ -206,7 +204,8 @@
         <p><strong>The worry:</strong> calls that hit voicemail while your hands are in someone's hair — and the no-shows that eat your week.</p>
         <ol>
           <li>It answers right away, any hour.</li>
-          <li>It asks what they want — cut, color, and with whom.</li>
+          <li>It answers price questions directly — no awkward runaround.</li>
+          <li>It matches the guest to the best-fit cut or color specialist.</li>
           <li>It books an open slot in your booking system.</li>
           <li>You get a text with the who, what, and when.</li>
         </ol>
@@ -290,7 +289,6 @@
       <p class="demo-pain">A missed call is a client hiring the firm across town.</p>
       <p class="demo-blurb">Friendly intake — name, matter type, urgency — books the consultation, and never gives legal advice.</p>
       <button type="button" class="demo-voice" data-voice-agent="law" hidden>🎙 Talk to it right now — no phone needed</button>
-      <a class="demo-call" href="tel:9418417590">📞 Or call the demo line · 941-841-7590</a>
       <div class="voice-panel" hidden>
         <div class="voice-status"></div>
         <div class="voice-transcript"></div>
@@ -500,12 +498,12 @@
      "insurance". See README → "Turn on the in-page voice demo". -->
 <script>
 window.VOICE_RELAY_URL = "https://grok-voice-relay.sullivanamy75.workers.dev";
-window.VOICE_AGENTS = { law: "retell", roofing: "retell" };
-window.CHAT_AGENTS = { law: true, roofing: true };
+window.VOICE_AGENTS = { law: "retell", salon: "retell", roofing: "retell" };
+window.CHAT_AGENTS = { law: true, salon: true, roofing: true };
 window.CHAT_AGENT_KEY = "roofing";
 </script>
-<script src="voice-demo.js?v=20260730-law" defer></script>
-<script src="chat-demo.js?v=20260730-law" defer></script>
+<script src="voice-demo.js?v=20260731-salon" defer></script>
+<script src="chat-demo.js?v=20260731-salon" defer></script>
 
 <script>
 // Demo tabs — built automatically from the .demo-card blocks above
