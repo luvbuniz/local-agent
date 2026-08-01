@@ -431,13 +431,21 @@ h1 {
 
 .scheduler-embed {
   width: 100%;
-  height: 720px;
-  height: clamp(660px, 82svh, 820px);
+  min-height: 720px;
+  min-height: clamp(660px, 82svh, 820px);
+  height: auto;
   margin-top: 24px;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 18px;
   background: var(--sand);
+}
+
+.scheduler-embed iframe {
+  display: block;
+  width: 100%;
+  min-height: inherit;
+  border-radius: inherit;
 }
 
 .scheduler-open {
@@ -651,7 +659,7 @@ footer {
   .disclosure { grid-template-columns: 1fr; }
   .demo-card { border-radius: 21px; }
   .scheduler-panel { padding: 22px 14px; border-radius: 21px; }
-  .scheduler-embed { height: max(660px, calc(100svh - 42px)); border-radius: 14px; }
+  .scheduler-embed { min-height: max(660px, calc(100svh - 42px)); height: auto; border-radius: 14px; }
   .voice-turn { grid-template-columns: 1fr; gap: 3px; }
   .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; }
   .chat-panel {
