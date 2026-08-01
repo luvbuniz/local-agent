@@ -18,10 +18,27 @@
   var subtitleEl = document.getElementById('chatAgentSubtitle');
   var noticeEl = document.getElementById('chatNotice');
   var inputLabel = document.getElementById('chatInputLabel');
+  var chatOpener = null;
 
   if (!relayUrl || !panel || !messagesEl || !statusEl || !form || !input || !submit) return;
 
   var agentCopy = {
+    gutter: {
+      name: 'Coastal Catch Gutters demo',
+      subtitle: 'Text chat · fictional gutter company',
+      notice: 'Please use made-up details. This demo cannot inspect a property, provide an estimate, confirm an appointment, take payment, or dispatch a crew.',
+      label: 'Message the fictional gutter receptionist',
+      placeholder: 'Describe overflow, damage, cleaning, guards, or another gutter concern…',
+      greeting: "Thanks for trying the Coastal Catch Gutters demo. I'm Riley, an AI receptionist for a fictional gutter company, so please use made-up contact details. Is water entering the building, is anything loose or hanging, or is this a cleaning or estimate question?"
+    },
+    plumbing: {
+      name: 'Harbor Flow Plumbing demo',
+      subtitle: 'Text chat · fictional plumbing company',
+      notice: 'Please use made-up details. This demo cannot dispatch a plumber, confirm an appointment, take payment, or update a real customer record.',
+      label: 'Message the fictional plumbing receptionist',
+      placeholder: 'Describe a leak, clog, water-heater, or other plumbing problem…',
+      greeting: "Thanks for trying the Harbor Flow Plumbing demo. I'm Maya, an AI receptionist for a fictional plumbing company, so please use made-up contact details. Is water actively leaking right now, or is this another plumbing problem?"
+    },
     hvac: {
       name: '💬 Coastal Comfort HVAC demo',
       subtitle: 'Text chat · fictional HVAC company',
@@ -214,6 +231,7 @@
   });
 
   window.openChat = function (requestedAgent) {
+    chatOpener = document.activeElement;
     selectAgent(requestedAgent);
     panel.hidden = false;
     if (bubble) bubble.setAttribute('aria-expanded', 'true');
@@ -225,7 +243,8 @@
   window.closeChat = function () {
     panel.hidden = true;
     if (bubble) bubble.setAttribute('aria-expanded', 'false');
-    if (bubble) bubble.focus();
+    if (chatOpener && typeof chatOpener.focus === 'function') chatOpener.focus();
+    else if (bubble) bubble.focus();
   };
 
   window.toggleChat = function () {

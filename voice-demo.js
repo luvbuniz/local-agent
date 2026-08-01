@@ -85,9 +85,33 @@
 
   function scrollTranscript(s) { s.transcriptEl.scrollTop = s.transcriptEl.scrollHeight; }
 
+  function isMicrophoneDenied(err) {
+    var name = err && err.name ? String(err.name).toLowerCase() : '';
+    var message = err && err.message ? String(err.message).toLowerCase() : String(err || '').toLowerCase();
+    return name === 'notallowederror' || name === 'permissiondeniederror' ||
+      (message.indexOf('microphone') !== -1 && (message.indexOf('denied') !== -1 || message.indexOf('permission') !== -1)) ||
+      message.indexOf('permission denied') !== -1 || message.indexOf('notallowederror') !== -1;
+  }
+
+  function handleRetellError(s, err) {
+    if (isMicrophoneDenied(err)) {
+      setStatus(s, 'Microphone access was blocked. Allow it in your browser, then try the demo again.');
+    } else {
+      if (window.console) console.error('[voice]', err);
+      setStatus(s, 'Could not connect — please try again later.');
+    }
+    cleanup(s, true);
+  }
+
   /* ---------------- Retell ---------------- */
 
   function startRetell(s) {
+    if (!navigator.mediaDevices || typeof navigator.mediaDevices.getUserMedia !== 'function') {
+      setStatus(s, 'Microphone access is not available in this browser. Try a current browser or request a walkthrough below.');
+      cleanup(s, false);
+      return;
+    }
+    setStatus(s, 'Asking for microphone permission…');
     fetch(RELAY_URL + '/web-call?agent=' + encodeURIComponent(s.agentKey), { method: 'POST' })
       .then(function (res) {
         if (!res.ok) throw new Error('relay ' + res.status);
@@ -108,22 +132,19 @@
             mergeRetellTranscript(s, turns);
           });
           client.on('call_ended', function () {
+            if (s.closed) return;
             setStatus(s, 'Demo ended. Thanks for trying it!');
             cleanup(s, false);
           });
           client.on('error', function (err) {
-            if (window.console) console.error('[voice]', err);
-            setStatus(s, 'Something hiccuped — try again in a moment.');
-            cleanup(s, true);
+            handleRetellError(s, err);
           });
 
           return client.startCall({ accessToken: data.access_token });
         });
       })
       .catch(function (err) {
-        if (window.console) console.error('[voice]', err);
-        setStatus(s, 'Could not connect — please try again later.');
-        cleanup(s, false);
+        handleRetellError(s, err);
       });
   }
 
@@ -328,7 +349,10 @@
     setStatus(s, 'Ending demo...');
     playClick();
     window.setTimeout(function () {
-      if (active === s) stop();
+      if (active === s) {
+        setStatus(s, 'Demo ended. Thanks for trying it!');
+        stop();
+      }
     }, 120);
   }
 

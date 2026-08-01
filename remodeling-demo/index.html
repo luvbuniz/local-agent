@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Remodeling phone-agent demo | Buni</title>
+  <meta name="description" content="Try Buni's remodeling lead-call demonstration, then book a free 15-minute walkthrough.">
+  <link rel="canonical" href="https://bunillc.com/remodeling-demo/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bunillc.com/remodeling-demo/">
+  <meta property="og:site_name" content="Buni">
+  <meta property="og:title" content="See how Buni can catch a remodeling call before it goes elsewhere">
+  <meta property="og:description" content="Try a short remodeling call demonstration and hear how Buni gathers project details and identifies good follow-up opportunities.">
+  <meta name="theme-color" content="#1f4d47">
+  <link rel="icon" href="../favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../roofing-demo/roofing-demo.css?v=20260731-mobile2">
+</head>
+<body data-trade="remodeling">
+  <a class="skip-link" href="#main">Skip to the demo</a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="../" aria-label="Buni home">buni<span>.</span></a>
+      <span class="header-label">Remodeling call demo</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Calls that should not go unanswered</p>
+        <h1 id="page-title">See how Buni can catch a remodeling call before it goes elsewhere.</h1>
+        <p class="hero-lede">Try a short call with a fictional remodeling receptionist. Describe an example kitchen, bathroom, addition, or whole-home project and hear what a real prospect would be asked.</p>
+
+        <div class="disclosure" role="note" aria-label="Demonstration notice">
+          <span class="disclosure-mark" aria-hidden="true">Demo</span>
+          <p><strong>This is a Buni demonstration, not a real remodeling company's phone line.</strong> Please use made-up contact and property details. It cannot inspect the property, provide an estimate, or schedule a contractor.</p>
+        </div>
+
+        <ul class="quick-notes" aria-label="Before you start">
+          <li>Allow microphone access when your browser asks.</li>
+          <li>Try: “We're thinking about remodeling our kitchen and opening it into the living room.”</li>
+          <li>Use fictional details and end the demo at any time.</li>
+        </ul>
+      </div>
+
+      <div class="demo-card" aria-labelledby="demo-heading">
+        <div class="demo-card-topline">
+          <span class="signal-dot" aria-hidden="true"></span>
+          <span>Ready for an example call</span>
+        </div>
+        <h2 id="demo-heading">Talk to the remodeling demo</h2>
+        <p>Press the button, allow your microphone, and speak naturally. The receptionist will guide the conversation one question at a time.</p>
+
+        <button type="button" class="demo-voice" data-voice-agent="remodeling" hidden>
+          <span aria-hidden="true">●</span> Talk to the remodeling demo
+        </button>
+        <button type="button" class="demo-text" onclick="openChat('remodeling')">Type to the remodeling demo</button>
+
+        <div class="voice-panel" hidden>
+          <div class="voice-status" role="status" aria-live="polite">Preparing the demo…</div>
+          <div class="voice-transcript" role="log" aria-live="polite" aria-relevant="additions text" tabindex="0"></div>
+          <button type="button" class="voice-end">End demo</button>
+        </div>
+
+        <p class="privacy-note">Your browser uses the microphone only during this demo call. Do not share sensitive or real customer information.</p>
+        <noscript><p class="error-note">JavaScript is required for the browser voice demo. You can still request a walkthrough below.</p></noscript>
+      </div>
+    </section>
+
+    <section class="benefits-section" aria-labelledby="benefits-heading">
+      <div class="shell">
+        <p class="eyebrow">What this demonstration shows</p>
+        <h2 id="benefits-heading">The basics your team needs to follow up well.</h2>
+        <div class="benefit-grid">
+          <article>
+            <span aria-hidden="true">01</span>
+            <h3>Capture the prospect and property</h3>
+            <p>Collect an example name, callback number, city, property type, and whether the caller owns or manages the property.</p>
+          </article>
+          <article>
+            <span aria-hidden="true">02</span>
+            <h3>Understand the reason for the call</h3>
+            <p>Hear whether the caller is considering a kitchen, bathroom, addition, whole-home renovation, accessibility update, or another project.</p>
+          </article>
+          <article>
+            <span aria-hidden="true">03</span>
+            <h3>Identify a useful next conversation</h3>
+            <p>Capture the caller's goals, timing, design stage, decision process, and what matters most without quoting or pressuring them.</p>
+          </article>
+        </div>
+        <p class="scope-note">This demo does not inspect a property, provide an estimate, qualify financing, book an appointment, update a CRM, send a text, or notify a remodeling team. A live workflow would be designed and tested with each business before those capabilities are described as working.</p>
+      </div>
+    </section>
+
+    <section class="booking-section shell" id="booking" aria-labelledby="booking-heading">
+      <div class="booking-panel">
+        <div>
+          <p class="eyebrow">A quick next step</p>
+          <h2 id="booking-heading">Want to hear how this could fit your call flow?</h2>
+          <p>Book a no-pressure walkthrough with Amy. We'll focus on unanswered project calls, the details your team needs, and what should always stay with a person.</p>
+        </div>
+        <a class="booking-button" data-booking-link href="#booking">Book a free 15-minute walkthrough</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span class="footer-wordmark">buni<span>.</span></span>
+      <span>After-hours and overflow call support for local teams.</span>
+    </div>
+  </footer>
+
+  <div class="chat-panel" id="chatPanel" hidden role="dialog" aria-label="Remodeling receptionist text chat">
+    <div class="chat-panel-head">
+      <div>
+        <span id="chatAgentName">Remodeling receptionist demo</span>
+        <small id="chatAgentSubtitle">Text chat · fictional business</small>
+      </div>
+      <button type="button" onclick="closeChat()" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-panel-body">
+      <div class="chat-notice" id="chatNotice">Please use made-up details in this public demo.</div>
+      <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-relevant="additions"></div>
+      <div class="chat-status" id="chatStatus" role="status" aria-live="polite"></div>
+      <form class="chat-composer" id="chatForm">
+        <label class="sr-only" id="chatInputLabel" for="chatInput">Message the fictional remodeling receptionist</label>
+        <input id="chatInput" type="text" maxlength="2000" autocomplete="off" placeholder="Describe an example remodeling project…">
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="landing.js" defer></script>
+  <script src="../voice-demo.js?v=20260801-remodeling" defer></script>
+  <script src="../chat-demo.js?v=20260801-remodeling" defer></script>
+</body>
+</html>

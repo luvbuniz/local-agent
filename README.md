@@ -24,6 +24,27 @@ those two the same way.
 
 Find & replace `https://calendly.com/PLACEHOLDER` with your real Calendly URL (3 places).
 
+## Trade outreach landing pages
+
+The focused prospect pages are:
+
+- `https://bunillc.com/roofing-demo/`
+- `https://bunillc.com/plumbing-demo/`
+- `https://bunillc.com/hvac-demo/`
+- `https://bunillc.com/gutter-demo/`
+- `https://bunillc.com/electrical-demo/`
+- `https://bunillc.com/remodeling-demo/`
+
+They reuse the Retell browser-call and text-chat implementations in `voice-demo.js` and `chat-demo.js`. The Cloudflare Worker maps each trade key to the matching published Retell voice and chat agents while keeping the API key and agent IDs out of browser code.
+
+Each page has one small `config.js` file containing its walkthrough URL. The CTA currently uses a temporary `mailto:amy@bunillc.com` link. Replace only `bookingUrl` in the applicable page configuration when Amy's real public booking page is ready.
+
+The plumbing source prompt and safety reference are in `agents/harbor-flow-plumbing-prompt.md` and `agents/harbor-flow-plumbing-knowledge-base.md`. The gutter equivalents are in `agents/coastal-catch-gutters-prompt.md` and `agents/coastal-catch-gutters-knowledge-base.md`. The HVAC page reuses the existing published Coastal Comfort agent and its files in `agents/coastal-comfort-hvac-*`.
+
+The electrical demo uses `agents/brightline-electric-prompt.md` and `agents/brightline-electric-knowledge-base.md`. The remodeling demo uses `agents/coastal-craft-remodeling-prompt.md` and `agents/coastal-craft-remodeling-knowledge-base.md`. Both are fictional, reusable examples and avoid promising booking, CRM delivery, texting, estimates, or dispatch.
+
+The gutter intake was researched as its own home-services vertical. Retell does not currently surface a gutter-specific public template; its closest public example is the [High-Intent Lead Screener](https://www.retellai.com/templates/high-intent-lead-screener) for home-services leads. The Buni demo borrows the narrow intake pattern but intentionally does not claim that booking, transfer, CRM updates, texting, estimates, or dispatch work.
+
 ## Add or remove a demo vertical
 
 Each vertical is one self-contained block in `index.html` between the
