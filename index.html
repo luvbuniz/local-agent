@@ -308,6 +308,14 @@
     </div>
     <!-- ================== END DEMO CARDS ================== -->
 
+    <div class="scheduler-card" aria-labelledby="scheduler-heading">
+      <p class="kicker">Prefer to pick a time yourself?</p>
+      <h3 id="scheduler-heading">Book a free 15-minute walkthrough.</h3>
+      <p>Choose a date and time that works for you. The form requires your name, phone number, and email so the calendar invitation goes to the right place.</p>
+      <div class="scheduler-embed" data-buni-scheduler aria-label="Buni appointment scheduler"></div>
+      <p class="scheduler-open">Having trouble with the form? <a href="https://cal.com/amy-sullivan-xfxic7/buni-walkthrough" target="_blank" rel="noopener">Open the scheduler in a new tab.</a></p>
+    </div>
+
     <div class="chat-card" data-voice-demo-shell>
       <div class="emoji" aria-hidden="true">💬</div>
       <p class="chat-card-kicker">Any questions?</p>
@@ -511,6 +519,7 @@ window.VOICE_AGENTS = { buni: "retell", law: "retell", salon: "retell", hvac: "r
 window.CHAT_AGENTS = { buni: true, law: true, salon: true, hvac: true, roofing: true, insurance: true };
 window.CHAT_AGENT_KEY = "buni";
 </script>
+<script src="scheduler.js?v=20260801-contact-checks" defer></script>
 <script src="voice-demo.js?v=20260801-bree" defer></script>
 <script src="chat-demo.js?v=20260801-bree" defer></script>
 
