@@ -17,6 +17,10 @@ const RETELL_AGENTS = {
   law: 'agent_e1baa529b6316a3e2d2ee1c46c',   // Meridian Family Law Demo
   salon: 'agent_ccbadfffc1b8af1d4a5325ec14',  // Aster & Ash Salon Demo
   hvac: 'agent_af80256e0fca866e3d35d3418e',  // Coastal Comfort HVAC Demo
+  electrical: 'agent_62f9b39fd5563191203e61e7fa',  // Brightline Electric Demo
+  gutter: 'agent_74158d6d3b4e9ed6e31e76e04f',  // Coastal Catch Gutters Demo
+  plumbing: 'agent_d16a844d76bd59505a00092b7e',  // Harbor Flow Plumbing Demo
+  remodeling: 'agent_a17421f7fb1ff23a8d31863fab',  // Coastal Craft Remodeling Demo
   roofing: 'agent_48deacf6eeb9b85ad57e6b2a04',  // Suncoast Roofing Demo
   insurance: 'agent_fd6462aa808fb206a445768896',  // Harborlight Insurance Demo
 };
@@ -26,6 +30,10 @@ const CHAT_AGENTS = {
   law: 'agent_bb3b3bc5dc1cecab334cb21c91',  // Meridian Family Law Text Chat
   salon: 'agent_ca006d2cb1d654773f742b9dcc',  // Aster & Ash Salon Text Chat
   hvac: 'agent_4da492dd5554162c71807049a9',  // Coastal Comfort HVAC Text Chat
+  electrical: 'agent_e5affa32c56da8c5dadb4f3cd7',  // Brightline Electric Text Chat
+  gutter: 'agent_860b479a0e1e76bbfa95647c4f',  // Coastal Catch Gutters Text Chat
+  plumbing: 'agent_badd924a15721dbdc4a67d58cd',  // Harbor Flow Plumbing Text Chat
+  remodeling: 'agent_8e5e4677493f7012aa11f1a40d',  // Coastal Craft Remodeling Text Chat
   roofing: 'agent_863274eb8a64e80d0b8a2557e9',  // Suncoast Roofing Text Chat
   insurance: 'agent_277aeaf686af4cd2ed3d87bdd4',  // Harborlight Insurance Text Chat
 };
