@@ -14,6 +14,7 @@
 
 // Retell agent IDs, one per demo card. Fill in as each agent is published.
 const RETELL_AGENTS = {
+  buni: 'agent_aa080b4913c0076ee8fb5e2211',  // Bree - Buni Questions and Scheduler
   law: 'agent_e1baa529b6316a3e2d2ee1c46c',   // Meridian Family Law Demo
   salon: 'agent_ccbadfffc1b8af1d4a5325ec14',  // Aster & Ash Salon Demo
   hvac: 'agent_af80256e0fca866e3d35d3418e',  // Coastal Comfort HVAC Demo
@@ -27,6 +28,7 @@ const RETELL_AGENTS = {
 
 // Retell chat agents, used by the text-only website chat.
 const CHAT_AGENTS = {
+  buni: 'agent_eb56371e0caeb7fbb734a84999',  // Bree - Buni Website Chat
   law: 'agent_bb3b3bc5dc1cecab334cb21c91',  // Meridian Family Law Text Chat
   salon: 'agent_ca006d2cb1d654773f742b9dcc',  // Aster & Ash Salon Text Chat
   hvac: 'agent_4da492dd5554162c71807049a9',  // Coastal Comfort HVAC Text Chat

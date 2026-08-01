@@ -20,10 +20,6 @@ each card's display text and `tel:` href with that industry's demo line.
 The hero button and the final CTA share one general demo number; swap
 those two the same way.
 
-## Swap the booking link
-
-Find & replace `https://calendly.com/PLACEHOLDER` with your real Calendly URL (3 places).
-
 ## Trade outreach landing pages
 
 The focused prospect pages are:
@@ -37,7 +33,15 @@ The focused prospect pages are:
 
 They reuse the Retell browser-call and text-chat implementations in `voice-demo.js` and `chat-demo.js`. The Cloudflare Worker maps each trade key to the matching published Retell voice and chat agents while keeping the API key and agent IDs out of browser code.
 
-Each page has one small `config.js` file containing its walkthrough URL. The CTA currently uses a temporary `mailto:amy@bunillc.com` link. Replace only `bookingUrl` in the applicable page configuration when Amy's real public booking page is ready.
+Each page has one small `config.js` file containing its relay and trade-agent settings. The closing panel offers one soft next step: ask Bree a question by voice or text. There is no calendar or email link in these panels.
+
+The shared Buni assistant prompt and conservative reference are `agents/buni-bree-scheduler-prompt.md` and `agents/buni-bree-knowledge-base.md`. Agent IDs remain server-side in `worker/voice-relay.js` under the `buni` key. Bree must never name the underlying voice, chat, calendar, or model vendors to a visitor.
+
+The Buni voice and website-chat agents use Retell's built-in Cal.com availability and booking tools with the 15-minute `Free 15-minute Buni walkthrough` event connected to Amy's Google Calendar. The booking function is deliberately named `book_only_after_explicit_yes`: Bree must collect a visitor-provided full name and email, business details, check the requested time, repeat the full date/time/timezone, ask for final confirmation, and receive an explicit yes before booking. The availability check, explicit-confirmation gate, booking creation, Google-connected Cal.com record, cancellation cleanup, and post-rotation availability check were tested end to end on August 1, 2026.
+
+The Cal.com API key is stored only inside the two Retell agents and remains absent from this repository and browser code. If the Cal.com event or key is replaced, update both Bree agents, publish new versions, and repeat the guarded booking test before describing scheduling as live. If either tool fails, Bree is instructed to say that she could not confirm the calendar and collect details for Amy's follow-up instead.
+
+Successful bookings send separate confirmation emails to the Buni organizer address and the visitor-provided email address. The visitor copy includes a calendar event and downloadable ICS invitations, plus reschedule and cancellation links; Cal.com's confirmation screen also offers Google Calendar, Outlook, Microsoft 365, and ICS add-to-calendar options. This host-and-guest email flow was verified in the `amy@bunillc.com` Workspace inbox using a controlled guest alias on August 1, 2026. Bree may describe the calendar invitation only after the booking tool returns success.
 
 The plumbing source prompt and safety reference are in `agents/harbor-flow-plumbing-prompt.md` and `agents/harbor-flow-plumbing-knowledge-base.md`. The gutter equivalents are in `agents/coastal-catch-gutters-prompt.md` and `agents/coastal-catch-gutters-knowledge-base.md`. The HVAC page reuses the existing published Coastal Comfort agent and its files in `agents/coastal-comfort-hvac-*`.
 
@@ -109,12 +113,9 @@ Notes:
 - Never paste an API key into `index.html` or anywhere in this repo — keys
   belong only in the Worker's runtime secrets.
 
-## Wire up the real chat widget
+## Main-site Buni chat
 
-Replace the contents of `<div class="chat-panel-body">` at the bottom of
-`index.html` with your widget's embed snippet — or delete the whole
-`.chat-panel` + `.chat-bubble` block and let your widget provider's script
-add its own bubble.
+The main-site `Questions?` bubble opens the `buni` text agent through the same Cloudflare relay as the trade demos. The browser receives only a short-lived chat ID; the Retell API key and agent ID remain in the Worker.
 
 ## Point a custom domain at GitHub Pages
 
