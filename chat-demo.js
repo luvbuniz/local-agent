@@ -23,6 +23,14 @@
   if (!relayUrl || !panel || !messagesEl || !statusEl || !form || !input || !submit) return;
 
   var agentCopy = {
+    buni: {
+      name: 'Bree · Buni questions',
+      subtitle: 'Buni AI assistant · voice or text',
+      notice: 'Bree can answer practical questions about Buni. Do not share passwords, payment details, or sensitive customer information.',
+      label: 'Ask Bree a question about Buni',
+      placeholder: 'Ask a question about Buni…',
+      greeting: "Hi, I'm Bree, Buni's AI assistant. What questions can I help with?"
+    },
     gutter: {
       name: 'Coastal Catch Gutters demo',
       subtitle: 'Text chat · fictional gutter company',
@@ -132,7 +140,7 @@
     var row = document.createElement('div');
     row.className = 'chat-message chat-message-' + role;
     var label = document.createElement('strong');
-    label.textContent = role === 'user' ? 'You' : 'Receptionist';
+    label.textContent = role === 'user' ? 'You' : (agentKey === 'buni' ? 'Bree' : 'Receptionist');
     var text = document.createElement('p');
     text.textContent = content;
     row.appendChild(label);

@@ -169,7 +169,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-con
 
 /* Chat bubble + panel */
 .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-.chat-bubble{position:fixed;bottom:20px;right:20px;z-index:100;width:58px;height:58px;border-radius:999px;background:var(--teal);border:none;color:#fff;font-size:24px;cursor:pointer;box-shadow:0 6px 20px rgba(31,77,71,.35);transition:transform .15s}
+.chat-bubble{position:fixed;bottom:20px;right:20px;z-index:100;min-width:58px;min-height:58px;padding:0 20px;border-radius:999px;background:var(--teal);border:none;color:#fff;font-family:inherit;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 6px 20px rgba(31,77,71,.35);transition:transform .15s}
 .chat-bubble:hover{transform:scale(1.06)}
 .chat-bubble:focus-visible,.chat-panel button:focus-visible,.chat-panel input:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
 .chat-panel{position:fixed;bottom:92px;right:20px;z-index:99;width:min(390px,calc(100vw - 40px));background:#fff;border:1px solid var(--card-line);border-radius:18px;box-shadow:0 10px 40px rgba(34,50,47,.22);overflow:hidden}
@@ -189,4 +189,4 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-con
 .chat-composer input{min-width:0;flex:1;border:1px solid #bdcec5;border-radius:10px;padding:10px 11px;background:#fff;color:var(--ink);font:inherit;font-size:14px}
 .chat-composer button{border:0;border-radius:10px;background:var(--teal);color:#fff;padding:0 14px;font-family:inherit;font-weight:800;cursor:pointer}
 .chat-composer button:disabled,.chat-composer input:disabled{opacity:.6;cursor:wait}
-@media (max-width:480px){.chat-panel{right:10px;bottom:84px;width:calc(100vw - 20px)}.chat-bubble{right:14px;bottom:14px}.chat-panel-body{height:calc(100vh - 120px)}}
+@media (max-width:480px){.chat-panel{top:max(10px,env(safe-area-inset-top));right:10px;bottom:max(84px,calc(env(safe-area-inset-bottom) + 74px));left:10px;display:flex;width:auto;flex-direction:column}.chat-bubble{right:14px;bottom:max(14px,env(safe-area-inset-bottom))}.chat-panel-body{min-height:0;height:auto;flex:1}}

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gutter phone-agent demo | Buni</title>
-  <meta name="description" content="Try Buni's after-hours gutter call demonstration, then book a free 15-minute walkthrough.">
+  <meta name="description" content="Try Buni's after-hours gutter call demonstration, then ask Bree a question by voice or text.">
   <link rel="canonical" href="https://bunillc.com/gutter-demo/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bunillc.com/gutter-demo/">
@@ -15,7 +15,7 @@
   <link rel="icon" href="../favicon.ico" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-  <link rel="stylesheet" href="../roofing-demo/roofing-demo.css?v=20260731-mobile2">
+  <link rel="stylesheet" href="../roofing-demo/roofing-demo.css?v=20260801-bree">
 </head>
 <body data-trade="gutter">
   <a class="skip-link" href="#main">Skip to the demo</a>
@@ -66,7 +66,7 @@
         </div>
 
         <p class="privacy-note">Your browser uses the microphone only during this demo call. Do not share sensitive or real customer information.</p>
-        <noscript><p class="error-note">JavaScript is required for the browser voice demo. You can still request a walkthrough below.</p></noscript>
+        <noscript><p class="error-note">JavaScript is required for the browser voice and text demos.</p></noscript>
       </div>
     </section>
 
@@ -96,13 +96,22 @@
     </section>
 
     <section class="booking-section shell" id="booking" aria-labelledby="booking-heading">
-      <div class="booking-panel">
+      <div class="booking-panel" data-voice-demo-shell>
         <div>
-          <p class="eyebrow">A quick next step</p>
-          <h2 id="booking-heading">Want to hear how this could fit your call flow?</h2>
-          <p>Book a no-pressure walkthrough with Amy. We'll focus on after-hours and overflow calls, the details your team needs, and what should always stay with a person.</p>
+          <p class="eyebrow">Any questions?</p>
+          <h2 id="booking-heading">Talk or type—whichever is easier.</h2>
+          <p>Bree is Buni's AI assistant. She can answer practical questions about the service and, if you'd like, help with a next step.</p>
         </div>
-        <a class="booking-button" data-booking-link href="#booking">Book a free 15-minute walkthrough</a>
+        <div class="question-actions">
+          <button type="button" class="booking-button" data-voice-agent="buni" hidden>Talk to Bree</button>
+          <button type="button" class="booking-button booking-button-secondary" onclick="openChat('buni')">Type a question</button>
+          <p class="assistant-note">Bree is a Buni demonstration, not a trades company's receptionist. Do not share sensitive information.</p>
+        </div>
+        <div class="voice-panel" hidden>
+          <div class="voice-status" role="status" aria-live="polite">Preparing Bree…</div>
+          <div class="voice-transcript" role="log" aria-live="polite" aria-relevant="additions text" tabindex="0"></div>
+          <button type="button" class="voice-end">End conversation</button>
+        </div>
       </div>
     </section>
   </main>
@@ -135,8 +144,7 @@
   </div>
 
   <script src="config.js"></script>
-  <script src="landing.js" defer></script>
-  <script src="../voice-demo.js?v=20260801-gutter" defer></script>
-  <script src="../chat-demo.js?v=20260801-gutter" defer></script>
+  <script src="../voice-demo.js?v=20260801-bree" defer></script>
+  <script src="../chat-demo.js?v=20260801-bree" defer></script>
 </body>
 </html>

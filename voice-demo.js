@@ -53,8 +53,10 @@
   function start(btn) {
     if (active) { requestStop(); return; }
 
-    var card = btn.closest('.demo-card');
+    var card = btn.closest('[data-voice-demo-shell], .demo-card');
+    if (!card) return;
     var panel = card.querySelector('.voice-panel');
+    if (!panel) return;
     var statusEl = panel.querySelector('.voice-status');
     var transcriptEl = panel.querySelector('.voice-transcript');
     var agentKey = btn.getAttribute('data-voice-agent');
