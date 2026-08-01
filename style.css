@@ -88,7 +88,8 @@ h2{margin:8px 0 6px;font-size:clamp(25px,4vw,34px);font-weight:800;letter-spacin
 .scheduler-card .kicker{margin:0}
 .scheduler-card h3{margin:6px 0 0;font-size:clamp(23px,3.6vw,31px);line-height:1.2}
 .scheduler-card>p:not(.kicker){max-width:660px;margin:10px 0 0;color:var(--muted);font-size:15px;line-height:1.55}
-.scheduler-embed{width:100%;height:720px;height:clamp(660px,82svh,820px);margin-top:22px;overflow:hidden;border:1px solid var(--card-line);border-radius:14px;background:var(--bg)}
+.scheduler-embed{width:100%;min-height:720px;min-height:clamp(660px,82svh,820px);height:auto;margin-top:22px;overflow:hidden;border:1px solid var(--card-line);border-radius:14px;background:var(--bg)}
+.scheduler-embed iframe{display:block;width:100%;min-height:inherit;border-radius:inherit}
 .scheduler-open{font-size:13.5px!important}.scheduler-open a{font-weight:800}
 .chat-card{flex:1 1 280px;background:var(--deep);border-radius:18px;padding:24px;display:flex;flex-direction:column;justify-content:center;gap:12px}
 .chat-card .emoji{font-size:30px}
@@ -201,4 +202,4 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-con
 .chat-composer input{min-width:0;flex:1;border:1px solid #bdcec5;border-radius:10px;padding:10px 11px;background:#fff;color:var(--ink);font:inherit;font-size:14px}
 .chat-composer button{border:0;border-radius:10px;background:var(--teal);color:#fff;padding:0 14px;font-family:inherit;font-weight:800;cursor:pointer}
 .chat-composer button:disabled,.chat-composer input:disabled{opacity:.6;cursor:wait}
-@media (max-width:480px){.scheduler-card{padding:20px 12px}.scheduler-embed{height:max(660px,calc(100svh - 42px))}.chat-card-actions{grid-template-columns:1fr}.chat-panel{top:max(10px,env(safe-area-inset-top));right:10px;bottom:max(84px,calc(env(safe-area-inset-bottom) + 74px));left:10px;display:flex;width:auto;flex-direction:column}.chat-bubble{right:14px;bottom:max(14px,env(safe-area-inset-bottom))}.chat-panel-body{min-height:0;height:auto;flex:1}}
+@media (max-width:480px){.scheduler-card{padding:20px 12px}.scheduler-embed{min-height:max(660px,calc(100svh - 42px));height:auto}.chat-card-actions{grid-template-columns:1fr}.chat-panel{top:max(10px,env(safe-area-inset-top));right:10px;bottom:max(84px,calc(env(safe-area-inset-bottom) + 74px));left:10px;display:flex;width:auto;flex-direction:column}.chat-bubble{right:14px;bottom:max(14px,env(safe-area-inset-bottom))}.chat-panel-body{min-height:0;height:auto;flex:1}}
