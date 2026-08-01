@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20260801-bree-chat">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
@@ -308,11 +308,21 @@
     </div>
     <!-- ================== END DEMO CARDS ================== -->
 
-    <div class="chat-card">
-      <div class="emoji">💬</div>
-      <h3>Rather type than talk?</h3>
-      <p>The same receptionist answers messages on your website too. Try the chat right here on this page.</p>
-      <button type="button" onclick="openChat('buni')">Ask Bree a question →</button>
+    <div class="chat-card" data-voice-demo-shell>
+      <div class="emoji" aria-hidden="true">💬</div>
+      <p class="chat-card-kicker">Any questions?</p>
+      <h3>Talk or type—whichever is easier.</h3>
+      <p>Bree can answer practical questions about Buni and help you decide whether it fits your business.</p>
+      <div class="chat-card-actions">
+        <button class="chat-card-talk" type="button" data-voice-agent="buni" hidden>Talk to Bree</button>
+        <button type="button" onclick="openChat('buni')">Type a question</button>
+      </div>
+      <div class="voice-panel" hidden>
+        <div class="voice-status" role="status" aria-live="polite">Preparing Bree…</div>
+        <div class="voice-transcript" role="log" aria-live="polite" aria-relevant="additions text" tabindex="0"></div>
+        <button type="button" class="voice-end">End conversation</button>
+      </div>
+      <p class="chat-card-note">Bree is Buni's assistant. Do not share passwords, payment details, or sensitive customer information.</p>
     </div>
   </div>
 </section>
@@ -462,7 +472,7 @@
     <div class="f-logo">buni<span>.</span> <small>· Buni LLC, Bradenton FL</small></div>
     <div class="f-links">
       <a href="mailto:amy@bunillc.com">amy@bunillc.com</a>
-      <a href="https://linkedin.com/in/PLACEHOLDER">LinkedIn</a>
+      <a href="tel:9416466325">941-646-6325</a>
     </div>
   </div>
 </footer>
@@ -487,7 +497,7 @@
     </form>
   </div>
 </div>
-<button class="chat-bubble" type="button" onclick="openChat('buni')" aria-label="Ask Bree a question" aria-expanded="false">Questions?</button>
+<button class="chat-bubble" type="button" onclick="openChat('buni')" aria-label="Text Bree a question" aria-expanded="false">Text Bree</button>
 
 <!-- Voice demos (Retell web call via the Cloudflare Worker relay).
      A card's 🎙 button only appears when its key is listed in VOICE_AGENTS
