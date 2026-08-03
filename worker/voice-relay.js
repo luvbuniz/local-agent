@@ -22,6 +22,7 @@ const RETELL_AGENTS = {
   gutter: 'agent_74158d6d3b4e9ed6e31e76e04f',  // Coastal Catch Gutters Demo
   plumbing: 'agent_d16a844d76bd59505a00092b7e',  // Harbor Flow Plumbing Demo
   remodeling: 'agent_a17421f7fb1ff23a8d31863fab',  // Coastal Craft Remodeling Demo
+  mechanic: 'agent_0a1a876cf271220374539f3cf9',  // Bayline Auto Care Demo
   roofing: 'agent_48deacf6eeb9b85ad57e6b2a04',  // Suncoast Roofing Demo
   insurance: 'agent_fd6462aa808fb206a445768896',  // Harborlight Insurance Demo
 };

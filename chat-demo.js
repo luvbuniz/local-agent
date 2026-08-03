@@ -22,6 +22,10 @@
 
   if (!relayUrl || !panel || !messagesEl || !statusEl || !form || !input || !submit) return;
 
+  document.querySelectorAll('[data-chat-agent]').forEach(function (button) {
+    button.hidden = !availableAgents[button.getAttribute('data-chat-agent')];
+  });
+
   var agentCopy = {
     buni: {
       name: 'Bree · Buni questions',
@@ -54,6 +58,14 @@
       label: 'Message the fictional HVAC receptionist',
       placeholder: 'Ask about no cooling, repair, maintenance, or replacement…',
       greeting: "Thanks for trying the Coastal Comfort Heating & Air demo. I'm Casey, an AI receptionist for a fictional HVAC company, so please use made-up contact details. Is this about no cooling, a repair or maintenance visit, replacing a system, or something else?"
+    },
+    mechanic: {
+      name: 'Bayline Auto Care demo',
+      subtitle: 'Text chat · fictional auto shop · English or Spanish',
+      notice: 'Please use made-up details. This demo cannot diagnose a vehicle, arrange a tow, quote a repair, confirm an appointment, take payment, or update a real shop record.',
+      label: 'Message the fictional auto-shop receptionist',
+      placeholder: 'Describe an example vehicle problem…',
+      greeting: "Thanks for trying the fictional Bayline Auto Care demo. Is the vehicle in a safe place right now?"
     },
     insurance: {
       name: '💬 Harborlight Insurance demo',
