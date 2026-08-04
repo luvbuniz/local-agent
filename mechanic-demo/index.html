@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auto-repair phone-agent demo | Buni</title>
+  <meta name="description" content="Try Buni's after-hours auto-repair call demonstration in English or Spanish, then ask Bree a question by voice or text.">
+  <link rel="canonical" href="https://bunillc.com/mechanic-demo/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bunillc.com/mechanic-demo/">
+  <meta property="og:site_name" content="Buni">
+  <meta property="og:title" content="See how Buni can handle an after-hours auto-repair call">
+  <meta property="og:description" content="Try a short auto-shop call demonstration and hear how Buni gathers vehicle details and identifies urgency for follow-up.">
+  <meta name="theme-color" content="#1f4d47">
+  <link rel="icon" href="../favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../roofing-demo/roofing-demo.css?v=20260803-mechanic">
+</head>
+<body data-trade="mechanic">
+  <a class="skip-link" href="#main">Skip to the demo</a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="../" aria-label="Buni home">buni<span>.</span></a>
+      <span class="header-label">Auto-shop call demo</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">After-hours and overflow support</p>
+        <h1 id="page-title">See how Buni can handle an after-hours auto-repair call.</h1>
+        <p class="hero-lede">Try a short call with a fictional auto-shop receptionist. Describe a car problem in English or Spanish and hear the practical questions a real caller would be asked.</p>
+
+        <div class="disclosure" role="note" aria-label="Demonstration notice">
+          <span class="disclosure-mark" aria-hidden="true">Demo</span>
+          <p><strong>This is a Buni demonstration, not a real repair shop's phone line.</strong> Please use made-up contact and vehicle details. It cannot diagnose a vehicle, arrange a tow, or respond to an emergency.</p>
+        </div>
+
+        <ul class="quick-notes" aria-label="Before you start">
+          <li>Allow microphone access when your browser asks.</li>
+          <li>Try: "My car won't start and I need it for work tomorrow."</li>
+          <li>Or begin in Spanish and the receptionist will continue in Spanish.</li>
+        </ul>
+      </div>
+
+      <div class="demo-card" aria-labelledby="demo-heading">
+        <div class="demo-card-topline">
+          <span class="signal-dot" aria-hidden="true"></span>
+          <span>Ready for an example call</span>
+        </div>
+        <h2 id="demo-heading">Talk to the auto-shop demo</h2>
+        <p>Press the button, allow your microphone, and describe the problem. The receptionist keeps each turn short and asks one question at a time.</p>
+
+        <button type="button" class="demo-voice" data-voice-agent="mechanic" hidden>
+          <span aria-hidden="true">&#9679;</span> Talk to the auto-shop demo
+        </button>
+        <button type="button" class="demo-text" data-chat-agent="mechanic" onclick="openChat('mechanic')" hidden>Type to the auto-shop demo</button>
+
+        <div class="voice-panel" hidden>
+          <div class="voice-status" role="status" aria-live="polite">Preparing the demo&hellip;</div>
+          <div class="voice-transcript" role="log" aria-live="polite" aria-relevant="additions text" tabindex="0"></div>
+          <button type="button" class="voice-end">End demo</button>
+        </div>
+
+        <p class="privacy-note">Your browser uses the microphone only during this demo call. Do not share sensitive or real customer information.</p>
+        <noscript><p class="error-note">JavaScript is required for the browser voice and text demos.</p></noscript>
+      </div>
+    </section>
+
+    <section class="benefits-section" aria-labelledby="benefits-heading">
+      <div class="shell">
+        <p class="eyebrow">What this demonstration shows</p>
+        <h2 id="benefits-heading">The basics your service advisor needs.</h2>
+        <div class="benefit-grid">
+          <article>
+            <span aria-hidden="true">01</span>
+            <h3>Capture caller and vehicle details</h3>
+            <p>Collect an example name, callback number, vehicle year, make, model, and location one question at a time.</p>
+          </article>
+          <article>
+            <span aria-hidden="true">02</span>
+            <h3>Understand what's happening</h3>
+            <p>Hear whether the caller reports a no-start, warning light, overheating, brake concern, strange noise, or routine maintenance.</p>
+          </article>
+          <article>
+            <span aria-hidden="true">03</span>
+            <h3>Spot calls that need faster follow-up</h3>
+            <p>Recognize smoke, fire, overheating, unsafe brakes, a crash, or a vehicle stopped in a dangerous location.</p>
+          </article>
+        </div>
+        <p class="scope-note">This demo does not diagnose a vehicle, quote a repair, arrange towing, book service, take payment, update a shop system, or notify a mechanic. A live workflow would be designed and tested with each shop before those capabilities are described as working.</p>
+      </div>
+    </section>
+
+    <section class="scheduler-section shell" aria-labelledby="scheduler-heading">
+      <div class="scheduler-panel">
+        <p class="eyebrow">Prefer to pick a time yourself?</p>
+        <h2 id="scheduler-heading">Book a free 15-minute walkthrough.</h2>
+        <p>Choose a date and time that works for you. The form requires your name, phone number, and email so the calendar invitation goes to the right place.</p>
+        <div class="scheduler-embed" data-buni-scheduler aria-label="Buni appointment scheduler"></div>
+        <p class="scheduler-open">Having trouble with the form? <a href="https://cal.com/amy-sullivan-xfxic7/buni-walkthrough" target="_blank" rel="noopener">Open the scheduler in a new tab.</a></p>
+      </div>
+    </section>
+
+    <section class="booking-section shell" id="booking" aria-labelledby="booking-heading">
+      <div class="booking-panel" data-voice-demo-shell>
+        <div>
+          <p class="eyebrow">Any questions?</p>
+          <h2 id="booking-heading">Talk or type&mdash;whichever is easier.</h2>
+          <p>Bree is Buni's AI assistant. She can answer practical questions about the service and, if you'd like, help with a next step.</p>
+        </div>
+        <div class="question-actions">
+          <button type="button" class="booking-button" data-voice-agent="buni" hidden>Talk to Bree</button>
+          <button type="button" class="booking-button booking-button-secondary" onclick="openChat('buni')">Type a question</button>
+          <p class="assistant-note">Bree is a Buni demonstration, not an auto shop's receptionist. Do not share sensitive information.</p>
+        </div>
+        <div class="voice-panel" hidden>
+          <div class="voice-status" role="status" aria-live="polite">Preparing Bree&hellip;</div>
+          <div class="voice-transcript" role="log" aria-live="polite" aria-relevant="additions text" tabindex="0"></div>
+          <button type="button" class="voice-end">End conversation</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span class="footer-wordmark">buni<span>.</span></span>
+      <span>After-hours and overflow call support for local teams.</span>
+    </div>
+  </footer>
+
+  <div class="chat-panel" id="chatPanel" hidden role="dialog" aria-label="Auto-shop receptionist text chat">
+    <div class="chat-panel-head">
+      <div>
+        <span id="chatAgentName">Auto-shop receptionist demo</span>
+        <small id="chatAgentSubtitle">Text chat &middot; fictional business</small>
+      </div>
+      <button type="button" onclick="closeChat()" aria-label="Close chat">&times;</button>
+    </div>
+    <div class="chat-panel-body">
+      <div class="chat-notice" id="chatNotice">Please use made-up details in this public demo.</div>
+      <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-relevant="additions"></div>
+      <div class="chat-status" id="chatStatus" role="status" aria-live="polite"></div>
+      <form class="chat-composer" id="chatForm">
+        <label class="sr-only" id="chatInputLabel" for="chatInput">Message the fictional auto-shop receptionist</label>
+        <input id="chatInput" type="text" maxlength="2000" autocomplete="off" placeholder="Describe an example vehicle problem&hellip;">
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="../scheduler.js?v=20260801-contact-checks" defer></script>
+  <script src="../voice-demo.js?v=20260801-bree" defer></script>
+  <script src="../chat-demo.js?v=20260803-mechanic" defer></script>
+</body>
+</html>

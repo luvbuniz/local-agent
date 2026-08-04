@@ -30,6 +30,7 @@ The focused prospect pages are:
 - `https://bunillc.com/gutter-demo/`
 - `https://bunillc.com/electrical-demo/`
 - `https://bunillc.com/remodeling-demo/`
+- `https://bunillc.com/mechanic-demo/`
 
 They reuse the Retell browser-call and text-chat implementations in `voice-demo.js` and `chat-demo.js`. The Cloudflare Worker maps each trade key to the matching published Retell voice and chat agents while keeping the API key and agent IDs out of browser code.
 
@@ -48,6 +49,15 @@ The public Cal.com form requires name, email, and phone number. Retell supports 
 The plumbing source prompt and safety reference are in `agents/harbor-flow-plumbing-prompt.md` and `agents/harbor-flow-plumbing-knowledge-base.md`. The gutter equivalents are in `agents/coastal-catch-gutters-prompt.md` and `agents/coastal-catch-gutters-knowledge-base.md`. The HVAC page reuses the existing published Coastal Comfort agent and its files in `agents/coastal-comfort-hvac-*`.
 
 The electrical demo uses `agents/brightline-electric-prompt.md` and `agents/brightline-electric-knowledge-base.md`. The remodeling demo uses `agents/coastal-craft-remodeling-prompt.md` and `agents/coastal-craft-remodeling-knowledge-base.md`. Both are fictional, reusable examples and avoid promising booking, CRM delivery, texting, estimates, or dispatch.
+
+The mechanic demo uses `agents/bayline-auto-care-prompt.md` and
+`agents/bayline-auto-care-knowledge-base.md`. It is a fictional auto-shop
+intake example with safety-first handling for crashes, roadway danger, smoke,
+overheating, brakes, and steering. Its published voice agent is configured for
+exactly English (US) and Spanish (Latin America), mapped server-side by the
+Worker's `mechanic` key, and enabled in `mechanic-demo/config.js`. The separate
+mechanic text-demo button remains hidden until a mechanic chat agent has been
+created, tested, and added to the Worker's `CHAT_AGENTS` mapping.
 
 The gutter intake was researched as its own home-services vertical. Retell does not currently surface a gutter-specific public template; its closest public example is the [High-Intent Lead Screener](https://www.retellai.com/templates/high-intent-lead-screener) for home-services leads. The Buni demo borrows the narrow intake pattern but intentionally does not claim that booking, transfer, CRM updates, texting, estimates, or dispatch work.
 
