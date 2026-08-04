@@ -31,6 +31,7 @@ The focused prospect pages are:
 - `https://bunillc.com/electrical-demo/`
 - `https://bunillc.com/remodeling-demo/`
 - `https://bunillc.com/mechanic-demo/`
+- `https://bunillc.com/dental-demo/`
 
 They reuse the Retell browser-call and text-chat implementations in `voice-demo.js` and `chat-demo.js`. The Cloudflare Worker maps each trade key to the matching published Retell voice and chat agents while keeping the API key and agent IDs out of browser code.
 
@@ -59,6 +60,22 @@ Worker's `mechanic` key, and enabled in `mechanic-demo/config.js`. The separate
 mechanic text demo uses `agents/bayline-auto-care-chat-prompt.md`; its published
 chat agent is mapped server-side by the Worker's `mechanic` key and enabled in
 `mechanic-demo/config.js`.
+
+The dental demo uses `agents/harbor-smile-dental-prompt.md`,
+`agents/harbor-smile-dental-chat-prompt.md`, and
+`agents/harbor-smile-dental-knowledge-base.md`. It is a fictional public demo
+for overflow and after-hours intake. The voice and chat agents are configured
+for English (US) and Spanish (Latin America), keep replies to two short
+sentences, and do not diagnose, book, verify benefits, access records, or accept
+real patient information. Published agent IDs remain server-side under the
+Worker's `dental` key and are enabled in `dental-demo/config.js`.
+
+Retell states that a signed BAA is required before transmitting PHI; sign it at
+`https://click-agreements.retellai.com/` and then follow Retell's current
+compliance configuration guide. A production dental deployment also needs a
+BAA with the dental practice and appropriate agreements and secure configuration
+for every service that will handle PHI. The public demo must remain fictional
+until those requirements and the complete workflow are reviewed and tested.
 
 The gutter intake was researched as its own home-services vertical. Retell does not currently surface a gutter-specific public template; its closest public example is the [High-Intent Lead Screener](https://www.retellai.com/templates/high-intent-lead-screener) for home-services leads. The Buni demo borrows the narrow intake pattern but intentionally does not claim that booking, transfer, CRM updates, texting, estimates, or dispatch work.
 

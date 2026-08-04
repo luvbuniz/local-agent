@@ -67,6 +67,14 @@
       placeholder: 'Describe an example vehicle problem…',
       greeting: "Thanks for trying the fictional Bayline Auto Care demo. Is the vehicle in a safe place right now?"
     },
+    dental: {
+      name: 'Harbor Smile Dental demo',
+      subtitle: 'Text chat · fictional dental office · English or Spanish',
+      notice: 'Please use made-up details. Do not share real patient, insurance, payment, or medical information. This demo cannot diagnose, book, verify benefits, prescribe, or access records.',
+      label: 'Message the fictional dental receptionist',
+      placeholder: 'Try a routine, appointment, or dental-concern question…',
+      greeting: 'Thanks for trying this fictional Buni dental demo. Please use made-up details. Is this a routine question, an appointment question, or a dental concern?'
+    },
     insurance: {
       name: '💬 Harborlight Insurance demo',
       subtitle: 'Text chat · fictional insurance agency',
