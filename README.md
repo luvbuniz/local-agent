@@ -106,15 +106,11 @@ per-industry expander with the worry line, the four steps, the tools list,
 and the safety-rail line. It's plain HTML: edit the text in place. To add
 one to a new vertical, copy the whole `<details>` block from any card.
 
-## Add your photo
+## Amy's photo
 
-In the "Hi, I'm Amy" section, replace the placeholder div with:
-
-```html
-<img src="amy.jpg" alt="Amy Sullivan">
-```
-
-and put `amy.jpg` in the repo root.
+The "Hi, I'm Amy" section uses the optimized `amy-sullivan.webp` asset. Keep
+the explicit dimensions, descriptive alt text, lazy loading, and asynchronous
+decoding if the photo is replaced later.
 
 ## Turn on the in-page voice demo (Retell)
 
