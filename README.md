@@ -33,6 +33,11 @@ The focused prospect pages are:
 - `https://bunillc.com/mechanic-demo/`
 - `https://bunillc.com/dental-demo/`
 
+The main page includes a manually controlled, swipeable industry carousel that
+links to every focused demo route. Add a new `.demo-market-card` in
+`index.html` when a new vertical is ready; do not add unfinished or unpublished
+agents to the carousel.
+
 They reuse the Retell browser-call and text-chat implementations in `voice-demo.js` and `chat-demo.js`. The Cloudflare Worker maps each trade key to the matching published Retell voice and chat agents while keeping the API key and agent IDs out of browser code.
 
 Each page has one small `config.js` file containing its relay and trade-agent settings. A manual Buni scheduler appears immediately before the closing panel, followed by the softer option to ask Bree a question by voice or text. The public event is `https://cal.com/amy-sullivan-xfxic7/buni-walkthrough`; its one browser-side configuration value is `SCHEDULER_LINK` in `scheduler.js`. Update that value and the visible fallback links if the public event changes.

@@ -48,6 +48,25 @@ section{scroll-margin-top:70px}
 h2{margin:8px 0 6px;font-size:clamp(25px,4vw,34px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
 .lede{margin:0 0 20px;font-size:16px;color:var(--muted);max-width:560px;line-height:1.5}
 
+/* Industry demo picker */
+.demo-picker{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.demo-picker-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+.demo-picker-head .lede{margin-bottom:0}
+.demo-carousel-controls{display:flex;gap:8px;flex:none}
+.demo-carousel-controls button{width:44px;height:44px;border:1px solid var(--card-line);border-radius:999px;background:var(--bg);color:var(--deep);font:800 20px/1 'Nunito Sans',sans-serif;cursor:pointer}
+.demo-carousel-controls button:hover{background:var(--chip)}
+.demo-carousel-controls button:focus-visible,.demo-market-card a:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.demo-carousel{display:flex;gap:16px;margin:24px -20px 0;padding:2px 20px 18px;list-style:none;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:inline mandatory;scroll-padding-inline:20px;scrollbar-width:thin;scrollbar-color:#b8cec5 transparent}
+.demo-market-card{display:flex;flex:0 0 min(82vw,286px);min-height:270px;flex-direction:column;scroll-snap-align:start;background:var(--bg);border:1px solid var(--card-line);border-radius:18px;padding:22px;box-shadow:0 2px 10px rgba(34,50,47,.05)}
+.demo-market-label{align-self:flex-start;border-radius:999px;background:var(--chip);padding:6px 10px;color:var(--deep);font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.demo-market-card h3{margin:16px 0 7px;font-size:20px;line-height:1.25}
+.demo-market-card p{margin:0 0 20px;color:var(--muted);font-size:14.5px;line-height:1.5}
+.demo-market-card a{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;border-radius:12px;background:var(--deep);padding:13px 14px;color:#fff;font-size:14.5px;font-weight:800;text-decoration:none}
+.demo-market-card a:hover{background:var(--teal);color:#fff}
+.demo-picker-note{margin:0;color:#766f64;font-size:13px;line-height:1.5}
+@media (min-width:760px){.demo-carousel{margin-right:0;margin-left:0;padding-right:0;padding-left:0;scroll-padding-inline:0}.demo-market-card{flex-basis:calc((100% - 32px)/3)}}
+@media (max-width:520px){.demo-picker-head{align-items:flex-start}.demo-carousel-controls{margin-top:21px}.demo-carousel-controls button{width:42px;height:42px}}
+
 /* Demo tabs */
 .tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;margin-bottom:16px}
 .tab{flex:none;background:#fff;color:var(--muted);border:1px solid var(--card-line);border-radius:999px;padding:10px 16px;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap}

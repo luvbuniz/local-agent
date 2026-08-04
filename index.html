@@ -164,6 +164,74 @@
   </div>
 </section>
 
+<section class="demo-picker" id="demos" aria-labelledby="demo-picker-heading">
+  <div class="wrap section">
+    <div class="demo-picker-head">
+      <div>
+        <div class="kicker">Choose your business</div>
+        <h2 id="demo-picker-heading">Try the receptionist that fits your work.</h2>
+        <p class="lede">Swipe through the demos, then talk or type to one using a made-up customer situation.</p>
+      </div>
+      <div class="demo-carousel-controls" aria-label="Demo carousel controls">
+        <button type="button" data-demo-carousel-prev aria-label="Show previous demos">&larr;</button>
+        <button type="button" data-demo-carousel-next aria-label="Show next demos">&rarr;</button>
+      </div>
+    </div>
+
+    <ul class="demo-carousel" data-demo-carousel aria-label="Available business demos">
+      <li class="demo-market-card">
+        <span class="demo-market-label">HVAC</span>
+        <h3>No-cool and after-hours calls</h3>
+        <p>Hear how it gathers the problem, property details, and urgency one question at a time.</p>
+        <a href="hvac-demo/">Try the HVAC demo <span aria-hidden="true">&rarr;</span></a>
+      </li>
+      <li class="demo-market-card">
+        <span class="demo-market-label">Plumbing</span>
+        <h3>Leaks, backups, and urgent calls</h3>
+        <p>Try a call that captures what happened, where it is, and whether immediate follow-up is needed.</p>
+        <a href="plumbing-demo/">Try the plumbing demo <span aria-hidden="true">&rarr;</span></a>
+      </li>
+      <li class="demo-market-card">
+        <span class="demo-market-label">Roofing</span>
+        <h3>Storm and leak call overflow</h3>
+        <p>See how it collects the caller's details, the reported damage, and how urgent the situation sounds.</p>
+        <a href="roofing-demo/">Try the roofing demo <span aria-hidden="true">&rarr;</span></a>
+      </li>
+      <li class="demo-market-card">
+        <span class="demo-market-label">Electrical</span>
+        <h3>Safety-first electrical intake</h3>
+        <p>Test a practical call that separates immediate safety concerns from routine service requests.</p>
+        <a href="electrical-demo/">Try the electrical demo <span aria-hidden="true">&rarr;</span></a>
+      </li>
+      <li class="demo-market-card">
+        <span class="demo-market-label">Gutters</span>
+        <h3>Install, repair, and overflow calls</h3>
+        <p>Hear it gather the property, service needed, and best follow-up details while the crew is working.</p>
+        <a href="gutter-demo/">Try the gutter demo <span aria-hidden="true">&rarr;</span></a>
+      </li>
+      <li class="demo-market-card">
+        <span class="demo-market-label">Auto repair</span>
+        <h3>Shop calls in English or Spanish</h3>
+        <p>Try a vehicle concern, tow question, or status request with short, practical replies.</p>
+        <a href="mechanic-demo/">Try the auto-shop demo <span aria-hidden="true">&rarr;</span></a>
+      </li>
+      <li class="demo-market-card">
+        <span class="demo-market-label">Remodeling</span>
+        <h3>High-value project inquiries</h3>
+        <p>See how it captures the project type, location, timing, and next-step details without overpromising.</p>
+        <a href="remodeling-demo/">Try the remodeling demo <span aria-hidden="true">&rarr;</span></a>
+      </li>
+      <li class="demo-market-card">
+        <span class="demo-market-label">Dental</span>
+        <h3>Routine and urgent dental calls</h3>
+        <p>Use a fictional situation to test careful after-hours intake in English or Spanish.</p>
+        <a href="dental-demo/">Try the dental demo <span aria-hidden="true">&rarr;</span></a>
+      </li>
+    </ul>
+    <p class="demo-picker-note">All demos are fictional. Use made-up details and do not share sensitive information.</p>
+  </div>
+</section>
+
 <section class="stats">
   <div class="wrap">
     <div class="stat"><b>80%</b><span>of callers hang up on voicemail — and call the next business on Google.</span></div>
@@ -172,10 +240,10 @@
   </div>
 </section>
 
-<section class="wrap section" id="demos">
-  <div class="kicker">Try it yourself</div>
-  <h2>Hear it answer a call for a business like yours.</h2>
-  <p class="lede">Pick your line of work, press the button, and talk to it like a real customer would — right in your browser, no phone call needed.</p>
+<section class="wrap section" id="browser-demo">
+  <div class="kicker">Try one without leaving this page</div>
+  <h2>Or hear a demo right here.</h2>
+  <p class="lede">Choose one of these examples, press the button, and talk to it like a customer would — no phone call needed.</p>
 
   <div class="tabs" id="tabs"></div>
 
@@ -524,6 +592,25 @@ window.CHAT_AGENT_KEY = "buni";
 <script src="chat-demo.js?v=20260801-bree" defer></script>
 
 <script>
+// Manually controlled demo carousel. Touch and trackpad users can swipe it.
+(function () {
+  var carousel = document.querySelector('[data-demo-carousel]');
+  var previous = document.querySelector('[data-demo-carousel-prev]');
+  var next = document.querySelector('[data-demo-carousel-next]');
+  if (!carousel || !previous || !next) return;
+
+  function move(direction) {
+    var card = carousel.querySelector('.demo-market-card');
+    var gap = 16;
+    var distance = card ? card.getBoundingClientRect().width + gap : carousel.clientWidth * 0.85;
+    var behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    carousel.scrollBy({ left: direction * distance, behavior: behavior });
+  }
+
+  previous.addEventListener('click', function () { move(-1); });
+  next.addEventListener('click', function () { move(1); });
+})();
+
 // Demo tabs — built automatically from the .demo-card blocks above
 (function () {
   var cards = document.querySelectorAll('.demo-card');
