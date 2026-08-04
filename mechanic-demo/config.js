@@ -11,6 +11,6 @@
   window.BUNI_MECHANIC_DEMO_CONFIG = Object.freeze(config);
   window.VOICE_RELAY_URL = config.voiceRelayUrl;
   window.VOICE_AGENTS = { mechanic: 'retell', buni: 'retell' };
-  window.CHAT_AGENTS = { buni: true };
+  window.CHAT_AGENTS = { mechanic: true, buni: true };
   window.CHAT_AGENT_KEY = 'buni';
 })();

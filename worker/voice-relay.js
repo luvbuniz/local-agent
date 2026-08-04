@@ -37,6 +37,7 @@ const CHAT_AGENTS = {
   gutter: 'agent_860b479a0e1e76bbfa95647c4f',  // Coastal Catch Gutters Text Chat
   plumbing: 'agent_badd924a15721dbdc4a67d58cd',  // Harbor Flow Plumbing Text Chat
   remodeling: 'agent_8e5e4677493f7012aa11f1a40d',  // Coastal Craft Remodeling Text Chat
+  mechanic: 'agent_bc5e14e060d663d129a98a6cfd',  // Bayline Auto Care Text Chat
   roofing: 'agent_863274eb8a64e80d0b8a2557e9',  // Suncoast Roofing Text Chat
   insurance: 'agent_277aeaf686af4cd2ed3d87bdd4',  // Harborlight Insurance Text Chat
 };

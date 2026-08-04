@@ -56,8 +56,9 @@ intake example with safety-first handling for crashes, roadway danger, smoke,
 overheating, brakes, and steering. Its published voice agent is configured for
 exactly English (US) and Spanish (Latin America), mapped server-side by the
 Worker's `mechanic` key, and enabled in `mechanic-demo/config.js`. The separate
-mechanic text-demo button remains hidden until a mechanic chat agent has been
-created, tested, and added to the Worker's `CHAT_AGENTS` mapping.
+mechanic text demo uses `agents/bayline-auto-care-chat-prompt.md`; its published
+chat agent is mapped server-side by the Worker's `mechanic` key and enabled in
+`mechanic-demo/config.js`.
 
 The gutter intake was researched as its own home-services vertical. Retell does not currently surface a gutter-specific public template; its closest public example is the [High-Intent Lead Screener](https://www.retellai.com/templates/high-intent-lead-screener) for home-services leads. The Buni demo borrows the narrow intake pattern but intentionally does not claim that booking, transfer, CRM updates, texting, estimates, or dispatch work.
 
