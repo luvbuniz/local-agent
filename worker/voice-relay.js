@@ -23,6 +23,7 @@ const RETELL_AGENTS = {
   plumbing: 'agent_d16a844d76bd59505a00092b7e',  // Harbor Flow Plumbing Demo
   remodeling: 'agent_a17421f7fb1ff23a8d31863fab',  // Coastal Craft Remodeling Demo
   mechanic: 'agent_0a1a876cf271220374539f3cf9',  // Bayline Auto Care Demo
+  dental: 'agent_25d4054798f5020e37eabea045',  // Harbor Smile Dental Demo
   roofing: 'agent_48deacf6eeb9b85ad57e6b2a04',  // Suncoast Roofing Demo
   insurance: 'agent_fd6462aa808fb206a445768896',  // Harborlight Insurance Demo
 };
@@ -38,6 +39,7 @@ const CHAT_AGENTS = {
   plumbing: 'agent_badd924a15721dbdc4a67d58cd',  // Harbor Flow Plumbing Text Chat
   remodeling: 'agent_8e5e4677493f7012aa11f1a40d',  // Coastal Craft Remodeling Text Chat
   mechanic: 'agent_bc5e14e060d663d129a98a6cfd',  // Bayline Auto Care Text Chat
+  dental: 'agent_35b2c25a9356a39d294c180911',  // Harbor Smile Dental Text Chat
   roofing: 'agent_863274eb8a64e80d0b8a2557e9',  // Suncoast Roofing Text Chat
   insurance: 'agent_277aeaf686af4cd2ed3d87bdd4',  // Harborlight Insurance Text Chat
 };

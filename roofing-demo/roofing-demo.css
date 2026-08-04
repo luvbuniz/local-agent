@@ -654,7 +654,7 @@ footer {
 }
 
 @media (max-width: 520px) {
-  .shell { width: min(100% - 28px, 1120px); }
+  .shell { width: min(1120px, calc(100% - 28px)); }
   .header-label { font-size: .72rem; }
   .disclosure { grid-template-columns: 1fr; }
   .demo-card { border-radius: 21px; }
