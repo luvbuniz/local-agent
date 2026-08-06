@@ -2,6 +2,18 @@
 
 Single-page static site for Buni LLC. No build step — just `index.html` + `style.css`.
 
+## Homepage positioning
+
+The main page positions Buni as a practical workflow-audit and implementation
+business serving clients across the United States. Phone and web assistants are
+kept as concrete examples lower on the page, not the primary offer.
+
+Keep the homepage process-first and evidence-safe: do not add blanket claims
+about round-the-clock coverage, booking, texting, CRM updates, dispatch, or
+other integrations unless that exact client workflow has been configured and
+tested end to end. The social preview at `og-card.png` uses the same workflow
+audit message for LinkedIn and other shared links.
+
 ## Put it on GitHub Pages
 
 1. Copy `index.html`, `style.css`, and this `README.md` into the root of your repo (e.g. `luvbuniz/local-agent`).
