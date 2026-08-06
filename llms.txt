@@ -1,36 +1,37 @@
 # Buni
 
-> Buni LLC sets up a friendly AI receptionist for local businesses that answers every phone call and website message, books appointments directly on the business's existing calendar, and texts the owner a summary — 24/7. Based in Bradenton, Florida, serving Bradenton, Sarasota, and Lakewood Ranch in person, with remote setup available anywhere.
+> Buni LLC provides practical AI workflow audits and implementation for service businesses. Buni finds where work is getting missed, repeated, or stuck, then helps the owner decide what to fix first and where automation is actually worth it.
 
 ## What Buni does
 
-- **Every call answered & booked**: A friendly voice answers 24/7, books straight into the calendar the business already uses (Google Calendar, Square, Jobber, and others), and texts the owner a summary of every call.
-- **Every message answered**: A chat assistant on the business website and Facebook/Instagram messages that answers questions and books appointments. Missed calls get an instant text back.
-- **More 5-star reviews**: Happy customers get a friendly text asking for a Google review at the right moment.
-- **Additional services**: team AI training, reactivation campaigns for old quotes and lapsed customers, Google review replies, automated quotes/estimates/intake paperwork, and social media drafting with owner approval.
+- **Workflow audits**: Trace how leads, scheduling, follow-up, paperwork, and handoffs work today; quantify the most important gaps; and produce a short ranked plan.
+- **Practical implementation**: Improve an approved process, use existing software features when they are enough, or build a bounded workflow with human review and a rollback path.
+- **Customer-facing assistants**: Voice and web assistants are available when calls, intake, or common questions are the documented problem and customers are comfortable with the channel.
+- **Team training**: Help staff use AI for appropriate everyday work while keeping judgment, safety, and sensitive decisions with people.
+
+## How Buni decides what to recommend
+
+An audit can recommend one of five responses: fix the process, use a feature the business already owns, assist a person, automate a bounded step, or keep the work human. A phone agent is one possible solution, not the default recommendation.
+
+The audit deliverable includes a plain-English workflow map, up to six ranked findings, the math behind the biggest gaps, and a fix-first, fix-later, and don't-fix plan. Assumptions are labeled. No live system changes are made during discovery.
 
 ## Who it's for
 
-Local service businesses — salons and spas, painters and contractors, roofers, insurance agents, law offices, and similar appointment- or lead-driven businesses.
+Owner-led and service businesses that want clearer operations before buying more software. Buni is based in Florida and works remotely with businesses across the United States.
 
-## Integrations
+## Working principles
 
-Works with the tools each industry already uses (exact fit confirmed in the free consultation): Square Appointments, Vagaro, and GlossGenius for salons; ServiceTitan, Jobber, and Housecall Pro for trades; Clio, Litify, and Lead Docket for law offices; Google Calendar for everyone. Industry safety rails are built in — for example, it never gives legal advice, never quotes contractor prices, and never gives insurance coverage advice; those questions route to the business owner.
-
-## Pricing
-
-- One-time setup: $400–$1,000 depending on business size and tools connected.
-- Monthly: $150–$500 depending on call volume.
-- No long contracts, cancel anytime. Nothing goes live until the owner has heard it and approved it; full refund if not happy.
+- Process first; technology follows a clearly defined problem.
+- Collect the minimum evidence needed. Never send passwords, payment details, or sensitive customer records.
+- Test changes in a bounded pilot with an owner, baseline, success measure, failure condition, and rollback.
+- Keep high-judgment, safety-sensitive, legal, clinical, and financial work with qualified people.
+- Verify access and the exact workflow before promising any calendar, CRM, messaging, dispatch, or other system connection.
 
 ## Key facts
 
 - Business name: Buni LLC
-- Founder: Amy Sullivan, a former teacher based in Bradenton / Lakewood Ranch, Florida
+- Founder: Amy Sullivan, a former teacher based in Florida
 - Phone: 941-646-6325
 - Email: amy@bunillc.com
 - Website: https://bunillc.com/
-- Service area: Bradenton, Sarasota, Lakewood Ranch (in person); anywhere (remote)
-- Callers keep dialing the business's existing number — it's simply forwarded, and can be un-forwarded anytime.
-- The receptionist never guesses: if it can't answer something, it takes a message and instantly texts both Amy and the business owner.
-- It is honest about being a virtual receptionist if a caller asks.
+- Service area: United States, with remote delivery available
