@@ -46,6 +46,7 @@ const CHAT_AGENTS = {
 
 // Grok agent IDs.
 const GROK_AGENTS = {
+  buni: 'agent_q4NwaGmW2ZpNtm3W',  // Bree - Buni Grok Voice
   roofing: 'agent_Boxggw1E8dEMdNcv',
 };
 
