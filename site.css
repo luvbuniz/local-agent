@@ -137,7 +137,7 @@ p:last-child { margin-bottom: 0; }
 /* Hero */
 .hero { padding: 56px 0 64px; border-bottom: 1px solid var(--line); }
 .hero-grid { display: grid; gap: 40px; }
-.hero h1 { max-width: 16ch; }
+.hero h1 { max-width: 19ch; }
 .hero .sub { font-size: 1.15rem; color: var(--muted); max-width: 58ch; margin-top: 22px; }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
 .hero-meta { margin-top: 26px; font-size: 0.9rem; color: var(--muted); }
@@ -312,3 +312,11 @@ p:last-child { margin-bottom: 0; }
 .site-footer a:hover { text-decoration: underline; color: #fff; }
 .footer-tag { margin-top: 14px; max-width: 40ch; }
 .footer-base { margin-top: 44px; padding-top: 22px; border-top: 1px solid #26343f; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 0.85rem; color: #8794a0; }
+
+/* Data programs */
+.program-grid { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+@media (min-width: 900px) { .program-grid { grid-template-columns: repeat(3, 1fr); } }
+.program { background: var(--surface); padding: 28px 24px; border-top: 3px solid var(--brand); }
+.program-tag { font-size: 0.78rem; font-weight: 600; color: var(--muted); letter-spacing: 0.02em; margin-bottom: 10px; }
+.program h3 { font-family: var(--serif); font-size: 1.35rem; margin-bottom: 10px; }
+.program p:last-child { color: var(--text); font-size: 0.97rem; }
