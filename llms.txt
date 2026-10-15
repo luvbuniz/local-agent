@@ -1,37 +1,35 @@
 # Buni
 
-> Buni LLC provides practical AI workflow audits and implementation for service businesses. Buni finds where work is getting missed, repeated, or stuck, then helps the owner decide what to fix first and where automation is actually worth it.
+> Buni LLC is an advisory firm based in Florida with two practices. Data Asset Advisory helps established organizations, from operating companies with 25+ employees to companies that have closed, realize value from operational data by connecting them with vetted AI-training data buyers, with written consent and without Buni ever accessing, holding, or viewing the data. Workflow & Automation helps operating businesses find where work is missed, repeated, or stuck and fix it with practical process changes, automation, and AI agents.
 
-## What Buni does
+## Data Asset Advisory
 
-- **Workflow audits**: Trace how leads, scheduling, follow-up, paperwork, and handoffs work today; quantify the most important gaps; and produce a short ranked plan.
-- **Practical implementation**: Improve an approved process, use existing software features when they are enough, or build a bounded workflow with human review and a rollback path.
-- **Customer-facing assistants**: Voice and web assistants are available when calls, intake, or common questions are the documented problem and customers are comfortable with the channel.
-- **Team training**: Help staff use AI for appropriate everyday work while keeping judgment, safety, and sensitive decisions with people.
+- **Programs**: (1) Data licensing for operating companies (typically 25+ employees with mature documentation). (2) Archive sales for closed and wind-down companies (typically 50+ employees). (3) Paid workforce video programs in which consenting employees record real day-to-day work for AI training and evaluation.
+- **Who it serves**: Owners and executives of operating companies; companies winding down or ceasing operations; Chapter 7 and Chapter 11 trustees and debtors-in-possession; assignees for the benefit of creditors, receivers, and liquidators; restructuring counsel and financial advisors; boards and officers of closed or acquired businesses.
+- **Data that may have value**: Slack and Microsoft Teams workspaces, email archives, CRM metadata, SOPs and knowledge bases, project histories, QA processes, support tickets, CAD and design files, and real-world work footage recorded by consenting employees.
+- **Process**: (1) Confidential assessment of a high-level inventory under NDA. (2) Introductions only to pre-qualified buyers, sharing descriptions, never data. (3) Written sign-off by the authorized parties (and the trustee or court where required), then direct transfer from the organization to the buyer under the signed agreement.
+- **Commitments**: Buni never accesses, holds, or views client data. Nothing is shared without written sign-off. Buyers are vetted for identity, intended use, security practices, and acceptance of limits on use, onward transfer, and retention. Personal information is redacted, de-identified, or excluded before any transfer, and video programs require each participant's informed, voluntary consent. Buyers may pay Buni a referral or finder's fee, which is disclosed to the client in writing before any introduction. Client names and matters are not disclosed without permission.
+- Buni is not a law firm and does not provide legal, tax, or accounting advice.
 
-## How Buni decides what to recommend
+## Workflow & Automation
 
-An audit can recommend one of five responses: fix the process, use a feature the business already owns, assist a person, automate a bounded step, or keep the work human. A phone agent is one possible solution, not the default recommendation.
-
-The audit deliverable includes a plain-English workflow map, up to six ranked findings, the math behind the biggest gaps, and a fix-first, fix-later, and don't-fix plan. Assumptions are labeled. No live system changes are made during discovery.
-
-## Who it's for
-
-Owner-led and service businesses that want clearer operations before buying more software. Buni is based in Florida and works remotely with businesses across the United States.
+- **Workflow audits**: Trace how work enters, moves, and stalls; quantify the gaps with labeled assumptions; deliver up to six ranked findings and a fix-first, fix-later, and don't-fix plan.
+- **Automation and AI agents**: Connect approved steps, reduce re-keying, organize follow-up, and deploy AI agents for intake, scheduling, or internal requests where they fit, with human review and a rollback path.
+- **Team enablement**: Help staff use AI for appropriate everyday work while keeping judgment and sensitive decisions with people.
 
 ## Working principles
 
-- Process first; technology follows a clearly defined problem.
-- Collect the minimum evidence needed. Never send passwords, payment details, or sensitive customer records.
-- Test changes in a bounded pilot with an owner, baseline, success measure, failure condition, and rollback.
-- Keep high-judgment, safety-sensitive, legal, clinical, and financial work with qualified people.
-- Verify access and the exact workflow before promising any calendar, CRM, messaging, dispatch, or other system connection.
+- Process first; technology follows a clearly understood problem or asset.
+- Evidence, not hype: assumptions are labeled and the math is shown.
+- Human oversight for high-judgment and sensitive decisions.
+- No live system changes and no data transfers without an agreed scope and written approval.
+- Consent before value.
 
 ## Key facts
 
 - Business name: Buni LLC
-- Founder: Amy Sullivan, a former teacher based in Florida
+- Headquarters: Florida, United States
 - Phone: (828) 803-4250
-- Email: amy@bunillc.com
+- Email: contact@bunillc.com
 - Website: https://bunillc.com/
-- Service area: United States, with remote delivery available
+- Service area: United States, delivered remotely
