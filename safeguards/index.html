@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Process and Safeguards — Buni LLC</title>
+<meta name="description" content="How Buni's Data Asset Advisory works, who pays, and the safeguards that protect sellers, employees, and customers.">
+<!-- DRAFT for Amy's review. noindex keeps it out of search results until approved; remove it when publishing. -->
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://bunillc.com/safeguards/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css?v=20261015-logo">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg?v=2">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<meta name="theme-color" content="#14332f">
+<style>
+  .doc { max-width: 860px; margin: 0 auto; padding: 48px var(--gutter) 72px; }
+  .doc-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-bottom: 20px; border-bottom: 2px solid var(--ink); }
+  .doc-meta { font-size: 0.85rem; color: var(--muted); text-align: right; }
+  .doc h1 { font-size: clamp(2rem, 4.6vw, 2.75rem); margin: 36px 0 12px; }
+  .doc .intro { font-size: 1.1rem; color: var(--muted); max-width: 64ch; }
+  .doc h2 { font-size: 1.45rem; margin: 44px 0 14px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .doc p, .doc li { max-width: 72ch; }
+  .callout { background: var(--brand-deep); color: var(--on-dark); padding: 22px 24px; margin: 28px 0 0; }
+  .callout strong { color: #fff; font-size: 1.1rem; display: block; margin-bottom: 6px; font-family: var(--serif); }
+  .callout p { color: var(--on-dark-muted); margin: 0; }
+  .doc ol.flow { list-style: none; counter-reset: s; padding: 0; margin: 0; }
+  .doc ol.flow li { counter-increment: s; position: relative; padding: 0 0 18px 48px; }
+  .doc ol.flow li::before { content: counter(s, decimal-leading-zero); position: absolute; left: 0; top: -2px; font-family: var(--serif); font-size: 1.35rem; color: var(--brand); }
+  .doc ol.flow h3 { margin-bottom: 4px; }
+  .doc ol.flow p { color: var(--text); margin: 0; }
+  table.sg { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  table.sg th, table.sg td { text-align: left; vertical-align: top; padding: 12px 12px 12px 0; border-bottom: 1px solid var(--line); }
+  table.sg th { width: 32%; color: var(--ink); font-weight: 600; }
+  .cols { display: grid; gap: 28px; }
+  @media (min-width: 720px) { .cols { grid-template-columns: 1fr 1fr; } }
+  .cols ul { padding-left: 1.1em; margin: 0; }
+  .cols li { margin-bottom: 8px; }
+  .doc-foot { margin-top: 48px; padding-top: 18px; border-top: 2px solid var(--ink); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; font-size: 0.9rem; color: var(--muted); }
+  .doc-foot a { color: var(--ink); font-weight: 600; text-decoration: none; }
+  .print-btn { margin-top: 24px; }
+  @media print {
+    @page { size: letter; margin: 0.6in; }
+    body { background: #fff; font-size: 10.5pt; line-height: 1.45; }
+    .doc { padding: 0; max-width: none; }
+    .doc h1 { margin-top: 18px; font-size: 24pt; }
+    .doc h2 { margin-top: 20px; font-size: 14pt; break-after: avoid; }
+    .callout { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .print-btn, .no-print { display: none !important; }
+    table.sg tr, .doc ol.flow li { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<main class="doc">
+  <div class="doc-head">
+    <a class="wordmark" href="../" aria-label="Buni LLC home"><svg class="wordmark-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="#14332f"/><path d="M20 15h13.5a8.5 8.5 0 0 1 0 17H20zM20 32h16.5a8.5 8.5 0 0 1 0 17H20z" fill="none" stroke="#f6f5f1" stroke-width="5.5" stroke-linejoin="round"/></svg><span class="wordmark-name">Buni</span><span class="wordmark-llc">LLC</span></a>
+    <div class="doc-meta">Data Asset Advisory<br>Process and Safeguards · October 2026</div>
+  </div>
+
+  <h1>Process and Safeguards</h1>
+  <p class="intro">A summary for owners, executives, trustees, assignees, and counsel considering whether to make operational data available to AI-training data buyers through Buni.</p>
+
+  <div class="callout">
+    <strong>Sellers never pay Buni.</strong>
+    <p>There is no retainer, success fee, or hourly charge to your organization for Data Asset Advisory. Buni is paid by the buyer through a referral or finder's fee. We disclose that arrangement to you in writing before any introduction, so you can weigh it.</p>
+  </div>
+
+  <h2>Our role, and its limits</h2>
+  <p>Buni assesses whether your operational records are likely to have value to AI-training data buyers, introduces you to buyers we have pre-qualified, and coordinates the process with you and your advisors. Three kinds of engagement are common: data licensing by operating companies, archive sales by closed or wind-down companies, and paid workforce video programs.</p>
+  <ul>
+    <li><strong>We never access, hold, store, or view your data.</strong> We work only from inventories and descriptions you choose to share. Data moves directly from your organization to the buyer.</li>
+    <li><strong>You decide.</strong> Nothing is shared with any buyer without written sign-off from the people authorized to give it.</li>
+    <li><strong>We are not a law firm</strong> and do not provide legal, tax, or accounting advice. We recommend that your own counsel be involved in every engagement.</li>
+  </ul>
+
+  <h2>Step by step</h2>
+  <ol class="flow">
+    <li><h3>Introductory call</h3><p>A no-obligation conversation about your organization, its systems, and your goals. No data is requested or shared.</p></li>
+    <li><h3>NDA and high-level inventory</h3><p>Under a mutual NDA, your team prepares a short inventory: systems, date ranges, approximate volumes, known sensitivities, and who holds the rights to the data.</p></li>
+    <li><h3>Assessment and readiness</h3><p>We give you a candid view of likely demand and flag what would need to be excluded, redacted, or de-identified. For estates and assignments, we identify the approvals your process requires.</p></li>
+    <li><h3>Buyer qualification and introduction</h3><p>We introduce you only to buyers we have pre-qualified, sharing descriptions, never data. Before any introduction you receive written disclosure of the fee the buyer pays Buni.</p></li>
+    <li><h3>Agreement and approval</h3><p>You and your counsel negotiate terms directly with the buyer. Nothing proceeds until the authorized parties, including a trustee or the court where required, approve in writing.</p></li>
+    <li><h3>Direct transfer</h3><p>Data moves directly from your organization to the buyer under the signed agreement, after the agreed redaction or de-identification. Buni is never in the data path.</p></li>
+  </ol>
+
+  <h2>Safeguards</h2>
+  <table class="sg">
+    <tr><th scope="row">Consent</th><td>Written sign-off by authorized parties before anything is shared. Trustee or court approval where the situation requires it.</td></tr>
+    <tr><th scope="row">Personal information</th><td>Personal information about employees, customers, and third parties is identified early and redacted, de-identified, or excluded before transfer, consistent with your privacy commitments and applicable law.</td></tr>
+    <tr><th scope="row">Regulated data</th><td>Health, financial-account, children's, and similarly regulated data is excluded unless your counsel confirms a lawful basis.</td></tr>
+    <tr><th scope="row">Third-party confidentiality</th><td>Material covered by customer, vendor, or partner confidentiality obligations is excluded unless those obligations permit the transfer.</td></tr>
+    <tr><th scope="row">Workforce video programs</th><td>Participation is voluntary for each employee, with individual informed consent, the right to decline without consequence, and clear rules about what stays out of frame, such as customer information and screens with sensitive data.</td></tr>
+    <tr><th scope="row">Buyer vetting</th><td>Identity, intended use, security and data-handling practices, and acceptance of contractual limits on use, onward transfer, retention, and re-identification.</td></tr>
+    <tr><th scope="row">Fees</th><td>Sellers pay nothing. The buyer's fee to Buni is disclosed to you in writing before any introduction.</td></tr>
+    <tr><th scope="row">Discretion</th><td>We do not disclose client names, matters, or terms without permission.</td></tr>
+  </table>
+
+  <h2>What we will ask you to confirm</h2>
+  <div class="cols">
+    <ul>
+      <li>You have authority to approve the engagement, or know who does.</li>
+      <li>Your organization owns, or has the right to license, the data in question.</li>
+      <li>Any limits in your privacy policy, employee notices, or customer terms.</li>
+    </ul>
+    <ul>
+      <li>Contracts that restrict how certain records may be used or disclosed.</li>
+      <li>Any regulated or especially sensitive categories in your systems.</li>
+      <li>For estates and assignments: the approval process and who leads it.</li>
+    </ul>
+  </div>
+
+  <h2>What we will not do</h2>
+  <ul>
+    <li>Access, copy, or store your data, or ask for system credentials.</li>
+    <li>Introduce a buyer who has not been pre-qualified, or share data with anyone.</li>
+    <li>Recommend transferring data your counsel has not cleared.</li>
+    <li>Charge your organization a fee for Data Asset Advisory.</li>
+  </ul>
+
+  <button class="btn btn-primary print-btn no-print" type="button" onclick="window.print()">Save or print as PDF</button>
+
+  <div class="doc-foot">
+    <span>Buni LLC · Florida · Serving organizations across the United States</span>
+    <span><a href="tel:+18288034250">(828) 803-4250</a> · <a href="mailto:contact@bunillc.com">contact@bunillc.com</a> · <a href="https://bunillc.com/">bunillc.com</a></span>
+  </div>
+</main>
+</body>
+</html>
