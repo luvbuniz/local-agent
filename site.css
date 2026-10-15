@@ -92,15 +92,17 @@ p:last-child { margin-bottom: 0; }
 }
 .hdr { display: flex; align-items: center; gap: 24px; min-height: 68px; }
 .wordmark {
-  display: inline-flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: center; gap: 12px;
   color: var(--ink); text-decoration: none; margin-right: auto;
 }
-.wordmark-name { font-family: var(--serif); font-weight: 600; font-size: 1.6rem; letter-spacing: -0.01em; line-height: 1; }
+.wordmark-mark { width: 36px; height: 36px; flex: none; }
+.wordmark-text { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+.wordmark-name { font-family: "Cinzel", var(--serif); font-weight: 700; font-size: 1.45rem; letter-spacing: 0.24em; margin-right: -0.24em; }
 .wordmark-llc {
-  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: var(--muted);
-  padding-left: 10px; border-left: 1px solid var(--line-strong); line-height: 1.2;
+  display: flex; align-items: center; gap: 0.6em; margin-top: 0.45em;
+  font-size: 0.58rem; font-weight: 600; letter-spacing: 0.45em; margin-right: -0.45em; color: var(--muted);
 }
-.wordmark-mark { width: 30px; height: 30px; flex: none; }
+.wordmark-llc::before, .wordmark-llc::after { content: ""; width: 2.2em; height: 1px; background: #b08d57; }
 .wordmark:hover { color: var(--ink); }
 
 .nav { display: none; }
@@ -305,7 +307,7 @@ p:last-child { margin-bottom: 0; }
 .footer-grid { display: grid; gap: 32px; }
 @media (min-width: 820px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; } }
 .site-footer .wordmark { color: #fff; }
-.site-footer .wordmark-llc { color: #9aa6af; border-color: #3a4853; }
+.site-footer .wordmark-llc { color: #9aa6af; }
 .site-footer h2 { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: #8794a0; margin-bottom: 12px; font-weight: 600; }
 .site-footer ul { list-style: none; margin: 0; padding: 0; }
 .site-footer li { margin-bottom: 8px; }
