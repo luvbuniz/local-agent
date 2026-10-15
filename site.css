@@ -92,7 +92,7 @@ p:last-child { margin-bottom: 0; }
 }
 .hdr { display: flex; align-items: center; gap: 24px; min-height: 68px; }
 .wordmark {
-  display: inline-flex; align-items: baseline; gap: 10px;
+  display: inline-flex; align-items: center; gap: 10px;
   color: var(--ink); text-decoration: none; margin-right: auto;
 }
 .wordmark-name { font-family: var(--serif); font-weight: 600; font-size: 1.6rem; letter-spacing: -0.01em; line-height: 1; }
@@ -100,6 +100,7 @@ p:last-child { margin-bottom: 0; }
   font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: var(--muted);
   padding-left: 10px; border-left: 1px solid var(--line-strong); line-height: 1.2;
 }
+.wordmark-mark { width: 30px; height: 30px; flex: none; }
 .wordmark:hover { color: var(--ink); }
 
 .nav { display: none; }
