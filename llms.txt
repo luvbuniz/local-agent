@@ -4,7 +4,7 @@
 
 ## Data Asset Advisory
 
-- **Programs**: (1) Data licensing for operating companies (typically 25+ employees with mature documentation). (2) Archive sales for closed and wind-down companies (typically 50+ employees). (3) Paid workforce video programs in which consenting employees record real day-to-day work for AI training and evaluation.
+- **Programs**: (1) Data licensing for operating companies (typically 25+ employees with mature documentation). (2) Archive sales for closed and wind-down companies (typically 50+ employees at peak). (3) Paid workforce video programs in which consenting employees record real day-to-day work for AI training and evaluation.
 - **Who it serves**: Owners and executives of operating companies; companies winding down or ceasing operations; Chapter 7 and Chapter 11 trustees and debtors-in-possession; assignees for the benefit of creditors, receivers, and liquidators; restructuring counsel and financial advisors; boards and officers of closed or acquired businesses.
 - **Data that may have value**: Slack and Microsoft Teams workspaces, email archives, CRM metadata, SOPs and knowledge bases, project histories, QA processes, support tickets, CAD and design files, and real-world work footage recorded by consenting employees.
 - **Process**: (1) Confidential assessment of a high-level inventory under NDA. (2) Introductions only to pre-qualified buyers, sharing descriptions, never data. (3) Written sign-off by the authorized parties (and the trustee or court where required), then direct transfer from the organization to the buyer under the signed agreement.
