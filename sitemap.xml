@@ -2,7 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bunillc.com/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://bunillc.com/intake/</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>

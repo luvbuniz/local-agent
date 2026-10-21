@@ -16,6 +16,7 @@
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="stylesheet" href="roofing-demo.css?v=20260801-scheduler-submit">
+  <link rel="stylesheet" href="../site-assist.css?v=20261021">
 </head>
 <body data-trade="roofing">
   <a class="skip-link" href="#main">Skip to the demo</a>
@@ -100,9 +101,12 @@
       <div class="scheduler-panel">
         <p class="eyebrow">Prefer to pick a time yourself?</p>
         <h2 id="scheduler-heading">Book a free 15-minute walkthrough.</h2>
-        <p>Choose a date and time that works for you. The form requires your name, phone number, and email so the calendar invitation goes to the right place.</p>
-        <div class="scheduler-embed" data-buni-scheduler aria-label="Buni appointment scheduler"></div>
-        <p class="scheduler-open">Having trouble with the form? <a href="https://cal.com/amy-sullivan-xfxic7/buni-walkthrough" target="_blank" rel="noopener">Open the scheduler in a new tab.</a></p>
+        <p>Choose a date and time that works for you. Booking opens in a new tab.</p>
+        <div class="scheduler-embed is-booking-link" data-buni-scheduler aria-label="Buni appointment booking">
+        <p>Pick a time on Buni’s booking page. It opens in a new tab.</p>
+        <a class="booking-button" href="https://calendar.app.google/28cgSSKEuwE3B3qs8" target="_blank" rel="noopener" data-booking-link>Book a 15-minute intro call</a>
+      </div>
+        <p class="scheduler-open"><a href="https://calendar.app.google/28cgSSKEuwE3B3qs8" target="_blank" rel="noopener" data-booking-link>Open the booking page.</a></p>
       </div>
     </section>
 
@@ -155,8 +159,9 @@
   </div>
 
   <script src="config.js"></script>
-  <script src="../scheduler.js?v=20260801-contact-checks" defer></script>
+  <script src="../scheduler.js?v=20261021-booking" defer></script>
   <script src="../voice-demo.js?v=20260801-bree" defer></script>
   <script src="../chat-demo.js?v=20260801-bree" defer></script>
+  <script src="../site-assist.js?v=20261021" defer></script>
 </body>
 </html>

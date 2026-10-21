@@ -52,7 +52,7 @@ agents to the carousel.
 
 They reuse the Retell browser-call and text-chat implementations in `voice-demo.js` and `chat-demo.js`. The Cloudflare Worker maps each trade key to the matching published Retell voice and chat agents while keeping the API key and agent IDs out of browser code.
 
-Each page has one small `config.js` file containing its relay and trade-agent settings. A manual Buni scheduler appears immediately before the closing panel, followed by the softer option to ask Bree a question by voice or text. The public event is `https://cal.com/amy-sullivan-xfxic7/buni-walkthrough`; its one browser-side configuration value is `SCHEDULER_LINK` in `scheduler.js`. Update that value and the visible fallback links if the public event changes.
+Each page has one small `config.js` file containing its relay and trade-agent settings. A manual Buni scheduler appears immediately before the closing panel, followed by the softer option to ask Bree a question by voice or text. The public booking page is `https://calendar.app.google/28cgSSKEuwE3B3qs8`. `scheduler.js` points the on-page scheduler at that link instead of embedding Cal.com. Update that value and the visible fallback links if the public booking page changes. The voice agents' calendar tools are separate from this website link.
 
 The shared Buni assistant prompt and conservative reference are `agents/buni-bree-scheduler-prompt.md` and `agents/buni-bree-knowledge-base.md`. Agent IDs remain server-side in `worker/voice-relay.js` under the `buni` key. Bree must never name the underlying voice, chat, calendar, or model vendors to a visitor.
 
