@@ -26,7 +26,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&amp;text=BUNI&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20261015-corporate">
+<link rel="stylesheet" href="site.css?v=20261021-intake">
+<link rel="stylesheet" href="site-assist.css?v=20261021">
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=4">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
@@ -47,7 +48,7 @@
   "logo": "https://bunillc.com/logo-gem.svg",
   "image": "https://bunillc.com/og-card.png",
   "description": "Buni provides Data Asset Advisory, connecting operating, wind-down, and closed organizations with vetted AI-training data buyers with written consent, and practical workflow audits and automation for operating businesses.",
-  "telephone": "+1-828-803-4250",
+  "telephone": "+1-941-646-6325",
   "email": "contact@bunillc.com",
   "address": {
     "@type": "PostalAddress",
@@ -207,7 +208,7 @@
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="hdr-phone" href="tel:+18288034250">(828) 803-4250</a>
+    <a class="hdr-phone" href="tel:+19416466325">(941) 646-6325</a>
     <a class="btn btn-primary hdr-cta" href="#contact">Contact us</a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" data-menu-toggle>
       <span class="sr-only">Menu</span>
@@ -222,7 +223,8 @@
       <li><a href="#about">About</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact us</a></li>
-      <li><a href="tel:+18288034250">Call (828) 803-4250</a></li>
+      <li><a href="intake/">Start the intake form</a></li>
+      <li><a href="tel:+19416466325">Call (941) 646-6325</a></li>
     </ul>
   </nav>
 </header>
@@ -237,6 +239,7 @@
       <p class="sub">Buni connects established organizations, from growing enterprises to companies that have closed, with vetted AI-training data buyers, confidentially and only with written consent. We also help operating businesses run better with practical workflow automation and AI.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#contact">Start a confidential conversation</a>
+        <a class="btn btn-outline" href="intake/">Start the intake form</a>
         <a class="btn btn-outline" href="#process">How the process works</a>
       </div>
       <p class="hero-meta">Based in Florida. Working with organizations, trustees, and counsel across the United States.</p>
@@ -466,7 +469,7 @@
         <div><dt>Headquarters</dt><dd>Florida</dd></div>
         <div><dt>Service area</dt><dd>United States, delivered remotely</dd></div>
         <div><dt>Practices</dt><dd>Data Asset Advisory; Workflow &amp; Automation</dd></div>
-        <div><dt>Contact</dt><dd><a href="mailto:contact@bunillc.com">contact@bunillc.com</a> · <a href="tel:+18288034250">(828) 803-4250</a></dd></div>
+        <div><dt>Contact</dt><dd><a href="mailto:contact@bunillc.com">contact@bunillc.com</a> · <a href="tel:+19416466325">(941) 646-6325</a></dd></div>
       </dl>
     </div>
   </div>
@@ -537,11 +540,13 @@
     <div>
       <p class="kicker">Contact</p>
       <h2 id="contact-title">Start a confidential conversation.</h2>
-      <p class="lede" style="margin-top:16px">Tell us a little about your situation. We aim to reply within one business day, and first conversations carry no obligation.</p>
+      <p class="lede" style="margin-top:16px">Tell us a little about your situation. Owners, trustees, and attorneys can also <a href="intake/">start the data-asset intake form</a>. We aim to reply within one business day, and first conversations carry no obligation.</p>
+      <p style="margin-top:22px"><a class="btn btn-primary" href="intake/">Start the data-asset intake form</a></p>
       <ul class="contact-direct">
-        <li><span>Phone</span><a href="tel:+18288034250">(828) 803-4250</a></li>
+        <li><span>Phone</span><a href="tel:+19416466325">(941) 646-6325</a></li>
         <li><span>Email</span><a href="mailto:contact@bunillc.com">contact@bunillc.com</a></li>
-        <li><span>Prefer to pick a time?</span><a href="https://cal.com/amy-sullivan-xfxic7/buni-walkthrough" target="_blank" rel="noopener">Schedule a 15-minute intro call <span aria-hidden="true">↗</span></a></li>
+        <li><span>Prefer to pick a time?</span><a href="https://calendar.app.google/28cgSSKEuwE3B3qs8" target="_blank" rel="noopener">Schedule a 15-minute intro call <span aria-hidden="true">↗</span></a></li>
+        <li><span>Data-asset intake</span><a href="intake/">Start the intake form</a></li>
       </ul>
     </div>
     <!-- Contact form: data-endpoint is the Google Apps Script web app URL (setup steps in google-apps-script/contact-form.gs).
@@ -629,8 +634,9 @@
       <div>
         <h2>Contact</h2>
         <ul>
-          <li><a href="tel:+18288034250">(828) 803-4250</a></li>
+          <li><a href="tel:+19416466325">(941) 646-6325</a></li>
           <li><a href="mailto:contact@bunillc.com">contact@bunillc.com</a></li>
+          <li><a href="intake/">Data-asset intake</a></li>
           <li><a href="#contact">Send a message</a></li>
         </ul>
       </div>
@@ -707,11 +713,12 @@
         say('Thank you. Your message was sent, and we aim to reply within one business day.');
       })
       .catch(function () {
-        say('Something went wrong. Please call (828) 803-4250 or email ' + form.getAttribute('data-mailto') + '.', true);
+        say('Something went wrong. Please call (941) 646-6325 or email ' + form.getAttribute('data-mailto') + '.', true);
       })
       .then(function () { button.disabled = false; });
   });
 })();
 </script>
+<script src="site-assist.js?v=20261021" defer></script>
 </body>
 </html>

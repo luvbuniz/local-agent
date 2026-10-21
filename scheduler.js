@@ -1,59 +1,27 @@
 (function () {
   'use strict';
 
-  // Replace this one value if Buni's public scheduling event changes.
-  var SCHEDULER_LINK = 'amy-sullivan-xfxic7/buni-walkthrough';
+  // Public booking page. Replaces the previous Cal.com embed.
+  var BOOKING_URL = 'https://calendar.app.google/28cgSSKEuwE3B3qs8';
+
+  var links = document.querySelectorAll('[data-booking-link]');
+  for (var i = 0; i < links.length; i++) {
+    links[i].setAttribute('href', BOOKING_URL);
+  }
+
   var target = document.querySelector('[data-buni-scheduler]');
+  if (!target || target.querySelector('[data-booking-link]')) return;
 
-  if (!target) return;
-
-  (function (C, A, L) {
-    var push = function (api, args) { api.q.push(args); };
-    var doc = C.document;
-
-    C.Cal = C.Cal || function () {
-      var cal = C.Cal;
-      var args = arguments;
-
-      if (!cal.loaded) {
-        cal.ns = {};
-        cal.q = cal.q || [];
-        doc.head.appendChild(doc.createElement('script')).src = A;
-        cal.loaded = true;
-      }
-
-      if (args[0] === L) {
-        var api = function () { push(api, arguments); };
-        var namespace = args[1];
-        api.q = api.q || [];
-
-        if (typeof namespace === 'string') {
-          cal.ns[namespace] = cal.ns[namespace] || api;
-          push(cal.ns[namespace], args);
-          push(cal, ['initNamespace', namespace]);
-        } else {
-          push(cal, args);
-        }
-        return;
-      }
-
-      push(cal, args);
-    };
-  })(window, 'https://app.cal.com/embed/embed.js', 'init');
-
-  window.Cal('init', 'buni-walkthrough', { origin: 'https://app.cal.com' });
-  window.Cal.config = window.Cal.config || {};
-  window.Cal.config.forwardQueryParams = true;
-  window.Cal.ns['buni-walkthrough']('inline', {
-    elementOrSelector: '[data-buni-scheduler]',
-    config: {
-      layout: 'month_view',
-      useSlotsViewOnSmallScreen: 'true'
-    },
-    calLink: SCHEDULER_LINK
-  });
-  window.Cal.ns['buni-walkthrough']('ui', {
-    hideEventTypeDetails: false,
-    layout: 'month_view'
-  });
+  target.classList.add('is-booking-link');
+  var note = document.createElement('p');
+  note.textContent = 'Pick a time on Buni’s booking page. It opens in a new tab.';
+  var link = document.createElement('a');
+  link.className = 'booking-button';
+  link.href = BOOKING_URL;
+  link.target = '_blank';
+  link.rel = 'noopener';
+  link.setAttribute('data-booking-link', '');
+  link.textContent = 'Book a 15-minute intro call';
+  target.appendChild(note);
+  target.appendChild(link);
 })();

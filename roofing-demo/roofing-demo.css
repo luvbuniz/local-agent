@@ -455,6 +455,19 @@ h1 {
 
 .scheduler-open a { font-weight: 800; }
 
+.scheduler-embed.is-booking-link {
+  min-height: 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px;
+  background: var(--sand);
+}
+.scheduler-embed.is-booking-link p { margin: 0; color: var(--muted); }
+.scheduler-embed.is-booking-link .booking-button { width: auto; min-width: min(100%, 280px); }
+
 .booking-section { padding-block: clamp(58px, 8vw, 94px); }
 
 .booking-panel {
