@@ -86,117 +86,263 @@
         <p><a class="btn btn-outline" href="/">Back to the homepage</a></p>
       </div>
 
-      <form class="form intake-form" id="intake-form" action="https://formsubmit.co/amy@bunillc.com" method="POST" novalidate>
-        <input type="hidden" name="_subject" value="Buni data-asset intake">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://bunillc.com/intake/?thanks=1">
+      <form class="form intake-form" id="intake-form" action="https://docs.google.com/forms/d/e/1FAIpQLScHEBfEBuMVUPYWsSQGr9VVmKYku8w6L_UEc7uNAVL8sA3RfQ/formResponse" method="POST" target="gform-sink" novalidate>
         <div class="hp" aria-hidden="true">
           <label for="intake-honey">Leave this field empty</label>
           <input id="intake-honey" name="_honey" type="text" tabindex="-1" autocomplete="off">
         </div>
-
         <p class="form-note">Fields without the word “optional” are required. Please keep your answers general.</p>
         <p class="intake-caution" role="note"><strong>Please do not include healthcare or patient information.</strong> Do not send medical records, patient names, insurance details, or anything that identifies a patient. If the company is in healthcare, describe it in general terms only.</p>
         <p class="form-status" id="intake-status" role="alert" aria-live="assertive"></p>
-
+        <fieldset class="intake-group">
+          <legend><h3 style="margin:28px 0 8px">1. Company</h3></legend>
         <div class="field">
-          <label for="intake-name">Your name</label>
-          <input id="intake-name" name="Name" type="text" autocomplete="name" required>
+          <label for="q1">Company legal name</label>
+          <input id="q1" name="entry.1663108920" type="text" autocomplete="organization" required>
         </div>
         <div class="field">
-          <label for="intake-company">Company name</label>
-          <input id="intake-company" name="Company" type="text" autocomplete="organization" required>
+          <label for="q2">DBA / brand names (e.g., former product names) <span class="opt">(optional)</span></label>
+          <input id="q2" name="entry.1928726597" type="text">
         </div>
-
+        <div class="field">
+          <label for="q3">Website <span class="opt">(optional)</span></label>
+          <input id="q3" name="entry.1754481365" type="text">
+        </div>
+        <div class="field">
+          <label for="q4">State of incorporation / HQ city &amp; state <span class="opt">(optional)</span></label>
+          <input id="q4" name="entry.1713870928" type="text">
+        </div>
+        <div class="field">
+          <label for="q5">Industry / what the company did</label>
+          <input id="q5" name="entry.123212536" type="text" required>
+        </div>
+        <div class="field">
+          <label for="q6">Years in operation <span class="opt">(optional)</span></label>
+          <input id="q6" name="entry.1040105402" type="text">
+        </div>
+        <fieldset class="field choice-set">
+          <legend>Operating status</legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="radio" name="entry.105332567" value="Operating" required> Operating</label>
+            <label class="choice"><input type="radio" name="entry.105332567" value="Winding down" required> Winding down</label>
+            <label class="choice"><input type="radio" name="entry.105332567" value="Ceased operations" required> Ceased operations</label>
+            <label class="choice"><input type="radio" name="entry.105332567" value="In bankruptcy" required> In bankruptcy</label>
+          </div>
+        </fieldset>
+        </fieldset>
+        <fieldset class="intake-group">
+          <legend><h3 style="margin:28px 0 8px">2. Your contact info</h3></legend>
+        <div class="field">
+          <label for="q8">Your name</label>
+          <input id="q8" name="entry.549450283" type="text" autocomplete="name" required>
+        </div>
         <fieldset class="field choice-set">
           <legend>Your role</legend>
           <div class="choice-grid">
-            <label class="choice"><input type="radio" name="Role" value="Owner" required> Owner</label>
-            <label class="choice"><input type="radio" name="Role" value="Trustee" required> Trustee</label>
-            <label class="choice"><input type="radio" name="Role" value="Attorney" required> Attorney</label>
-            <label class="choice"><input type="radio" name="Role" value="Other" required> Other</label>
+            <label class="choice"><input type="radio" name="entry.2075464649" value="Chapter 7 Trustee" required> Chapter 7 Trustee</label>
+            <label class="choice"><input type="radio" name="entry.2075464649" value="Trustee&#x27;s counsel" required> Trustee&#x27;s counsel</label>
+            <label class="choice"><input type="radio" name="entry.2075464649" value="Debtor&#x27;s counsel" required> Debtor&#x27;s counsel</label>
+            <label class="choice"><input type="radio" name="entry.2075464649" value="Officer or owner" required> Officer or owner</label>
+            <label class="choice"><input type="radio" name="entry.2075464649" value="Receiver or assignee" required> Receiver or assignee</label>
+            <label class="choice"><input type="radio" name="entry.2075464649" value="Other" required> Other</label>
           </div>
         </fieldset>
-        <div class="field" id="role-other-wrap" hidden>
-          <label for="intake-role-other">If other, how should we describe your role? <span class="opt">(optional)</span></label>
-          <input id="intake-role-other" name="Role details" type="text" autocomplete="organization-title">
-        </div>
-
         <div class="field">
-          <label for="intake-phone">Phone</label>
-          <input id="intake-phone" name="Phone" type="tel" autocomplete="tel" required>
+          <label for="q10">Firm / organization <span class="opt">(optional)</span></label>
+          <input id="q10" name="entry.1842017284" type="text">
         </div>
         <div class="field">
-          <label for="intake-email">Email</label>
-          <input id="intake-email" name="email" type="email" autocomplete="email" required>
-          <input type="hidden" name="_replyto" id="intake-replyto" value="">
+          <label for="q11">Email / Phone</label>
+          <input id="q11" name="entry.991386317" type="text" autocomplete="email" required>
         </div>
-
+        <div class="field">
+          <label for="q12">Best time to reach you <span class="opt">(optional)</span></label>
+          <input id="q12" name="entry.2056713955" type="text">
+        </div>
+        </fieldset>
+        <fieldset class="intake-group">
+          <legend><h3 style="margin:28px 0 8px">3. Bankruptcy / legal status (skip if not in a proceeding)</h3></legend>
+        <div class="field">
+          <label for="q13">Case name and number (e.g., 3:26-bk-34126) <span class="opt">(optional)</span></label>
+          <input id="q13" name="entry.1569277837" type="text">
+        </div>
+        <div class="field">
+          <label for="q14">Court / district <span class="opt">(optional)</span></label>
+          <input id="q14" name="entry.1288682654" type="text">
+        </div>
         <fieldset class="field choice-set">
-          <legend>Company status</legend>
+          <legend>Chapter <span class="opt">(optional)</span></legend>
           <div class="choice-grid">
-            <label class="choice"><input type="radio" name="Company status" value="Operating" required> Operating</label>
-            <label class="choice"><input type="radio" name="Company status" value="Closed" required> Closed</label>
-            <label class="choice"><input type="radio" name="Company status" value="In bankruptcy" required> In bankruptcy</label>
+            <label class="choice"><input type="radio" name="entry.1248438478" value="7"> 7</label>
+            <label class="choice"><input type="radio" name="entry.1248438478" value="11"> 11</label>
+            <label class="choice"><input type="radio" name="entry.1248438478" value="13"> 13</label>
+            <label class="choice"><input type="radio" name="entry.1248438478" value="ABC"> ABC</label>
+            <label class="choice"><input type="radio" name="entry.1248438478" value="Receivership"> Receivership</label>
+            <label class="choice"><input type="radio" name="entry.1248438478" value="Other"> Other</label>
           </div>
         </fieldset>
-        <div id="bankruptcy-fields" hidden>
-          <div class="field">
-            <label for="intake-chapter">Bankruptcy chapter <span class="opt">(if you know it)</span></label>
-            <input id="intake-chapter" name="Bankruptcy chapter" type="text" placeholder="For example, 7 or 11">
-          </div>
-          <div class="field">
-            <label for="intake-case">Case number <span class="opt">(if you know it)</span></label>
-            <input id="intake-case" name="Case number" type="text" placeholder="Leave blank if you do not have it handy">
-          </div>
-        </div>
-
         <div class="field">
-          <label for="intake-does">What does the company do?</label>
-          <textarea id="intake-does" name="What the company does" required placeholder="A sentence or two is plenty. For example: We installed commercial roofs in North Carolina for about 30 years."></textarea>
+          <label for="q16">Petition date <span class="opt">(optional)</span></label>
+          <input id="q16" name="entry.822857953" type="date">
         </div>
         <div class="field">
-          <label for="intake-years">About how many years was it operating? <span class="opt">(optional)</span></label>
-          <input id="intake-years" name="Years operating" type="text" placeholder="For example, 30 years, or not sure">
+          <label for="q17">Trustee name and contact (if different from you) <span class="opt">(optional)</span></label>
+          <input id="q17" name="entry.973807263" type="text">
         </div>
-
+        <div class="field">
+          <label for="q18">Debtor&#x27;s counsel name and contact <span class="opt">(optional)</span></label>
+          <input id="q18" name="entry.433381222" type="text">
+        </div>
         <fieldset class="field choice-set">
-          <legend>What kinds of records or content did the company build up? <span class="opt">(optional)</span></legend>
-          <p class="form-note" id="data-hint">Check any that sound familiar. Skip this if you are not sure. Do not attach files, and do not paste the records themselves.</p>
-          <div class="choice-grid" aria-describedby="data-hint">
-            <label class="choice"><input type="checkbox" name="Customer accounts" value="Yes"> Customer accounts</label>
-            <label class="choice"><input type="checkbox" name="Software code" value="Yes"> Software code</label>
-            <label class="choice"><input type="checkbox" name="Call recordings" value="Yes"> Call recordings</label>
-            <label class="choice"><input type="checkbox" name="Video or audio" value="Yes"> Video or audio</label>
-            <label class="choice"><input type="checkbox" name="Documents" value="Yes"> Documents</label>
-            <label class="choice"><input type="checkbox" name="Images" value="Yes"> Images</label>
-            <label class="choice"><input type="checkbox" name="Other data type" value="Yes" id="data-other"> Other</label>
+          <legend>Case currently marked <span class="opt">(optional)</span></legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="radio" name="entry.1888850839" value="Asset"> Asset</label>
+            <label class="choice"><input type="radio" name="entry.1888850839" value="No-asset"> No-asset</label>
+            <label class="choice"><input type="radio" name="entry.1888850839" value="Unknown"> Unknown</label>
           </div>
         </fieldset>
-        <div class="field" id="data-other-wrap" hidden>
-          <label for="intake-data-other">If other, what kind of records? <span class="opt">(optional)</span></label>
-          <input id="intake-data-other" name="Other records" type="text">
-        </div>
-
         <div class="field">
-          <label for="intake-size">About how much is there, if you know? <span class="opt">(optional)</span></label>
-          <input id="intake-size" name="Approximate size" type="text" placeholder="A rough guess is fine, such as a few filing cabinets, one shared drive, or not sure">
+          <label for="q20">Any known deadlines (case closing, sale motion, abandonment)? <span class="opt">(optional)</span></label>
+          <input id="q20" name="entry.1573724614" type="text">
+        </div>
+        </fieldset>
+        <fieldset class="intake-group">
+          <legend><h3 style="margin:28px 0 8px">4. Data inventory</h3></legend>
+        <fieldset class="field choice-set" data-required-group>
+          <legend>Data types available (check all that apply) — give rough volume for each</legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="checkbox" name="entry.610363136" value="Internal documents / wikis (e.g., Confluence, Notion, SharePoint) — approx. # docs / GB"> Internal documents / wikis (e.g., Confluence, Notion, SharePoint) — approx. # docs / GB</label>
+            <label class="choice"><input type="checkbox" name="entry.610363136" value="Support tickets (e.g., Zendesk, Freshdesk, Intercom) — approx. # tickets / years"> Support tickets (e.g., Zendesk, Freshdesk, Intercom) — approx. # tickets / years</label>
+            <label class="choice"><input type="checkbox" name="entry.610363136" value="Source code + commit history (e.g., GitHub, GitLab, Bitbucket) — # repos / LOC / years"> Source code + commit history (e.g., GitHub, GitLab, Bitbucket) — # repos / LOC / years</label>
+            <label class="choice"><input type="checkbox" name="entry.610363136" value="Project tracking (e.g., Jira, Asana, Linear) — # issues"> Project tracking (e.g., Jira, Asana, Linear) — # issues</label>
+            <label class="choice"><input type="checkbox" name="entry.610363136" value="Chat (e.g., Slack, Teams) — # messages / years"> Chat (e.g., Slack, Teams) — # messages / years</label>
+            <label class="choice"><input type="checkbox" name="entry.610363136" value="CRM / sales records (e.g., Salesforce, HubSpot) — # records"> CRM / sales records (e.g., Salesforce, HubSpot) — # records</label>
+            <label class="choice"><input type="checkbox" name="entry.610363136" value="Engineering / CAD / design files — # files / formats"> Engineering / CAD / design files — # files / formats</label>
+            <label class="choice"><input type="checkbox" name="entry.610363136" value="Audio (calls, podcasts, voice) — hours"> Audio (calls, podcasts, voice) — hours</label>
+            <label class="choice"><input type="checkbox" name="entry.610363136" value="Video (training, meetings, product) — hours"> Video (training, meetings, product) — hours</label>
+            <label class="choice"><input type="checkbox" name="entry.610363136" value="Email archives — approx. mailboxes / GB"> Email archives — approx. mailboxes / GB</label>
+            <label class="choice"><input type="checkbox" name="entry.610363136" value="Product / user-generated content"> Product / user-generated content</label>
+            <label class="choice"><input type="checkbox" name="entry.610363136" value="Other (describe)"> Other (describe)</label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="q22">Date range covered by the data <span class="opt">(optional)</span></label>
+          <input id="q22" name="entry.1547390036" type="text">
         </div>
         <div class="field">
-          <label for="intake-counsel">Trustee or attorney contact <span class="opt">(optional)</span></label>
-          <textarea id="intake-counsel" name="Trustee or attorney contact" placeholder="Name, phone, or email. Leave this blank if that is you, or if there isn’t one."></textarea>
+          <label for="q23">Language(s) <span class="opt">(optional)</span></label>
+          <input id="q23" name="entry.2103229032" type="text">
         </div>
         <div class="field">
-          <label for="intake-notes">Anything else we should know? <span class="opt">(optional)</span></label>
-          <textarea id="intake-notes" name="Notes" placeholder="Only what you are comfortable putting in an email."></textarea>
+          <label for="q24">Where is it stored now? (cloud accounts still active? backups? hardware?)</label>
+          <textarea id="q24" name="entry.174246833" required></textarea>
         </div>
-
-        <p class="form-note">When you send this, it is emailed to amy@bunillc.com. Buni is not a law firm and does not give legal advice.</p>
+        <div class="field">
+          <label for="q25">Will the accounts stay paid/active? Any shutdown dates?</label>
+          <textarea id="q25" name="entry.1529372003" required></textarea>
+        </div>
+        </fieldset>
+        <fieldset class="intake-group">
+          <legend><h3 style="margin:28px 0 8px">5. Privacy and rights</h3></legend>
+        <fieldset class="field choice-set">
+          <legend>Does the data contain personal information (customer, employee, or user names, emails, health or financial data)?</legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="radio" name="entry.505111639" value="Yes" required> Yes</label>
+            <label class="choice"><input type="radio" name="entry.505111639" value="No" required> No</label>
+            <label class="choice"><input type="radio" name="entry.505111639" value="Unsure" required> Unsure</label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="q27">Any data from regulated sectors (HIPAA, FERPA, GLBA, minors, EU/UK residents for GDPR)? <span class="opt">(optional)</span></label>
+          <textarea id="q27" name="entry.1932628006"></textarea>
+        </div>
+        <fieldset class="field choice-set">
+          <legend>Who owns the data?</legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="radio" name="entry.1833374476" value="Company outright" required> Company outright</label>
+            <label class="choice"><input type="radio" name="entry.1833374476" value="Customer-owned under SaaS contracts" required> Customer-owned under SaaS contracts</label>
+            <label class="choice"><input type="radio" name="entry.1833374476" value="Mixed" required> Mixed</label>
+            <label class="choice"><input type="radio" name="entry.1833374476" value="Unsure" required> Unsure</label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="q29">Any customer contracts, privacy policies, or NDAs that limit use or transfer? <span class="opt">(optional)</span></label>
+          <textarea id="q29" name="entry.569337133"></textarea>
+        </div>
+        <div class="field">
+          <label for="q30">Any third-party code or licensed content mixed in? <span class="opt">(optional)</span></label>
+          <textarea id="q30" name="entry.132226405"></textarea>
+        </div>
+        <fieldset class="field choice-set">
+          <legend>Will court approval be needed for a sale or license (e.g., a §363 motion)? <span class="opt">(optional)</span></legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="radio" name="entry.896566037" value="Yes"> Yes</label>
+            <label class="choice"><input type="radio" name="entry.896566037" value="No"> No</label>
+            <label class="choice"><input type="radio" name="entry.896566037" value="Unsure"> Unsure</label>
+          </div>
+        </fieldset>
+        <fieldset class="field choice-set">
+          <legend>Are you willing to have personal information removed or anonymized before transfer? <span class="opt">(optional)</span></legend>
+          <p class="form-note">Removal is done by the seller or buyer, never by Buni LLC.</p>
+          <div class="choice-grid">
+            <label class="choice"><input type="radio" name="entry.1750345995" value="Yes"> Yes</label>
+            <label class="choice"><input type="radio" name="entry.1750345995" value="No"> No</label>
+            <label class="choice"><input type="radio" name="entry.1750345995" value="Unsure"> Unsure</label>
+          </div>
+        </fieldset>
+        </fieldset>
+        <fieldset class="intake-group">
+          <legend><h3 style="margin:28px 0 8px">6. Deal preferences</h3></legend>
+        <fieldset class="field choice-set">
+          <legend>Preferred structure <span class="opt">(optional)</span></legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="radio" name="entry.950256325" value="One-time sale"> One-time sale</label>
+            <label class="choice"><input type="radio" name="entry.950256325" value="License"> License</label>
+            <label class="choice"><input type="radio" name="entry.950256325" value="Open to either"> Open to either</label>
+          </div>
+        </fieldset>
+        <fieldset class="field choice-set">
+          <legend>Exclusivity preference <span class="opt">(optional)</span></legend>
+          <p class="form-note">Note: whether a deal is exclusive depends on the buyer.</p>
+          <div class="choice-grid">
+            <label class="choice"><input type="radio" name="entry.1381490732" value="Exclusive OK"> Exclusive OK</label>
+            <label class="choice"><input type="radio" name="entry.1381490732" value="Prefer non-exclusive"> Prefer non-exclusive</label>
+            <label class="choice"><input type="radio" name="entry.1381490732" value="No preference"> No preference</label>
+          </div>
+        </fieldset>
+        <fieldset class="field choice-set">
+          <legend>Target timeline</legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="radio" name="entry.754048922" value="ASAP (under 30 days)" required> ASAP (under 30 days)</label>
+            <label class="choice"><input type="radio" name="entry.754048922" value="1–3 months" required> 1–3 months</label>
+            <label class="choice"><input type="radio" name="entry.754048922" value="Flexible" required> Flexible</label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="q36">Price expectations (if any) <span class="opt">(optional)</span></label>
+          <input id="q36" name="entry.667181476" type="text">
+        </div>
+        <div class="field">
+          <label for="q37">Anything else we should know? <span class="opt">(optional)</span></label>
+          <textarea id="q37" name="entry.573542331"></textarea>
+        </div>
+        </fieldset>
+        <fieldset class="intake-group">
+          <legend><h3 style="margin:28px 0 8px">7. Consent</h3></legend>
+        <fieldset class="field choice-set" data-required-group>
+          <legend>Consent</legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="checkbox" name="entry.618712540" value="I&#x27;m authorized to share this information on behalf of the company or estate."> I&#x27;m authorized to share this information on behalf of the company or estate.</label>
+            <label class="choice"><input type="checkbox" name="entry.618712540" value="I understand Buni LLC is a referral and connection service only. Buni LLC never takes possession of the data, and buyer names are shared privately, never publicly."> I understand Buni LLC is a referral and connection service only. Buni LLC never takes possession of the data, and buyer names are shared privately, never publicly.</label>
+            <label class="choice"><input type="checkbox" name="entry.618712540" value="Buni LLC may contact me about this submission."> Buni LLC may contact me about this submission.</label>
+          </div>
+        </fieldset>
+        </fieldset>
+        <p class="form-note">Buni is not a law firm and does not give legal advice.</p>
         <p class="intake-help intake-help-compact"><strong>Stuck on a question?</strong> Call <a href="tel:+19416466325">(941) 646-6325</a> and we will finish it with you.</p>
         <button class="btn btn-primary" type="submit" id="intake-submit">Send this to Buni</button>
-        <noscript><p class="form-note">If this page cannot use scripts, the form still emails Buni, then brings you back here.</p></noscript>
       </form>
+      <iframe name="gform-sink" title="" hidden style="display:none"></iframe>
     </div>
   </section>
 </main>
@@ -292,10 +438,6 @@
       return false;
     }, wrapId);
   }
-  groupOn('Role', 'Other', 'role-other-wrap');
-  groupOn('Company status', 'In bankruptcy', 'bankruptcy-fields');
-  var dataOther = document.querySelectorAll('#data-other');
-  bindToggle(dataOther, function () { return dataOther[0] && dataOther[0].checked; }, 'data-other-wrap');
 
   if (!form) return;
 
@@ -303,59 +445,40 @@
     status.textContent = text;
   }
 
+  var GFORM = 'https://docs.google.com/forms/d/e/1FAIpQLScHEBfEBuMVUPYWsSQGr9VVmKYku8w6L_UEc7uNAVL8sA3RfQ/formResponse';
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     say('');
     if (form.querySelector('[name="_honey"]').value) return;
+    var groups = form.querySelectorAll('[data-required-group]');
+    for (var g = 0; g < groups.length; g++) {
+      if (!groups[g].querySelector('input:checked')) {
+        say('Please check at least one box in: ' + groups[g].querySelector('legend').textContent.trim());
+        groups[g].querySelector('input').focus();
+        return;
+      }
+    }
     if (!form.checkValidity()) {
       say('Please complete the required fields. If you would rather talk it through, call (941) 646-6325.');
       var firstInvalid = form.querySelector(':invalid');
       if (firstInvalid) firstInvalid.focus();
       return;
     }
-
-    var reply = document.getElementById('intake-replyto');
-    var email = document.getElementById('intake-email');
-    if (reply && email) reply.value = email.value.trim();
-
-    var data = new FormData(form);
-    if (data.get('_honey')) return;
-    data.delete('_honey');
-    data.delete('_next');
-    var company = data.get('Company') || 'Unknown company';
-    data.set('_subject', 'Buni data-asset intake: ' + company);
-    data.set('Page', window.location.href);
-
-    var payload = {};
-    data.forEach(function (value, key) {
-      if (typeof value !== 'string' || !value.trim()) return;
-      if (payload[key]) payload[key] = payload[key] + ', ' + value;
-      else payload[key] = value;
+    var body = new URLSearchParams();
+    new FormData(form).forEach(function (value, key) {
+      if (key.indexOf('entry.') !== 0 || typeof value !== 'string' || !value.trim()) return;
+      var el = form.querySelector('[name="' + key + '"]');
+      if (el && el.type === 'date') {
+        var p = value.split('-');
+        body.append(key + '_year', p[0]); body.append(key + '_month', String(+p[1])); body.append(key + '_day', String(+p[2]));
+      } else body.append(key, value);
     });
-
     submit.disabled = true;
     say('Sending…');
-    fetch('https://formsubmit.co/ajax/amy@bunillc.com', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(payload)
-    }).then(function (res) {
-      return res.text().then(function (raw) {
-        var body = {};
-        try { body = raw ? JSON.parse(raw) : {}; } catch (err) { body = { message: raw }; }
-        var message = body && typeof body.message === 'string' ? body.message : '';
-        var flag = body && body.success;
-        var activation = /activat/i.test(message);
-        var ok = activation || (res.ok && (flag === true || flag === 'true' || flag === 'True'));
-        if (!ok) throw new Error(message || 'Request failed');
-        return activation;
-      });
-    }).then(function () {
+    fetch(GFORM, { method: 'POST', mode: 'no-cors', body: body }).then(function () {
       form.reset();
       showThanks();
-      if (window.history && window.history.replaceState) {
-        window.history.replaceState(null, '', window.location.pathname + '?thanks=1');
-      }
+      if (window.history && window.history.replaceState) window.history.replaceState(null, '', window.location.pathname + '?thanks=1');
     }).catch(function () {
       say('We could not send the form just now. Please call (941) 646-6325 or email amy@bunillc.com and we will take it from you.');
       submit.disabled = false;
