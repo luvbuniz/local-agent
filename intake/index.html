@@ -209,20 +209,105 @@
         <fieldset class="intake-group">
           <legend><h3 style="margin:28px 0 8px">4. Data inventory</h3></legend>
         <fieldset class="field choice-set" data-required-group>
-          <legend>Data types available (check all that apply) — give rough volume for each</legend>
-          <div class="choice-grid">
-            <label class="choice"><input type="checkbox" name="entry.610363136" value="Internal documents / wikis (e.g., Confluence, Notion, SharePoint) — approx. # docs / GB"> Internal documents / wikis (e.g., Confluence, Notion, SharePoint) — approx. # docs / GB</label>
-            <label class="choice"><input type="checkbox" name="entry.610363136" value="Support tickets (e.g., Zendesk, Freshdesk, Intercom) — approx. # tickets / years"> Support tickets (e.g., Zendesk, Freshdesk, Intercom) — approx. # tickets / years</label>
-            <label class="choice"><input type="checkbox" name="entry.610363136" value="Source code + commit history (e.g., GitHub, GitLab, Bitbucket) — # repos / LOC / years"> Source code + commit history (e.g., GitHub, GitLab, Bitbucket) — # repos / LOC / years</label>
-            <label class="choice"><input type="checkbox" name="entry.610363136" value="Project tracking (e.g., Jira, Asana, Linear) — # issues"> Project tracking (e.g., Jira, Asana, Linear) — # issues</label>
-            <label class="choice"><input type="checkbox" name="entry.610363136" value="Chat (e.g., Slack, Teams) — # messages / years"> Chat (e.g., Slack, Teams) — # messages / years</label>
-            <label class="choice"><input type="checkbox" name="entry.610363136" value="CRM / sales records (e.g., Salesforce, HubSpot) — # records"> CRM / sales records (e.g., Salesforce, HubSpot) — # records</label>
-            <label class="choice"><input type="checkbox" name="entry.610363136" value="Engineering / CAD / design files — # files / formats"> Engineering / CAD / design files — # files / formats</label>
-            <label class="choice"><input type="checkbox" name="entry.610363136" value="Audio (calls, podcasts, voice) — hours"> Audio (calls, podcasts, voice) — hours</label>
-            <label class="choice"><input type="checkbox" name="entry.610363136" value="Video (training, meetings, product) — hours"> Video (training, meetings, product) — hours</label>
-            <label class="choice"><input type="checkbox" name="entry.610363136" value="Email archives — approx. mailboxes / GB"> Email archives — approx. mailboxes / GB</label>
-            <label class="choice"><input type="checkbox" name="entry.610363136" value="Product / user-generated content"> Product / user-generated content</label>
-            <label class="choice"><input type="checkbox" name="entry.610363136" value="Other (describe)"> Other (describe)</label>
+          <legend>Data types available (check all that apply)</legend>
+          <p class="form-note">Check each type you have, then pick the tool and how many years of history.</p>
+          <div class="data-types">
+            <div class="data-type">
+              <label class="choice"><input type="checkbox" name="entry.610363136" value="Internal documents / wiki"> Internal documents / wiki</label>
+              <div class="data-type-detail" id="dt-docs" hidden style="display:grid;gap:10px;margin:8px 0 14px 28px">
+                <div class="field"><label for="dt-docs-tool">Tool or platform</label><select id="dt-docs-tool" name="entry.1262480027"><option value="">Choose one</option><option value="Confluence">Confluence</option><option value="Notion">Notion</option><option value="SharePoint">SharePoint</option><option value="Google Drive">Google Drive</option><option value="Other">Other</option></select></div>
+                <div class="field" id="dt-docs-otherwrap" hidden><label for="dt-docs-other">Tool name</label><input id="dt-docs-other" name="entry.679080016" type="text" placeholder="Type the tool name"></div>
+                <div class="field"><label for="dt-docs-years">Years of history</label><select id="dt-docs-years" name="entry.1454957222"><option value="">Choose one</option><option value="Under 1">Under 1</option><option value="1-2">1-2</option><option value="3-5">3-5</option><option value="6-10">6-10</option><option value="10+">10+</option></select></div>
+              </div>
+            </div>
+            <div class="data-type">
+              <label class="choice"><input type="checkbox" name="entry.610363136" value="Support tickets"> Support tickets</label>
+              <div class="data-type-detail" id="dt-tickets" hidden style="display:grid;gap:10px;margin:8px 0 14px 28px">
+                <div class="field"><label for="dt-tickets-tool">Tool or platform</label><select id="dt-tickets-tool" name="entry.335069427"><option value="">Choose one</option><option value="Zendesk">Zendesk</option><option value="Jira Service Management">Jira Service Management</option><option value="Freshdesk">Freshdesk</option><option value="Intercom">Intercom</option><option value="ServiceNow">ServiceNow</option><option value="Other">Other</option></select></div>
+                <div class="field" id="dt-tickets-otherwrap" hidden><label for="dt-tickets-other">Tool name</label><input id="dt-tickets-other" name="entry.1227271375" type="text" placeholder="Type the tool name"></div>
+                <div class="field"><label for="dt-tickets-years">Years of history</label><select id="dt-tickets-years" name="entry.908540970"><option value="">Choose one</option><option value="Under 1">Under 1</option><option value="1-2">1-2</option><option value="3-5">3-5</option><option value="6-10">6-10</option><option value="10+">10+</option></select></div>
+              </div>
+            </div>
+            <div class="data-type">
+              <label class="choice"><input type="checkbox" name="entry.610363136" value="Source code"> Source code</label>
+              <div class="data-type-detail" id="dt-code" hidden style="display:grid;gap:10px;margin:8px 0 14px 28px">
+                <div class="field"><label for="dt-code-tool">Tool or platform</label><select id="dt-code-tool" name="entry.1059983352"><option value="">Choose one</option><option value="GitHub">GitHub</option><option value="GitLab">GitLab</option><option value="Bitbucket">Bitbucket</option><option value="Azure DevOps">Azure DevOps</option><option value="Other">Other</option></select></div>
+                <div class="field" id="dt-code-otherwrap" hidden><label for="dt-code-other">Tool name</label><input id="dt-code-other" name="entry.2081194032" type="text" placeholder="Type the tool name"></div>
+                <div class="field"><label for="dt-code-years">Years of history</label><select id="dt-code-years" name="entry.1518297638"><option value="">Choose one</option><option value="Under 1">Under 1</option><option value="1-2">1-2</option><option value="3-5">3-5</option><option value="6-10">6-10</option><option value="10+">10+</option></select></div>
+              </div>
+            </div>
+            <div class="data-type">
+              <label class="choice"><input type="checkbox" name="entry.610363136" value="Chat / messaging"> Chat / messaging</label>
+              <div class="data-type-detail" id="dt-chat" hidden style="display:grid;gap:10px;margin:8px 0 14px 28px">
+                <div class="field"><label for="dt-chat-tool">Tool or platform</label><select id="dt-chat-tool" name="entry.1340930890"><option value="">Choose one</option><option value="Slack">Slack</option><option value="Microsoft Teams">Microsoft Teams</option><option value="Discord">Discord</option><option value="Google Chat">Google Chat</option><option value="Other">Other</option></select></div>
+                <div class="field" id="dt-chat-otherwrap" hidden><label for="dt-chat-other">Tool name</label><input id="dt-chat-other" name="entry.1021103338" type="text" placeholder="Type the tool name"></div>
+                <div class="field"><label for="dt-chat-years">Years of history</label><select id="dt-chat-years" name="entry.646411660"><option value="">Choose one</option><option value="Under 1">Under 1</option><option value="1-2">1-2</option><option value="3-5">3-5</option><option value="6-10">6-10</option><option value="10+">10+</option></select></div>
+              </div>
+            </div>
+            <div class="data-type">
+              <label class="choice"><input type="checkbox" name="entry.610363136" value="Email"> Email</label>
+              <div class="data-type-detail" id="dt-email" hidden style="display:grid;gap:10px;margin:8px 0 14px 28px">
+                <div class="field"><label for="dt-email-tool">Tool or platform</label><select id="dt-email-tool" name="entry.57971779"><option value="">Choose one</option><option value="Google Workspace / Gmail">Google Workspace / Gmail</option><option value="Microsoft 365 / Outlook">Microsoft 365 / Outlook</option><option value="Other">Other</option></select></div>
+                <div class="field" id="dt-email-otherwrap" hidden><label for="dt-email-other">Tool name</label><input id="dt-email-other" name="entry.1794389184" type="text" placeholder="Type the tool name"></div>
+                <div class="field"><label for="dt-email-years">Years of history</label><select id="dt-email-years" name="entry.1860889647"><option value="">Choose one</option><option value="Under 1">Under 1</option><option value="1-2">1-2</option><option value="3-5">3-5</option><option value="6-10">6-10</option><option value="10+">10+</option></select></div>
+              </div>
+            </div>
+            <div class="data-type">
+              <label class="choice"><input type="checkbox" name="entry.610363136" value="Project management / issue tracking"> Project management / issue tracking</label>
+              <div class="data-type-detail" id="dt-pm" hidden style="display:grid;gap:10px;margin:8px 0 14px 28px">
+                <div class="field"><label for="dt-pm-tool">Tool or platform</label><select id="dt-pm-tool" name="entry.1759524987"><option value="">Choose one</option><option value="Jira">Jira</option><option value="Asana">Asana</option><option value="Linear">Linear</option><option value="Trello">Trello</option><option value="Monday">Monday</option><option value="Other">Other</option></select></div>
+                <div class="field" id="dt-pm-otherwrap" hidden><label for="dt-pm-other">Tool name</label><input id="dt-pm-other" name="entry.1841448515" type="text" placeholder="Type the tool name"></div>
+                <div class="field"><label for="dt-pm-years">Years of history</label><select id="dt-pm-years" name="entry.1803789660"><option value="">Choose one</option><option value="Under 1">Under 1</option><option value="1-2">1-2</option><option value="3-5">3-5</option><option value="6-10">6-10</option><option value="10+">10+</option></select></div>
+              </div>
+            </div>
+            <div class="data-type">
+              <label class="choice"><input type="checkbox" name="entry.610363136" value="CRM / sales"> CRM / sales</label>
+              <div class="data-type-detail" id="dt-crm" hidden style="display:grid;gap:10px;margin:8px 0 14px 28px">
+                <div class="field"><label for="dt-crm-tool">Tool or platform</label><select id="dt-crm-tool" name="entry.1834848371"><option value="">Choose one</option><option value="Salesforce">Salesforce</option><option value="HubSpot">HubSpot</option><option value="Other">Other</option></select></div>
+                <div class="field" id="dt-crm-otherwrap" hidden><label for="dt-crm-other">Tool name</label><input id="dt-crm-other" name="entry.566323681" type="text" placeholder="Type the tool name"></div>
+                <div class="field"><label for="dt-crm-years">Years of history</label><select id="dt-crm-years" name="entry.1093359232"><option value="">Choose one</option><option value="Under 1">Under 1</option><option value="1-2">1-2</option><option value="3-5">3-5</option><option value="6-10">6-10</option><option value="10+">10+</option></select></div>
+              </div>
+            </div>
+            <div class="data-type">
+              <label class="choice"><input type="checkbox" name="entry.610363136" value="Design files"> Design files</label>
+              <div class="data-type-detail" id="dt-design" hidden style="display:grid;gap:10px;margin:8px 0 14px 28px">
+                <div class="field"><label for="dt-design-tool">Tool or platform</label><select id="dt-design-tool" name="entry.770053861"><option value="">Choose one</option><option value="Figma">Figma</option><option value="Adobe Creative Cloud">Adobe Creative Cloud</option><option value="AutoCAD / CAD">AutoCAD / CAD</option><option value="Other">Other</option></select></div>
+                <div class="field" id="dt-design-otherwrap" hidden><label for="dt-design-other">Tool name</label><input id="dt-design-other" name="entry.35737598" type="text" placeholder="Type the tool name"></div>
+                <div class="field"><label for="dt-design-years">Years of history</label><select id="dt-design-years" name="entry.1856079290"><option value="">Choose one</option><option value="Under 1">Under 1</option><option value="1-2">1-2</option><option value="3-5">3-5</option><option value="6-10">6-10</option><option value="10+">10+</option></select></div>
+              </div>
+            </div>
+            <div class="data-type">
+              <label class="choice"><input type="checkbox" name="entry.610363136" value="Other data"> Other data</label>
+              <div class="data-type-detail" id="dt-other" hidden style="display:grid;gap:10px;margin:8px 0 14px 28px">
+                <div class="field"><label for="dt-other-tool">Tool or platform</label><select id="dt-other-tool" name="entry.398644068"><option value="">Choose one</option><option value="Other">Other</option></select></div>
+                <div class="field" id="dt-other-otherwrap" hidden><label for="dt-other-other">Tool name</label><input id="dt-other-other" name="entry.1930783838" type="text" placeholder="Type the tool name"></div>
+                <div class="field"><label for="dt-other-years">Years of history</label><select id="dt-other-years" name="entry.103628469"><option value="">Choose one</option><option value="Under 1">Under 1</option><option value="1-2">1-2</option><option value="3-5">3-5</option><option value="6-10">6-10</option><option value="10+">10+</option></select></div>
+              </div>
+            </div>
+            <div class="data-type">
+              <label class="choice"><input type="checkbox" name="entry.610363136" value="Audio"> Audio</label>
+              <div class="data-type-detail" id="dt-audio" hidden style="display:grid;gap:10px;margin:8px 0 14px 28px">
+                <div class="field"><label for="dt-audio-tool">Tool or platform</label><select id="dt-audio-tool" name="entry.1867120325"><option value="">Choose one</option><option value="Other">Other</option></select></div>
+                <div class="field" id="dt-audio-otherwrap" hidden><label for="dt-audio-other">Tool name</label><input id="dt-audio-other" name="entry.1400837312" type="text" placeholder="Type the tool name"></div>
+                <div class="field"><label for="dt-audio-years">Years of history</label><select id="dt-audio-years" name="entry.1676858302"><option value="">Choose one</option><option value="Under 1">Under 1</option><option value="1-2">1-2</option><option value="3-5">3-5</option><option value="6-10">6-10</option><option value="10+">10+</option></select></div>
+              </div>
+            </div>
+            <div class="data-type">
+              <label class="choice"><input type="checkbox" name="entry.610363136" value="Video"> Video</label>
+              <div class="data-type-detail" id="dt-video" hidden style="display:grid;gap:10px;margin:8px 0 14px 28px">
+                <div class="field"><label for="dt-video-tool">Tool or platform</label><select id="dt-video-tool" name="entry.1360564406"><option value="">Choose one</option><option value="Other">Other</option></select></div>
+                <div class="field" id="dt-video-otherwrap" hidden><label for="dt-video-other">Tool name</label><input id="dt-video-other" name="entry.1375724365" type="text" placeholder="Type the tool name"></div>
+                <div class="field"><label for="dt-video-years">Years of history</label><select id="dt-video-years" name="entry.1826899706"><option value="">Choose one</option><option value="Under 1">Under 1</option><option value="1-2">1-2</option><option value="3-5">3-5</option><option value="6-10">6-10</option><option value="10+">10+</option></select></div>
+              </div>
+            </div>
+            <div class="data-type">
+              <label class="choice"><input type="checkbox" name="entry.610363136" value="Product / user-generated content"> Product / user-generated content</label>
+              <div class="data-type-detail" id="dt-ugc" hidden style="display:grid;gap:10px;margin:8px 0 14px 28px">
+                <div class="field"><label for="dt-ugc-tool">Tool or platform</label><select id="dt-ugc-tool" name="entry.2035785894"><option value="">Choose one</option><option value="Other">Other</option></select></div>
+                <div class="field" id="dt-ugc-otherwrap" hidden><label for="dt-ugc-other">Tool name</label><input id="dt-ugc-other" name="entry.533808009" type="text" placeholder="Type the tool name"></div>
+                <div class="field"><label for="dt-ugc-years">Years of history</label><select id="dt-ugc-years" name="entry.1574803369"><option value="">Choose one</option><option value="Under 1">Under 1</option><option value="1-2">1-2</option><option value="3-5">3-5</option><option value="6-10">6-10</option><option value="10+">10+</option></select></div>
+              </div>
+            </div>
           </div>
         </fieldset>
         <div class="field">
@@ -290,45 +375,13 @@
             <label class="choice"><input type="radio" name="entry.1750345995" value="Unsure"> Unsure</label>
           </div>
         </fieldset>
-        </fieldset>
-        <fieldset class="intake-group">
-          <legend><h3 style="margin:28px 0 8px">6. Deal preferences</h3></legend>
-        <fieldset class="field choice-set">
-          <legend>Preferred structure <span class="opt">(optional)</span></legend>
-          <div class="choice-grid">
-            <label class="choice"><input type="radio" name="entry.950256325" value="One-time sale"> One-time sale</label>
-            <label class="choice"><input type="radio" name="entry.950256325" value="License"> License</label>
-            <label class="choice"><input type="radio" name="entry.950256325" value="Open to either"> Open to either</label>
-          </div>
-        </fieldset>
-        <fieldset class="field choice-set">
-          <legend>Exclusivity preference <span class="opt">(optional)</span></legend>
-          <p class="form-note">Note: whether a deal is exclusive depends on the buyer.</p>
-          <div class="choice-grid">
-            <label class="choice"><input type="radio" name="entry.1381490732" value="Exclusive OK"> Exclusive OK</label>
-            <label class="choice"><input type="radio" name="entry.1381490732" value="Prefer non-exclusive"> Prefer non-exclusive</label>
-            <label class="choice"><input type="radio" name="entry.1381490732" value="No preference"> No preference</label>
-          </div>
-        </fieldset>
-        <fieldset class="field choice-set">
-          <legend>Target timeline</legend>
-          <div class="choice-grid">
-            <label class="choice"><input type="radio" name="entry.754048922" value="ASAP (under 30 days)" required> ASAP (under 30 days)</label>
-            <label class="choice"><input type="radio" name="entry.754048922" value="1–3 months" required> 1–3 months</label>
-            <label class="choice"><input type="radio" name="entry.754048922" value="Flexible" required> Flexible</label>
-          </div>
-        </fieldset>
-        <div class="field">
-          <label for="q36">Price expectations (if any) <span class="opt">(optional)</span></label>
-          <input id="q36" name="entry.667181476" type="text">
-        </div>
         <div class="field">
           <label for="q37">Anything else we should know? <span class="opt">(optional)</span></label>
           <textarea id="q37" name="entry.573542331"></textarea>
         </div>
         </fieldset>
         <fieldset class="intake-group">
-          <legend><h3 style="margin:28px 0 8px">7. Consent</h3></legend>
+          <legend><h3 style="margin:28px 0 8px">6. Consent</h3></legend>
         <fieldset class="field choice-set" data-required-group>
           <legend>Consent</legend>
           <div class="choice-grid">
@@ -438,6 +491,25 @@
       return false;
     }, wrapId);
   }
+
+
+  var DATA_TYPES = [["entry.610363136", "Internal documents / wiki", "docs"], ["entry.610363136", "Support tickets", "tickets"], ["entry.610363136", "Source code", "code"], ["entry.610363136", "Chat / messaging", "chat"], ["entry.610363136", "Email", "email"], ["entry.610363136", "Project management / issue tracking", "pm"], ["entry.610363136", "CRM / sales", "crm"], ["entry.610363136", "Design files", "design"], ["entry.610363136", "Other data", "other"], ["entry.610363136", "Audio", "audio"], ["entry.610363136", "Video", "video"], ["entry.610363136", "Product / user-generated content", "ugc"]];
+  DATA_TYPES.forEach(function (d) {
+    var box = document.querySelector('input[name="' + d[0] + '"][value="' + d[1].replace(/"/g, '\\"') + '"]');
+    var wrap = document.getElementById('dt-' + d[2]);
+    var sel = document.getElementById('dt-' + d[2] + '-tool');
+    var ow = document.getElementById('dt-' + d[2] + '-otherwrap');
+    if (!box || !wrap || !sel || !ow) return;
+    function sync() {
+      var on = box.checked, other = on && sel.value === 'Other';
+      wrap.hidden = !on; wrap.style.display = on ? 'grid' : 'none';
+      var f = wrap.querySelectorAll('select, input');
+      for (var i = 0; i < f.length; i++) f[i].disabled = !on;
+      ow.hidden = !other;
+      ow.querySelector('input').disabled = !other;
+    }
+    box.addEventListener('change', sync); sel.addEventListener('change', sync); sync();
+  });
 
   if (!form) return;
 
