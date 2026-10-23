@@ -1,0 +1,36 @@
+/* Insights section. Builds on /site.css variables. */
+.nav a[aria-current="page"] { color: var(--brand); }
+.insights-hero { padding-bottom: 40px; }
+.insights-list-wrap { padding: 0 0 88px; }
+.insight-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 28px; }
+.insight-card {
+  display: grid; gap: 20px; background: var(--surface); border: 1px solid var(--line);
+  border-top: 3px solid var(--brand); padding: 20px;
+}
+.insight-thumb img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.insight-card h2 { font-size: 1.45rem; line-height: 1.25; margin: 4px 0 10px; }
+.insight-card h2 a { color: var(--ink); text-decoration: none; }
+.insight-card h2 a:hover { color: var(--brand); }
+.insight-card p { color: var(--text); }
+.insight-more { display: inline-block; margin-top: 10px; font-weight: 600; }
+@media (min-width: 720px) {
+  .insight-card { grid-template-columns: 300px minmax(0, 1fr); gap: 28px; padding: 24px; align-items: start; }
+}
+.post-meta { color: var(--muted); font-size: 0.9rem; margin: 0; }
+.post { padding: 48px 0 88px; }
+.post-wrap { max-width: 760px; }
+.post-crumbs { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 14px; }
+.post-crumbs a { text-decoration: none; }
+.post h1 { font-size: clamp(1.9rem, 4.5vw, 2.7rem); line-height: 1.15; margin: 0 0 14px; }
+.post-cover { margin: 28px 0 32px; }
+.post-cover img, .post-body img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+.post-body { font-size: 1.075rem; line-height: 1.72; color: var(--text); }
+.post-body h2 { font-size: 1.5rem; line-height: 1.25; margin: 2.1em 0 0.6em; }
+.post-body p, .post-body ul, .post-body ol { margin: 0 0 1.1em; }
+.post-body li { margin-bottom: 0.4em; }
+.post-body p:has(> img) { margin: 1.8em 0; }
+.post-body a { overflow-wrap: anywhere; }
+.post-back { margin-top: 40px; font-weight: 600; }
+@media (min-width: 900px) { .post { padding: 72px 0 104px; } }
+.eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand); margin-bottom: 14px; }
+.insights-hero h1 { max-width: 20ch; margin-bottom: 18px; }
