@@ -2,14 +2,15 @@
 title: "The Asset Nobody Lists: Why Company Data Is Worth Money in Bankruptcy"
 slug: bankruptcy-data-asset
 date: 2026-10-23
+updated: 2026-10-24
 description: "Company data can be estate property. A practical look for Chapter 7 trustees and bankruptcy attorneys at finding, valuing, and selling it under Section 363."
-keywords: "bankruptcy data assets, Section 363 sale customer data, Chapter 7 trustee unscheduled assets, consumer privacy ombudsman, estate property data"
+keywords: "bankruptcy data assets, Section 363 sale customer data, Chapter 7 trustee unscheduled assets, consumer privacy ombudsman, estate property data, AI training data"
 cover: bankruptcy-data-asset-cover.jpg
-cover_alt: "Worn law-office desk with stacks of manila folders and banker's boxes, with the article title and Buni LLC byline"
+cover_alt: "The Asset Nobody Lists: why company data is worth money in bankruptcy. By Amy Sullivan, Buni LLC"
 author: Amy Sullivan
 ---
 
-Most schedules I've seen list the obvious things. Equipment, vehicles, receivables, maybe a trademark. What rarely shows up is the data the business built over years of operating: customer records, transaction histories, product catalogs, support logs, content archives, and the software that holds it all together.
+Bankruptcy schedules usually list the obvious things. Equipment, vehicles, receivables, maybe a trademark. What rarely shows up is the data the business built over years of operating: customer records, transaction histories, email and chat archives, support logs, internal documentation, and the software that holds it all together.
 
 That gap matters. If the data has value, it's an estate asset. And if nobody lists it, nobody sells it.
 
@@ -21,7 +22,7 @@ So the first question isn't whether data counts. It's whether this debtor's data
 
 ## Why it goes unscheduled
 
-![A cluttered back office with an old beige computer, a scuffed closed laptop on loose papers and bent folders, a sticky note, a coffee ring, tangled cables, and worn mismatched archive boxes](unscheduled-office-photo.jpg)
+![Where the data lives when a business stops: email and chat, customer records, files and documents, support and operations, sales and finance, engineering and design. First step: secure admin access.](where-the-data-lives.png)
 
 Debtors have to file a schedule of assets and liabilities ([11 U.S.C. § 521(a)(1)](https://www.law.cornell.edu/uscode/text/11/521)). In practice, data tends to slip through for plain reasons:
 
@@ -30,6 +31,12 @@ Debtors have to file a schedule of assets and liabilities ([11 U.S.C. § 521(a)(
 - The people who know where it lives, like a former IT contractor or an ops manager, are gone by the petition date.
 
 None of this means anyone is hiding anything. It just means the asset is easy to miss, and a case that looks like a no-asset case on paper may not be one.
+
+## A newer kind of buyer
+
+For years, the realistic buyers for a closed company's data were competitors and acquirers interested in customer lists. AI developers have added a different kind of demand. They license real-world business records, such as email and chat archives, support tickets, standard operating procedures, CRM data, and design files, to train and evaluate their models.
+
+That can give records with little traditional resale value a market. It also raises its own questions about personal information, confidentiality, and what the buyer may do with the data, which the sections below address.
 
 ## What the trustee's job points to
 
@@ -48,28 +55,32 @@ And if a case has already closed, it can be reopened "to administer assets" ([11
 
 ## Selling it under Section 363
 
-Once you've identified the data, the sale runs through the familiar process: a sale outside the ordinary course of business, after notice and a hearing, with court approval ([11 U.S.C. § 363(b)](https://www.law.cornell.edu/uscode/text/11/363)).
+Once you've identified the data, the sale runs through the familiar process: a sale outside the ordinary course of business, after notice and a hearing ([11 U.S.C. § 363(b)](https://www.law.cornell.edu/uscode/text/11/363)).
 
 Not all data is the same, though. Business records, product data, and non-personal datasets usually raise fewer issues. Customer data about individuals is where the Code adds guardrails.
 
 ## The privacy rules for customer data
 
-![Three-step privacy path for selling customer data in a Section 363 sale: check the privacy policy, consumer privacy ombudsman under section 332, then court approval under section 363(b)(1)(B)](section-363-privacy-path.png)
+![Selling customer data in a Section 363 sale: check the privacy policy, a consumer privacy ombudsman under section 332, then court approval under section 363(b)(1)(B)](section-363-privacy-path.png)
 
 Congress addressed this directly. If the debtor had a privacy policy in effect on the petition date that barred transferring personally identifiable information to unaffiliated parties, the trustee can't sell or lease that information unless one of two things is true ([11 U.S.C. § 363(b)(1)](https://www.law.cornell.edu/uscode/text/11/363)):
 
 - the sale is consistent with that policy, or
 - a consumer privacy ombudsman is appointed under section 332, and after notice and a hearing, the court approves the sale, giving due consideration to the facts, circumstances, and conditions, and finding no showing that it would violate applicable nonbankruptcy law.
 
-"Personally identifiable information" is a defined term. It covers items like an individual's name, address, email, phone number, and financial account numbers, when provided to the debtor in connection with getting a product or service primarily for personal, family, or household purposes ([11 U.S.C. § 101(41A)](https://www.law.cornell.edu/uscode/text/11/101)).
+"Personally identifiable information" is a defined term. It covers an individual's name, home address, email address, home telephone number, Social Security number, or credit card number, when provided to the debtor in connection with getting a product or service primarily for personal, family, or household purposes ([11 U.S.C. § 101(41A)](https://www.law.cornell.edu/uscode/text/11/101)).
 
-When a hearing is required, the court orders the United States trustee to appoint a disinterested person to serve as the ombudsman, at least 7 days before the hearing ([11 U.S.C. § 332(a)](https://www.law.cornell.edu/uscode/text/11/332)). The ombudsman can appear and give the court information about the proposed sale, including the debtor's privacy policy and the potential harms or benefits to consumers ([11 U.S.C. § 332(b)](https://www.law.cornell.edu/uscode/text/11/332)). The [U.S. Trustee Program](https://www.justice.gov/ust) handles those appointments.
+When a hearing is required, the court orders the United States trustee to appoint a disinterested person to serve as the ombudsman, no later than 7 days before the hearing ([11 U.S.C. § 332(a)](https://www.law.cornell.edu/uscode/text/11/332)). The ombudsman can appear and give the court information about the proposed sale, including the debtor's privacy policy and the potential harms or benefits to consumers ([11 U.S.C. § 332(b)](https://www.law.cornell.edu/uscode/text/11/332)). The [U.S. Trustee Program](https://www.justice.gov/ust) handles those appointments.
+
+That definition is about consumers. Employee email, chat messages, and business-contact data generally fall outside it, so the Section 363(b)(1) restriction may not reach them. State privacy law, employment law, and confidentiality agreements still can, which is why redaction or de-identification is usually agreed before anything transfers.
 
 In short, customer data can be sold, but the privacy policy, the ombudsman, and the court all have a say. Building that into the timeline from day one beats discovering it at the sale hearing.
 
-## Where a broker fits
+## Where Buni fits
 
-Most trustees don't have a buyer list for datasets, and most debtors' data needs some work before anyone can evaluate it. That's the gap Buni LLC works in. We don't take custody of the data or hold it. We help identify what might be sellable, connect the estate with appropriate buyers, and refer out the technical and legal pieces to the right people, so the trustee and counsel stay in control and the court process runs the way it normally would.
+Most trustees don't have a buyer list for datasets, and most debtors' data needs some work before anyone can evaluate it. That's the gap Buni LLC works in. We don't take custody of the data or hold it. We help identify what might be sellable, introduce pre-qualified buyers, and refer the technical and legal pieces to the right people, so the trustee and counsel stay in control and the court process runs the way it normally would.
+
+We're also upfront about how we're paid. Buyers pay our fee, and the estate pays us nothing. We disclose that arrangement in writing before any introduction, and any role we play in a case goes through whatever approval the court requires.
 
 ## A practical starting point
 
